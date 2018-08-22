@@ -1,0 +1,7 @@
+~*.pptx
+*.pptx
+*.xcf
+
+node_modules/
+build/
+.publish

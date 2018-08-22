@@ -1,0 +1,208 @@
+
+body
+  font-family $font
+  color $brand
+
+h1
+h2
+h3
+  margin-bottom 0
+  font-family $font
+  font-weight normal
+  letter-spacing -2px
+
+.remark-slide-content
+  h1
+    font-size 3em
+  h2
+    font-size 2em
+  h3
+    font-size 1.6em
+
+  .remark-slide-number
+    left auto
+    right 30px
+    opacity 1
+    font-family $font
+    font-size 1.4em
+    color $brand-alt
+
+.footnote
+  position absolute
+  bottom 3em
+  right 4em
+
+li
+  p
+    line-height 1.25em
+
+blockquote
+  border-radius 0 8px 8px 0
+  border 1px solid darken($brand-highlight, 10%)
+  border-left 12px solid darken($brand-highlight, 10%)
+  background-color lighten($brand-highlight, 10%)
+  padding 20px
+  p
+    text-align left
+    margin .5em
+    font-size: 1.5em;
+    line-height: 1.4em;
+
+.red
+  color #fa0000
+
+.large
+  font-size 2em
+
+a, a > code
+  color $brand-alt
+  text-decoration none
+
+code.remark-code.hljs
+  text-align left
+  border-radius 0 8px 8px 0
+  border 1px solid darken($brand-highlight, 10%)
+  border-left 12px solid darken($brand-highlight, 10%)
+  background-color lighten($brand-highlight, 10%)
+
+.remark-code
+.remark-inline-code
+  font-family $code-font
+
+.remark-code-line-highlighted
+  background-color inherit
+  font-weight bold
+
+.pull-left
+  float left
+  width 47%
+
+.pull-right
+  float right
+  width 47%
+
+.pull-right ~ p
+  clear both
+
+#slideshow
+  .slide
+    .content
+      code
+        font-size 0.8em
+      pre
+        code
+          padding 15px
+          font-size 0.9em
+
+.inverse
+  color #777872
+  background #272822
+  text-shadow -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000
+
+.inverse h1
+.inverse h2
+  line-height 0.8em
+  color #f3f3f3
+
+/* Slide-specific styling */
+
+.remark-code
+.remark-inline-code
+  font-family $code-font
+  font-size 28px
+.extra-small .remark-code
+.extra-small .remark-inline-code
+  font-size 16px
+.small .remark-code
+.small .remark-inline-code
+  font-size 20px
+.medium .remark-code
+.medium .remark-inline-code
+  font-size 24px
+h2+.medium
+  margin-top 4em
+.huge .remark-code
+.huge .remark-inline-code
+  font-size 40px
+for num in (1..30)
+  .dim-{num}
+    .remark-code
+      .remark-code-line:nth-child({num})
+        opacity .5
+        background-color lighten($brand-highlight, 50%)
+.highlight-code
+  .remark-code
+    .remark-code-line
+      opacity .6
+      &.remark-code-line-highlighted
+        opacity 1
+
+.col
+  float left
+  min-height 1px
+  img
+    width 100%
+.col.col-1
+    width 10%
+.col.col-2
+    width 20%
+.col.col-3
+    width 30%
+.col.col-4
+    width 40%
+.col.col-5
+    width 50%
+.col.col-6
+    width 60%
+.col.col-7
+    width 70%
+.col.col-8
+    width 80%
+.col.col-9
+    width 90%
+.col.col-10
+    width 100%
+.img-80
+  img
+    width 80%
+.col.centered
+  margin-left auto
+  margin-right auto
+  float none
+
+.no-footer
+  .remark-slide-number
+    display none
+.bg-cover
+  background-size cover
+  background-repeat no-repeat
+  background-position center
+  background-color white
+  .remark-slide-number
+    display none
+.bg-cover.square
+  background-size contain
+.full-width
+  img
+    width 100%
+.alt-brand
+  color: $brand-alt;
+
+.sub-section
+  vertical-align middle
+  text-align center
+  h1
+    font-size 4em
+  h2
+    font-size 3em
+  h2:first-child
+    color #999
+    margin-top 0
+
+.disclaimer
+  margin-top 2em
+
+.profile img
+  border: 7px solid $brand-alt
+  border-radius: 50%
+  width auto

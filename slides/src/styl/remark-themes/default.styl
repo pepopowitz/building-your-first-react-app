@@ -1,0 +1,329 @@
+@import "./_variables"
+@import "./_shared"
+@import "./_title"
+
+@import url("../fonts/fonts.css");
+
+a
+  color $brand-context
+.remark-slide-content
+  padding 1em 3em 1em 3em
+.remark-code
+  position relative
+.inverse-text
+  color white
+
+.title.small h1
+  font-size 4em
+
+/* Two-column layout */
+
+.left-column
+  float left
+  width 20%
+  height 92%
+  color #777
+
+.left-column
+  h2:last-of-type
+  h3:last-child
+    color #000
+
+.right-column
+  float right
+  width 75%
+  padding-top 1em
+
+ul, ol
+  font-size 3em
+  font-family $font
+  margin 0
+  padding-left 1em
+  padding-top 15px
+  li>p
+    margin 0
+.remark-notes
+  ul
+    font-size 1em
+
+.content
+  blockquote
+    font-size 1.5em
+    width calc(100% - 54px)
+    margin 1.5rem 0
+    h1, h2, h3, h4
+      float none
+      margin 0
+      border none
+      padding 0
+      margin 0 0 0.5rem 0
+    h4
+      font-size 2.7rem
+  p, blockquote
+    float left
+    font-family $font
+  ul, ol
+    > li > p
+      float none
+  h1, h2, h3
+    float left
+    margin-top -.4em
+    font-size 3em
+    text-align left
+    padding 0 .25em
+    border-right 1px solid
+  h4
+  h5
+  h6
+    margin 0
+    font-family $font
+    font-weight 400
+  h4
+    margin-top -.4em
+  pre
+    margin-top 0
+  &.level-1
+    h1
+      color $context-current
+      border-right none
+      &+*
+        clear both
+      &+pre, &+div:not(.remark-slide-number):not(.content-image):not(.bio)
+        display block
+        margin-top 1.5rem
+        width 100%
+        float left
+    h2, h3
+      text-align center
+      float none
+      border none
+  &.level-2
+    h1
+      color $context-current-minus-one
+    h2
+      color $context-current
+      border-right none
+      &+*
+        clear both
+      &+pre, &+div:not(.remark-slide-number):not(.content-image):not(.bio)
+        display block
+        margin-top 1.5rem
+        width 100%
+        float left
+    h3
+      float none
+      font-size 4em
+      border none
+      padding 15px
+
+  &.level-3
+    h1
+      color $context-current-minus-two
+    h2
+      color $context-current-minus-one
+    h3
+      color $context-current
+      border-right none
+      &+*
+        clear both
+      &+pre, &+div:not(.remark-slide-number):not(.content-image)
+        display block
+        margin-top 1.5rem
+        width 100%
+        float left
+    h4
+      float none
+      font-size 4em
+      padding 15px
+      letter-spacing -2px
+    h5
+      font-size 3em
+      margin-top -.4em
+      text-align center
+      letter-spacing -2px
+  &.level-1, &.level-2, &.level-3
+    .content-image
+      p
+        margin 0
+      img
+        display block
+        width 80%
+        margin-left auto
+        margin-right auto
+    ul, ol
+      left 50%
+      display inline-table
+      font-size 3rem
+      line-height 4rem
+      position relative
+      transform translateX(-50%)
+
+.footnote
+  font-family $font
+  font-size 1.6em
+  position relative
+  right auto
+  bottom auto
+  p
+    margin 0
+    float right
+.level-1 h1, .level-2 h1, .level-3 h1 
+  padding-left 0
+.footnote
+  color $brand-context
+  & a
+    color $brand-context
+.title-footnote 
+  p
+    width 100%
+  .footnote
+    text-align center
+    display block
+
+.content.level-1, .content.level-2, .content.level-3
+  .highlight
+    color $brand-context
+.content.level-1 h2, .content.level-2 h3, .content.level-3 h4
+  float none
+  text-align center
+  border 0
+  font-size 5rem
+  line-height 1em
+  padding 1rem 0
+  &:first-of-type
+    padding-top 2rem
+  a
+    color $brand-context
+.content.level-1.heading-minus-1 h2, .content.level-2.heading-minus-1 h3, .content.level-3.heading-minus-1 h4
+  font-size 4rem
+
+
+.title h2
+  margin-top 0
+  a
+    color $brand-context
+
+
+.double-wide pre
+  width 100%
+  float left
+.double-wide .leftest
+.double-wide .rightest
+  float left
+  width 48%
+.double-wide .leftest
+  margin-right:2%
+.double-wide .rightest
+  margin-left:2%
+
+.double-stack pre
+  width 100%
+  float left
+.double-stack pre+pre
+.double-stack p+p
+  margin-top 2em
+
+
+.new-section
+  vertical-align middle
+  text-align center
+.new-section
+  h1
+    font-size 5em
+    margin-top 0
+  h2
+    font-size 3em
+    margin-top 0
+
+
+.sub-section
+  h1
+    font-size 3em
+  h2
+    font-size 4em
+  h1:first-child
+    color #999
+    margin-top 0
+  h2
+    margin-top 0
+
+
+.title.conversation
+  blockquote
+    padding 15px
+    h2
+      margin-top 0
+
+.bio
+  margin-left auto
+  margin-right auto
+  text-align center
+  float none
+  margin-top 5.5rem
+  p
+    margin 0
+    display flex
+    justify-content space-around
+    img
+      width 40%
+      height 40%
+.nm-logo
+  width 100%
+  text-align center  
+  top 147px
+  position absolute
+
+.bg-cover:not(.no-footer)
+  .remark-slide-number
+    display block
+    font-size 1.4em
+  &.inverse .remark-slide-number
+    color white
+    opacity 1
+.bg-contain
+  background-size contain
+  background-repeat no-repeat
+  background-color #fff
+  background-position center
+
+.cover-art
+  h1, h2, h3
+    background-color $brand
+    margin 0
+  h1
+    line-height 1em
+    position absolute
+    top 30px
+    left 30px
+    text-align left
+    width 80%
+    padding 1rem
+  .about
+    background-color $brand
+    position absolute
+    bottom 30px
+    right 30px
+    padding 1rem
+
+.content.resources
+  h4
+    font-size 2em
+    margin-top 1em
+    padding-left 15px
+  ul, ol
+    font-size 1.5em
+    padding-left 1.5em
+    display block
+    line-height 1.3em
+.content.hide-footer
+  .remark-slide-number
+    display none
+      
+.about
+  .half
+    display table-cell
+    vertical-align middle
+    h1
+      margin 0
+    
+@import "_custom"
