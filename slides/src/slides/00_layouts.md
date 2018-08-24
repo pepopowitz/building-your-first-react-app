@@ -80,6 +80,11 @@ name: module-section
 
 ---
 layout: true
+class: title, module, inverse
+name: exercise
+
+---
+layout: true
 name: cover-art
 template: title
 background-image: url(images/title.jpg)

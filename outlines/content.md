@@ -9,7 +9,7 @@ Automated testing
 Best practices
 
 
-intro & setup
+About
   about me
     skip it?
       just show art from kids?
@@ -47,13 +47,19 @@ History of JavaScript web apps
     easy to write
     didn't scale to an app
   Knockout/Backbone/AngularJS
-    scaled to an app, but complex
-    simple, but didn't scale to an app
+    sometimes they scaled to an app, but were complex
+    sometimes they were simple, but didn't scale to an app
 
   React
     good balance of simplicity and scaling to an app
-    Facebook: >30000 React components
     That's the problem React solves: scaling simple, understandable code to a large app.
+      simplicity:
+        hope you can experience today
+      scalability:
+        30000
+          # of components in Facebook's codebase
+          source: https://medium.com/@dan_abramov/hey-thanks-for-feedback-bf9502689ca4
+            Dan Abramov
 
 
 
@@ -91,14 +97,14 @@ React Fundamentals
         Problem solved: Setting up webpack is difficult
     JavaScript Features
 
-2gether exercise: Modern JS fundamentals (lambdas & modules)
+2gether exercise (1): Modern JS fundamentals (lambdas & modules)
 
 Components
   React Is Component-Based
     The 'Component' Mindset
       example
 
-solo exercise: Components
+solo exercise (2): Components
   break listy into components (on paper)
   take-aways
     Components are about ISOLATION, more than they are about reuse
@@ -108,7 +114,7 @@ solo exercise: Components
 
 Components In React
 
-2gether exercise: Modern JS fundamentals (class syntax)
+2gether exercise (3): Modern JS fundamentals (class syntax)
 
   Components implement a render() method
     example
@@ -138,13 +144,16 @@ Components In React
 
   Components can be written with JSX
     JSX is optional
+    Problem it solves
+      terser syntax?
+      ????
 
     Separation of concerns
     Browsers don't understand it
           
-2gether exercise: Modern JS fundamentals (transforming variables)
+2gether exercise (4): Modern JS fundamentals (transforming variables)
 
-solo exercise: JSX fundamentals
+solo exercise (5): JSX fundamentals
   https://reactjs.org/docs/introducing-jsx.html
   className
   conditional rendering
@@ -169,7 +178,7 @@ React Components in JSX
       String and numbers. These are rendered as text nodes in the DOM.
       Booleans or null. Render nothing. (Mostly exists to support return test && <Child /> pattern, where test is boolean.)
 
-2gether exercise: implement render several times, returning each of those things ^^^. maybe as a type-along?
+2gether exercise (6): implement render several times, returning each of those things ^^^.
 
   stateless functional
     reasons to use stateless functional
@@ -178,16 +187,15 @@ React Components in JSX
       no life-cycle events
     favor stateless functional
 
-solo exercise: convert a react.component to a stateless functional
+solo exercise (7): convert a react.component to a stateless functional
 
-  take-aways
-    Note: Always start component names with a capital letter.
-
-    common errors:
-      Uncaught Error: Component(...): Nothing was returned from render. This usually means a return statement is missing. Or, to render nothing, return null.
-        forgot to return something from render
-        return <...> on multiple lines needs to be wrapped with ()!
+  common errors:
+    Always start component names with a capital letter.
     
+    Uncaught Error: Component(...): Nothing was returned from render. This usually means a return statement is missing. Or, to render nothing, return null.
+      forgot to return something from render
+      return <...> on multiple lines needs to be wrapped with ()!
+  
 
 props
   can't be modified!
@@ -200,12 +208,12 @@ props
   children
     composition of components (versus inheritance)
 
-solo exercise: create a component that wraps children
+solo exercise (8): create a component that wraps children
 
   type checking
     proptypes
 
-2gether exercise: define proptypes for a component so that one call works and the other doesn't
+2gether exercise (9): define proptypes for a component so that one call works and the other doesn't
 
     next: flow, typescript
 
@@ -217,7 +225,7 @@ css
     className
     import './styles.css';
 
-solo exercise: traditional styles
+solo exercise (10): traditional styles
 
   css-in-js
     show "the slide"
@@ -242,12 +250,11 @@ Routing
   talk about organizing suitcases here?
   routes are just components
 
-2gether exercise: build out router
-
-solo exercise: build a header component, and have it displayed for all routes?
-
-solo exercise:
+2gether exercise (12): build out router
   add links to our column headers & row headers, to take us to a "friend detail" or "list detail" page
+
+solo exercise (13): build a header component, and have it displayed for all routes?
+
 
   next:
     authenticated routes
@@ -286,12 +293,13 @@ state
     setState(prevState => {})
     return only the state you want to update
 
-2gether exercise: return only the state we want to update
+2gether exercise (14): return only the state we want to update
 
+2gether exercise (15): Modern JS - async/await
 
-2gether exercise: load actual data into grid, from api
+2gether exercise (16): load actual data into grid, from api
 
-solo exercise: load list/friend from api endpoint in detail pages
+solo exercise: load list/friend (17) from api endpoint in detail pages
 
   maybe two parts - 1, load something from an api endpoint. 2, hook up events.
 
@@ -299,35 +307,36 @@ Context
   prop drilling
   how Context solves it
 
-2gether exercise: write context.provider & one context.consumer together
+  Context
+  Provider
+  Consumer
 
-solo exercise: write other context.consumers on your own
+2gether exercise (18): write context.provider & one context.consumer together
+
+solo exercise (19): write other context.consumers on your own
 
 
   next: redux, mobx
   conclusion
+    elevate State
     use setState for local state
     Context for "cross-cutting" state
     redux/mobx for app state with traceability
 
 
 handling events????
-  attaching event handlers in a stateless functional
   attaching event handlers in a Component
-  passing event handlers to children
+  attaching event handlers in a stateless functional
+    passing event handlers to children
   binding to this
     .bind(this) in constructor
     fat arrow functions
     class fields
   is this better before state?
 
-2gether/solo exercise
-  handleListMemberChanged, removeFriendFromList, addFriendToList
-    set them up with unit tests ahead of time?????
-    this might be a whole nother exercise????
-  bonus: show some sort of indicator that the grid is saving, and then it is done saving
-  bonus: friend detail view/edit
-    see list detail view/edit
+2gether exercise (20): addFriendToList
+solo exercise (21): removeFriendFromList
+  set them up with unit tests ahead of time
 
 
 testing???
@@ -335,11 +344,13 @@ testing???
   extract logic from components & test in isolation
   enzyme
 
-2gether exercise: write a test that renders a conditional component
+2gether exercise (22): write a test that renders a conditional component
 
-2gether exercise: write a test that simulates an event?
+2gether exercise (23): write a test that simulates an event?
 
   next: react-testing-library
+  
+  suggestions
 
 
 

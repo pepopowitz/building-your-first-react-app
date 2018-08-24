@@ -19,7 +19,7 @@ template: cover-art
 ## Steven Hicks
 ### <i class="el el-twitter"></i> [@pepopowitz](https://twitter.com/pepopowitz)
 ### <i class="el el-envelope"></i> steven.j.hicks@gmail.com
-### <i class="el el-globe"></i> [stevenhicks.me/tdd](https://stevenhicks.me/tdd)
+### <i class="el el-globe"></i> [stevenhicks.me/your-first-react-app](https://stevenhicks.me/your-first-react-app)
 ]
 
 ???
@@ -40,7 +40,7 @@ class: double-wide, resources
 
 # Resources
 
-* [Workshop materials](https://stevenhicks.me/tdd)
+* [Workshop materials](https://stevenhicks.me/your-first-react-app)
 * [Jest](https://facebook.github.io/jest/)
 * [Code katas](https://codekatas.com)
 

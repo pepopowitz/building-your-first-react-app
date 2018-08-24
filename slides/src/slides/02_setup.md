@@ -1,7 +1,8 @@
----
-template: module-title
 
-# Module 0
+template: module-title
+layout: false
+
+# Setup
 ## Setup
 
 ---
@@ -35,3 +36,5 @@ I'll walk around and help where I can, but please don't hesitate to ask your nei
 
 TIMEBOXED TO 5 MINUTES.
 
+
+---

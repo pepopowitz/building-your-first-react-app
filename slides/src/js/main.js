@@ -28,7 +28,7 @@ var slideShow = remark.create({
 
     // Enable or disable counting of incremental slides in the slide counting
     countIncrementalSlides: false,
-    slideNumberFormat: 'stevenhicks.me/tdd 🦄 @pepopowitz',
+    slideNumberFormat: 'stevenhicks.me/your-first-react-app 🦄 @pepopowitz',
 
     // For more options see:
     // https://github.com/gnab/remark/wiki/Configuration#highlighting
