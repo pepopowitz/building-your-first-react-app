@@ -1,17 +1,15 @@
 {
-    "name": "building-quality-javascript-with-test-driven-development",
+    "name": "building-your-first-react-app",
     "version": "0.1.0",
-    "description": "Slides for my 'Building Quality JavaScript With Test-Driven Development' workshop",
+    "description": "Slides for my 'Building Your First React App' workshop",
     "homepage": "https://stevenhicks.me",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/pepopowitz/none-yet.git"
+        "url": "git+https://github.com/pepopowitz/building-your-first-react-app.git"
     },
     "private": true,
     "keywords": [
-        "TDD",
-        "JavaScript",
-        "Quality",
+        "React",
         "Workshop"
     ],
     "author": {

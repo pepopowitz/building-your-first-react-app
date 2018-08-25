@@ -26,6 +26,8 @@ var slideShow = remark.create({
         click: false
     },
 
+    
+
     // Enable or disable counting of incremental slides in the slide counting
     countIncrementalSlides: false,
     slideNumberFormat: 'stevenhicks.me/your-first-react-app 🦄 @pepopowitz',

@@ -3,11 +3,12 @@
 // Necessary Plugins
 var gulp  = require('gulp');
 var paths = require('../paths');
-
+var reload = require('./browser-sync').reload;
+console.log('sjh', reload);
 // Call Watch
 module.exports = gulp.task('watch', function() {
-  gulp.watch([paths.source.slides, paths.source.templates], ['jade']);
-  gulp.watch(paths.source.js, ['js']);
-  gulp.watch(paths.source.styl, ['stylus']);
-  gulp.watch(paths.source.img, ['imagemin']);
+  gulp.watch([paths.source.slides, paths.source.templates], gulp.series('jade', reload));
+  gulp.watch(paths.source.js, gulp.series('js', reload));
+  gulp.watch(paths.source.styl, gulp.series('stylus', reload));
+  gulp.watch(paths.source.img, gulp.series('imagemin', reload));
 });

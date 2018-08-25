@@ -3,5 +3,14 @@
 // Necessary Plugins
 var gulp = require('gulp');
 
+require('./fonts');
+require('./imagemin');
+require('./jade');
+require('./js');
+require('./stylus');
+
 // dist task
-module.exports = gulp.task('dist', ['js', 'jade', 'stylus', 'imagemin', 'fonts']);
+module.exports = gulp.task(
+  'dist',
+  gulp.series('js', 'jade', 'stylus', 'imagemin', 'fonts')
+);
