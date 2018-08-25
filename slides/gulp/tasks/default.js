@@ -4,7 +4,6 @@
 var gulp = require('gulp');
 
 var server = require('./browser-sync').server;
-console.log(server);
 require('./dist');
 require('./fonts');
 require('./imagemin');

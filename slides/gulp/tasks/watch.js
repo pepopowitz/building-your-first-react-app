@@ -4,7 +4,6 @@
 var gulp  = require('gulp');
 var paths = require('../paths');
 var reload = require('./browser-sync').reload;
-console.log('sjh', reload);
 // Call Watch
 module.exports = gulp.task('watch', function() {
   gulp.watch([paths.source.slides, paths.source.templates], gulp.series('jade', reload));
