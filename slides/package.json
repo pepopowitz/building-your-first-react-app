@@ -1,41 +1,43 @@
 {
-    "name": "building-your-first-react-app",
-    "version": "0.1.0",
-    "description": "Slides for my 'Building Your First React App' workshop",
-    "homepage": "https://stevenhicks.me",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/pepopowitz/building-your-first-react-app.git"
-    },
-    "private": true,
-    "keywords": [
-        "React",
-        "Workshop"
-    ],
-    "author": {
-        "name": "Steven Hicks",
-        "email": "steven.j.hicks@gmail.com",
-        "web": "https://stevenhicks.me",
-        "twitter": "pepopowitz"
-    },
-    "license": "MIT",
-    "scripts": {
-        "clean": "rm -r node_modules/; rm -r build/",
-        "start": "gulp"
-    },
-    "devDependencies": {
-        "autoprefixer": "^6.3.3",
-        "browser-sync": "^2.11.1",
-        "gulp": "^3.9.1",
-        "gulp-cache": "^0.4.2",
-        "gulp-concat": "^2.6.0",
-        "gulp-csscomb": "^3.0.6",
-        "gulp-imagemin": "^2.4.0",
-        "gulp-jade": "^1.1.0",
-        "gulp-plumber": "^1.1.0",
-        "gulp-stylus": "^2.3.1",
-        "gulp-uglify": "^1.5.3",
-        "gulp-util": "^3.0.7",
-        "poststylus": "^0.2.3"
-    }
+  "name": "building-your-first-react-app",
+  "version": "0.1.0",
+  "description": "Slides for my 'Building Your First React App' workshop",
+  "homepage": "https://stevenhicks.me",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pepopowitz/building-your-first-react-app.git"
+  },
+  "private": true,
+  "keywords": [
+    "React",
+    "Workshop"
+  ],
+  "author": {
+    "name": "Steven Hicks",
+    "email": "steven.j.hicks@gmail.com",
+    "web": "https://stevenhicks.me",
+    "twitter": "pepopowitz"
+  },
+  "license": "MIT",
+  "scripts": {
+    "mkdir": "mkdir build",
+    "clean": "rm -rf ./build/",
+    "start": "gulp",
+    "build": "gulp dist",
+    "dist": "npm run clean && npm run mkdir && npm run build"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.3.3",
+    "browser-sync": "^2.11.1",
+    "gulp": "^4.0.0",
+    "gulp-cache": "^0.4.2",
+    "gulp-concat": "^2.6.0",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-jade": "^1.1.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-stylus": "^2.3.1",
+    "gulp-uglify": "^1.5.3",
+    "gulp-util": "^3.0.7",
+    "poststylus": "^0.2.3"
+  }
 }
