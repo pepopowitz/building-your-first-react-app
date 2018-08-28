@@ -21,6 +21,7 @@ Setup
 About
   Me
   This Workshop
+    Project Structure
     Collaborative
     Schedule
     Feedback(?)
@@ -91,8 +92,8 @@ React Components In JSX
 
 Props
   --
-  Default Props
   Destructuring
+  Default Props
   Children
     Composition vs Inheritance
   Exercise 8 - create a component that wraps children

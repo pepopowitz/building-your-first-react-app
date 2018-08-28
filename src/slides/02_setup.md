@@ -9,11 +9,11 @@ layout: false
 template: module
 layout: true
 
-# 0: Setup
+# Setup
 
 ---
 
-## [https://stevenhicks.me/[setupurl]](https://stevenhicks.me/[setupurl])
+## [stevenhicks.me/your-first-react-app-setup](https://stevenhicks.me/your-first-react-app-setup)
 
 ???
 
