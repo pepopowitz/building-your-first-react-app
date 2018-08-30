@@ -119,8 +119,6 @@ Components In React
   Components implement a render() method
     example
       React.createElement (single element)
-      nested elements
-      show what the examples translate to
     from docs: 
       The render() function should be pure, meaning that it does not modify component state, it returns the same result each time it’s invoked, and it does not directly interact with the browser. If you need to interact with the browser, perform your work in componentDidMount() or the other lifecycle methods instead. Keeping render() pure makes components easier to think about.
 
@@ -139,14 +137,15 @@ Components In React
 
   Components are a hierarchy of calls to React.createElement
     talk about details of createElement
+    nested elements
+    show what the examples translate to
     show examples of deeply nested
 
 
   Components can be written with JSX
     JSX is optional
     Problem it solves
-      terser syntax?
-      ????
+      React.createElement is verbose
 
     Separation of concerns
     Browsers don't understand it
