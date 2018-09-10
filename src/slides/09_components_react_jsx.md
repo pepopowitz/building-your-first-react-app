@@ -24,55 +24,140 @@ can return five things*
 (actually more but we're only going to talk about 5)
 
 ---
+template: module-section
+layout: true
 
-### React Components
+# Components + React + JSX
+## render()
+
+---
+
+### 1. Element/React Component
 
 --
 
+```jsx
+class Friend extends React.Component {
+  render() {
+*   return (
+*     <div>
+*       {this.props.name}
+*     </div>
+*   );
+  }
+}
 ```
-example of react component
+
+???
+render a DOM node
+
+---
+
+### 1. Element/React Component
+
+
+```jsx
+class Friend extends React.Component {
+  render() {
+*   return (
+*     <FriendImage friend={this.props.friend} />
+*   );
+  }
+}
 ```
 
 ???
 
-<div /> and <MyComponent /> are React elements that instruct React to render a DOM node, or another user-defined component, respectively.
+render another user-defined component.
 
 ---
 
-### Arrays
+### 2. Array
 
 --
 
-```
-example of array
+```jsx
+class FriendsList extends React.Component {
+  render() {
+*   return [
+*     <FriendImage friend={this.props.friendA} />,
+*     <FriendImage friend={this.props.friendB} />,
+*   ]
+  }
+}
 ```
 
 ???
 
 Let you return multiple elements from render
 
+it's more valuable than you think
+
+this example is not something you'll do a lot of...
+
 ---
 
-### Fragments
+### 2. Array
 
---
+```jsx
+class FriendsList extends React.Component {
+  render() {
+*   return this.props.friends.map(friend =>
+*     <Friend name={friend.name} />
+*   );
+  }
+}
+```
 
-```
-example of fragment
-```
 
 ???
 
-Let you return a specific kind of array
+but this is!
+
+mapping from an array to an array of react components.
 
 ---
 
-### Strings/numbers
+### 3. Fragment
 
 --
 
+```jsx
+import React, { Fragment } from 'react';
+
+class FriendsList extends React.Component {
+  render() {
+*   return (
+*     <Fragment>
+*       <FriendImage friend={this.props.friendA} />
+*       <FriendImage friend={this.props.friendB} />
+*     </Fragment>
+*   );
+  }
+}
 ```
-example of string/number
+???
+
+Nicer syntax than returning an array,
+
+if you have multiple items to return
+
+Fragment does not render anything to the DOM
+
+It used to be that you had to wrap things in a div, instead of a fragment (pollution)
+
+---
+
+### 4. String/Number
+
+--
+
+```jsx
+class Friend extends React.Component {
+  render() {
+*   return {this.props.name};
+  }
+}
 ```
 
 ???
@@ -81,17 +166,44 @@ These are rendered as text nodes in the DOM.
 
 ---
 
-### null
+### 5. null
 
 --
 
-```
-example of null
+```jsx
+class Friend extends React.Component {
+  render() {
+*   return {null};
+  }
+}
 ```
 
 ???
 
-renders nothing - so we can early-exit from a component
+renders nothing.
+
+you could do this, but you won't.
+
+..
+
+you WILL do this, though
+
+---
+
+### 5. null
+
+```jsx
+class Friend extends React.Component {
+  render() {
+*   if (this.props.isLoading) {
+*     return null;
+*   }
+    return <div>{this.props.name}</div>
+  }
+}
+```
+
+early-exit from a component
 
 ---
 template: exercise
@@ -100,28 +212,95 @@ layout: false
 # Exercise 6
 ## render() Results
 
----
-
-## Problem: We don't always need class syntax????
-
-```
-example of class syntax with nothing but props
-```
 
 ---
+template: components-react-jsx-section
+layout: false
+
+## Do We Need Class Syntax?
+
+--
+
+```jsx
+*class Friend extends React.Component {
+* render() {
+    if (this.props.isLoading) {
+      return null;
+    }
+    return <div>{this.props.name}</div>
+* }
+*}
+```
+
+---
+template: components-react-jsx-section
 
 ## Stateless Functional Components
 
+???
+
+Components that are written with functions
+
+that don't have state
+
+---
+template: module-section
+layout: true
+
+# Components/React/JSX
+## Stateless Functions
+
+---
+
+```jsx
+class Friend extends React.Component {
+  render() {
+    if (this.props.isLoading) {
+      return null;
+    }
+    return <div>{this.props.name}</div>
+  }
+}
 ```
-example of stateless functional
+
+--
+
+```jsx
+function Friend(props) {
+  if (props.isLoading) {
+    return null;
+  }
+  return <div>{props.name}</div>
+}
 ```
 
 ---
-## Stateless Functional |
-### Vs. React.Component
+template: module-section
+layout: true
 
+# Components/React/JSX
+## Stateless Functions
+
+---
+
+```jsx
+class Friend extends React.Component {
+  render() {
+    if (this.props.isLoading) {
+      return null;
+    }
+    return <div>{this.props.name}</div>
+  }
+}
 ```
-side-by-side
+
+```jsx
+function Friend({ isLoading, name }) {
+  if (isLoading) {
+    return null;
+  }
+  return <div>{name}</div>
+}
 ```
 
 ---
@@ -132,7 +311,19 @@ layout: false
 ## Convert A Component
 
 ---
+template: components-react-jsx-section
+layout: false
+
 ## Suggestions
+
+---
+template: module-section
+layout: true
+
+# Components + React + JSX
+## Suggestions
+
+---
 
 ### Start With Stateless Functional
 
@@ -141,37 +332,108 @@ layout: false
 convert it to class only after you need to
 
 ---
+template: components-react-jsx-section
+layout: false
 
+## Common Errors
+
+---
+template: module-section
+layout: true
+
+# Components + React + JSX
 ## Common Errors
 
 ---
 
 ### Component Names Must Be Capitalized
 
-```
-error message from non-capitalized
-```
+.error[
+> The tag &lt; friendsList &gt; is unrecognized in this browser. If you meant to render a React component, start its name with an uppercase letter.`
+]
 
 ---
 
 ### Components Must Return Something
 
-```
-side-by-side of returning vs not returning
-```
-
---
-
-```
-error message from not returning
-```
+.error[
+> Nothing was returned from render. This usually means a return statement is missing. Or, to render nothing, return null.`
+]
 
 ---
 
-### Returning Multiple Lines? Wrap In ().
+### Components Must Return Something
 
+```jsx
+export default function({ name }) {
+  <div>
+    {name}
+  </div>
+}
 ```
-example and/or error message
+
+???
+
+you'll write components like this, many times
+
+the problem?
+
+---
+
+### Components Must Return Something
+
+```jsx
+export default function({ name }) {
+  return (
+    <div>
+      {name}
+    </div>
+  );
+}
 ```
+
+???
+
+it's not actually RETURNING the jsx.
+
+---
+
+### Components Must Return Something
+
+```jsx
+export default function({ name }) {
+  return 
+    <div>
+      {name}
+    </div>
+  ;
+}
+```
+
+???
+
+another thing you'll do plenty of times
+
+what's wrong?
+
+that return is returning!
+
+---
+
+### Components Must Return Something
+
+```jsx
+export default function({ name }) {
+* return (
+    <div>
+      {name}
+    </div>
+* );
+}
+```
+
+???
+
+we need parens on the same line, to tell it not to just terminate that statement.
 
 ---

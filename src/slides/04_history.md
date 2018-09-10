@@ -5,6 +5,12 @@ layout: false
 # History
 ## History
 
+???
+
+I've been working on front-end web apps for 20 years
+
+I've built them with many different kinds of JavaScript tools
+
 ---
 
 layout: true
@@ -13,10 +19,11 @@ name: history-section
 
 # History
 
-
 ---
 
 ## Plain JavaScript
+
+--
 
 * 👎 Hard to write
 * 👎 Hard to scale
@@ -25,12 +32,20 @@ name: history-section
 
 ## jQuery
 
+--
+
 * 👍 Easy to write
 * 👎 Hard to scale
 
 ---
 
 ## MVC/MVVM
+
+???
+
+Angular 1, Knockout, Backbone, ...
+
+--
 
 * 👍 Easy to scale
 * 👎 Hard to write
@@ -54,6 +69,12 @@ Regardless, an improvement!
 ---
 
 ## React
+
+???
+
+My favorite way to build a web app
+
+--
 
 * 👍 Easy to write
 * 👍 Easy to scale

@@ -19,19 +19,26 @@ name: components-section
 
 ???
 
-This is React's killer feature
+Components are React's killer feature
 
 It's a mindset shift
 
-we used to think in terms of "controllers" and "views" - "separation of concerns"
+When we were doing MVC/MVVM, 
+
+we used to think in terms of "controllers" and "views"
+
+We did this because of the principle of "separation of concerns"
 
 But React says controllers & views are the same concern
 
 ---
+template: module-section
+layout: false
 
-## The "Component" Mindset |
+# Components
+## The "Component" Mindset
 
-(an example - from facebook or something.)
+TODO - draw an example from facebook
 
 ---
 
@@ -42,14 +49,20 @@ layout: false
 ## Identifying Components
 
 ---
-template: components-section
+template: level-3
+layout: true
+
+# Components
 ## Exercise 2
+### Identify Components
 
-### Identifying Components
+---
 
-* instructions
-* go 
-* here
+#### Draw the boundaries of individual components on each page
+
+---
+
+TODO - example
 
 ---
 template: components-section
@@ -57,7 +70,13 @@ template: components-section
 ## Suggestions
 
 ---
-## Suggestions |
+template: module-section
+layout: true
+
+# Components
+## Suggestions
+
+---
 
 ### Favor small components
 
@@ -66,7 +85,6 @@ template: components-section
 The **deconstruction** of UI's into small components is crucial to successful React development.
 
 ---
-## Suggestions |
 
 ### Components are more about isolation than reuse
 
@@ -76,8 +94,14 @@ It's easy to think we are doing this to make reuse easier
 
 But it's really more about isolation
 
-Smaller components that do fewer things are easier to understand
+Components are like building blocks.
+
+Smaller ones that do fewer things are easier to understand
 
 And easier to assemble (so they aid reuse).
+
+---
+
+TODO - drawing of large building blocks (many colors with blurry edges) vs small building blocks (many colors but discrete edges)
 
 ---

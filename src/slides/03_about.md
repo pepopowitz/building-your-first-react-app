@@ -86,6 +86,15 @@ name: about
 ### Project Structure
 
 ---
+### The App
+
+#### https://github.com/pepopowitz/listy
+
+???
+
+Quick demo?
+
+---
 class: collaborative
 
 ### Collaborative

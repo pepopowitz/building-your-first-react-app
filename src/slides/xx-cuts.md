@@ -15,3 +15,65 @@ class: schedule
 ???
 
 Now is your chance to break!
+
+
+
+
+
+
+a second input: state
+
+---
+template: level-3
+layout: true
+# Components + React
+## Inputs
+### state
+
+---
+
+drawing of triangle: 
+props & state -> render -> ??? -> props & state
+
+---
+
+```jsx
+class Friend extends React.Component {
+  render() {
+*    console.log(this.state.name, this.state.url);
+  }
+}
+```
+
+---
+
+#### Props Are Read-Only
+#### State Is Read-Write
+
+???
+
+The difference
+
+...
+
+We'll look more later
+
+
+
+
+
+---
+#### Reconciliation
+
+here
+
+do I need to talk about this??????
+???
+
+Updating the DOM is slow
+
+Virtual DOM
+
+--
+
+(drawing of reconciliation)

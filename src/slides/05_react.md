@@ -3,7 +3,13 @@ template: module-title
 layout: false
 
 # React
-## React Is
+## What Is React?
+
+???
+
+There are a bunch of things that react is...
+
+the most significant one, for me, is...
 
 ---
 
@@ -11,7 +17,7 @@ layout: true
 template: module
 name: react-section
 
-# React
+# React Is
 
 ---
 
@@ -26,8 +32,13 @@ React makes it easy to scale simple, understandable code to a large app.
 simplicity: hope you can experience today
 
 ---
+template: module-section
+# React Is
+## Scalable
+### 30,000
+--
 
-## 30,000
+#### The number of React components in Facebook's codebase
 
 .footnote[
 [Dan Abramov](https://medium.com/@dan_abramov/hey-thanks-for-feedback-bf9502689ca4)
@@ -43,9 +54,16 @@ source: https://medium.com/@dan_abramov/hey-thanks-for-feedback-bf9502689ca4
   
 
 ---
+layout: true
+template: react-section
 
-## A JavaScript library for building user interfaces
+---
 
+> A JavaScript library for building user interfaces
+
+.footnote[
+https://reactjs.org/
+]
 ???
 
 from their site
@@ -65,20 +83,28 @@ And nothing more
 (maybe the C)
 
 ---
+layout: true
+template: module-section
+name: react-is-v-in-mvc
 
-## The V in MVC |
-
-## Angular : monolith :: 
-## React : microlibraries
+# React Is
+## The V in MVC
 ---
 
-## The V in MVC |
+### Angular : monolith :: 
+### React : microlibraries
+
+---
 
 > Choosing between Angular and React is like choosing between buying an off-the-shelf computer and building your own with off-the-shelf parts.
 
 .footnote[
   [Cory House](https://medium.freecodecamp.com/angular-2-versus-react-there-will-be-blood-66595faafd51)
 ]
+
+---
+template: react-section
+layout: true
 
 ---
 
@@ -92,7 +118,26 @@ Well, it means we write code that says **WHAT** to display
 
 **not HOW** to display it
 
-...
+---
+layout: true
+template: module-section
+name: react-is-declarative
+
+# React Is
+## Declarative
+---
+
+### How do you get to my house?
+
+--
+
+**Imperative**: directions
+
+--
+
+**Declarative**: address
+
+???
 
 Obviously some code, at some point,
 
@@ -100,10 +145,8 @@ has to be written on HOW to display
 
 ---
 
-## Declarative | 
-
 ### Imperative code is abstracted
-#### So we can call it declaratively
+### so that we can call it declaratively
 
 ???
 
@@ -111,15 +154,19 @@ But we abstract the imperative code
 
 So our app can call it declaratively.
 
-**Example**: how to find my house.
-
-**Imperative**: directions
-
-**Declarative**: address
-
 ---
 
-## Declarative | 
+```javascript
+example of declarative js vs imperative (.map vs for loop?)
+```
+
+???
+
+...
+
+Why do we care about this?
+
+---
 
 > Declarative views make your code more predictable and easier to debug.
 
@@ -129,15 +176,23 @@ https://facebook.github.io/react/
 
 ???
 
-Why do we care?
+When your code is less worried about HOW to do things, 
+
+it's less cognitive load on the reader.
+
+---
+template: react-section
+layout: true
 
 ---
 
 ## Component-Based
 
 ---
+template: module-section
 
-## Component-Based | 
+# React Is
+## Component-Based
 
 > Build encapsulated components that manage their own state, then compose them to make complex UIs.
 
@@ -145,14 +200,14 @@ Why do we care?
 https://facebook.github.io/react/
 ]
 
----
-
-## "Just" JavaScript
-
 ???
 
-Not totally true
+We'll talk more about components in a bit
 
-But it's closer to writing plain JS than probably any other JS UI framework
+...
+
+but before we do, we need to take a step backwards from even React
+
+Let's talk about JavaScript.
 
 ---
