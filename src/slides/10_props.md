@@ -17,47 +17,244 @@ name: props-section
 
 ## Component Inputs
 
----
-
-### Can't Be Modified
-
-```
-example of what you can't do
-```
+(triangle drawing)
 
 ---
 
-## Object Destructuring
+## Should Never Be Modified
 
+--
+
+```jsx
+function Friend(props) {
+* props.name = 'Mr. Cat The Mystery Cat';
+
+  if (props.isLoading) {
+    return null;
+  }
+  return <div>{props.name}</div>
+}
 ```
-example of no destructuring
-example of destructuring assignment
-example of destructuring in args
+
+???
+
+If a prop needs to be changed...
+
+it's probably state (not a prop)
+
+---
+
+## Syntax
+
+--
+
+```jsx
+function Friend(props) {
+  if (props.isLoading) {
+    return null;
+  }
+  return <div>{props.name}</div>
+}
 ```
+
+???
+
+stateless function
+
+---
+
+## Syntax
+
+```jsx
+function Friend(props) {
+* const { isLoading, name } = props;
+  if (isLoading) {
+    return null;
+  }
+  return <div>{name}</div>
+}
+```
+
+???
+
+object destructuring
+
+---
+## Syntax
+
+```jsx
+*function Friend({ isLoading, name }) {
+  if (isLoading) {
+    return null;
+  }
+  return <div>{name}</div>
+}
+```
+
+???
+
+argument destructuring
+
+---
+## Syntax
+
+```jsx
+
+class Friend extends React.Component {
+  render() {
+*   const { isLoading, name } = props;
+    if (isLoading) {
+      return null;
+    }
+    return <div>{name}</div>
+  }
+}
+```
+
+???
+
+class syntax + destructuring
 
 ---
 
 ## Default Props
 
+???
+
+specify defaults for props
+
 --
 
+```jsx
+class FriendImage extends React.Component {
+  render() {
+    const { name, url } = this.props;
+
+    return <img alt={name} src={url} />
+  }
+}
+
+*FriendImage.defaultProps = {
+* url: 'http://placekitten.com/200'
+*}
 ```
-example
+
+???
+
+class, set afterward
+
+---
+
+## Default Props
+
+```jsx
+class FriendImage extends React.Component {
+  render() {
+    const { name, url } = this.props;
+    
+    return <img alt={name} src={url} />;
+  }
+
+* static defaultProps = {
+*   url: 'http://placekitten.com/200'
+* }
+}
 ```
+
+???
+
+class, static method
+
+---
+## Default Props
+
+```jsx
+function FriendImage({ name, url }) {
+  return <img alt={name} src={url} />
+}
+
+*FriendImage.defaultProps = {
+* url: 'http://placekitten.com/200'
+*}
+```
+
+???
+
+stateless function
+
+---
+## Default Props
+
+```jsx
+function FriendImage(
+  { 
+    name, 
+*   url = 'http://placekitten.com/200' 
+  }
+) {
+  return <img alt={name} src={url} />;
+}
+```
+
+???
+
+stateless function & destructuring - default arguments
 
 ---
 
 ## Children
 
+???
+
+Every component gets a special prop
+
+--
+
+```jsx
+<Title>Welcome to listy!</Title>
 ```
-example of component using props.children
+
+--
+
+```jsx
+function Title({ children }) {
+  return (
+    <div id="title">{children}</div>
+  );
+}
 ```
+
+--
+```html
+<div id="title">
+  Welcome to listy!
+</div>
+```
+
+???
+
+...
+
+children prop is really powerful.
 
 ---
-## Children |
-### Composition Vs. Inheritance
+template: module-section
+layout: true
 
-figure out how to talk about this
+# Props
+## Children
+
+---
+
+### Composition
+
+???
+
+allows us to compose our components, instead of inherit them
+
+...
+
+TODO - why is this valuable, and how do I see the value?
 
 ---
 template: exercise
@@ -67,8 +264,12 @@ layout: false
 ## Composition & props.children
 
 ---
+template: props-section
+layout: true
 
-## How can we be sure our component is getting the props it needs?
+---
+
+## How do we validate props?
 
 ???
 
@@ -81,23 +282,80 @@ how do we make sure our component is getting the data it needs?
 ## PropTypes
 
 ---
+template: module-section
+layout: true
+# Props
+## PropTypes
 
-## PropTypes |
+---
 
 ### Optional
 
 ---
 
-## PropTypes |
-
+```
 npm install --save prop-types
+```
 
 ---
-## PropTypes
 
+```jsx
+function FriendImage({ name, url }) {
+  return <img alt={name} src={url} />;
+}
+
+*FriendImage.propTypes = {
+* name: propTypes.string.isRequired,
+* age: propTypes.number.isRequired,
+*}
 ```
-examples of some prop types
+
+???
+
+stateless functional
+
+---
+
+```jsx
+class FriendImage extends React.Component {
+  render() {
+    const { name, url } = this.props;
+
+    return <img alt={name} src={url} />
+  }
+}
+
+*FriendImage.propTypes = {
+* name: propTypes.string.isRequired,
+* age: propTypes.number.isRequired,
+*}
 ```
+
+???
+
+class + set after
+
+---
+
+```jsx
+class FriendImage extends React.Component {
+  render() {
+    const { name, url } = this.props;
+
+    return <img alt={name} src={url} />
+  }
+
+* static propTypes = {
+*   name: propTypes.string.isRequired,
+*   age: propTypes.number.isRequired,`
+* }
+}
+```
+
+???
+
+class + static method
+
 
 ---
 template: exercise
@@ -107,23 +365,107 @@ layout: false
 ## Defining PropTypes
 
 ---
+template: props-section
 
+## Deeper Learning
+
+---
+template: module-section
+layout: true
+
+# Props
 ## Deeper Learning
 
 ---
 
 ### TypeScript
 
+```jsx
+*interface IFriendImageProps {
+* name: string;
+* age: number;
+*}
+
+*class FriendImage extends React.Component<IFriendImageProps, {}> {
+  render() {
+    const { name, url } = this.props;
+
+    return <img alt={name} src={url} />
+  }
+}
 ```
-example of ts
+
+???
+
+will give you a compile-time error if it doesn't get those types
+
+class
+
+---
+
+### TypeScript
+
+```jsx
+*interface IFriendImageProps {
+* name: string;
+* age: number;
+*}
+
+*function FriendImage(props: IFriendImageProps) {
+  const { name, url } = props;
+
+  return <img alt={name} src={url} />;
+}
 ```
+
+???
+
+stateless functional
+
 
 ---
 
 ### Flow
 
+```jsx
+*type FriendImageProps = {
+* name: string;
+* age: number;
+*};
+
+*class FriendImage extends React.Component<FriendImageProps> {
+  render() {
+    const { name, url } = this.props;
+
+    return <img alt={name} src={url} />
+  }
+}
 ```
-example of flow
+
+???
+
+class
+
+---
+### Flow
+
+```jsx
+*type FriendImageProps = {
+* name: string;
+* age: number;
+*}
+
+*function FriendImage(props: FriendImageProps) {
+  const { name, url } = props;
+
+  return <img alt={name} src={url} />;
+}
 ```
+
+???
+
+stateless function
+
+better tooling from typescript
 
 ---

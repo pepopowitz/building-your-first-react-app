@@ -275,35 +275,6 @@ function Friend(props) {
 ```
 
 ---
-template: module-section
-layout: true
-
-# Components/React/JSX
-## Stateless Functions
-
----
-
-```jsx
-class Friend extends React.Component {
-  render() {
-    if (this.props.isLoading) {
-      return null;
-    }
-    return <div>{this.props.name}</div>
-  }
-}
-```
-
-```jsx
-function Friend({ isLoading, name }) {
-  if (isLoading) {
-    return null;
-  }
-  return <div>{name}</div>
-}
-```
-
----
 template: exercise
 layout: false
 
