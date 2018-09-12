@@ -15,53 +15,140 @@ name: css-section
 
 ---
 
-## Method 1: CSS Imports
-
----
-
-## CSS Imports |
-
-```
-example
-```
+## Styles Go With Components
 
 ???
 
-Note that this works because we're using webpack with style-loader
+gone are the days of one massive stylesheet for an entire app
+
+with react's focus on components, we want to put our styles with our components.
+
+A few different approaches.
+
+---
+
+## Method 1: Component CSS Files
+
+---
+template: module-section
+layout: false
+
+# CSS
+## CSS Imports
+
+```css
+.friend {
+  color: blueviolet;
+  border-bottom: 1px solid blueviolet;
+}
+```
+.footnote[
+friend.css
+]
+
+```jsx
+*import './friend.css';
+
+function Friend({ name }) {
+* return <div className="friend">{name}</div>
+});
+```
+.footnote[
+friend.jsx
+]
+
+???
+
+**className**
+
+Note that this works because we're using **webpack with style-loader**
 
 (it effectively turns our css into a js object that we can import)
-
 
 ---
 template: exercise
 layout: false
 
 # Exercise 10
-## CSS Imports
+## Component CSS Files
 
 ---
 
 ## Method 2: CSS Modules
+### https://github.com/css-modules/css-modules
+
+.css-modules[
+![CSS Modules](images/css-modules-logo.png)
+]
+
+---
+template: module-section
+layout: true
+# CSS
+## CSS Modules
 
 ---
 
 ### Why?
 
-> modular and reusable CSS!
-> No more conflicts.
-> Explicit dependencies.
-> No global scope.
+> * modular and reusable CSS!
+> * No more conflicts.
+> * Explicit dependencies.
+> * No global scope.
 
 .footnote[
 [CSS Modules](https://github.com/css-modules/css-modules)
 ]
 
 ---
-## CSS Modules |
 
+```css
+.friend {
+  color: blueviolet;
+  border-bottom: 1px solid blueviolet;
+}
 ```
-example
+.footnote[
+friend.css
+]
+
+```jsx
+*import styles from './friend.css';
+
+function Friend({ name }) {
+* return <div className={styles.friend}>{name}</div>
+}
 ```
+.footnote[
+friend.jsx
+]
+
+???
+
+what it looks like in your code
+
+---
+
+```css
+.Friend__friend__31BtE {
+  color: blueviolet;
+  border-bottom: 1px solid blueviolet;
+}
+```
+.footnote[
+CSS
+]
+
+```html
+<div class="Friend__friend__31BtE">Mr. Turtle</div>
+```
+.footnote[
+HTML
+]
+
+???
+
+what gets shipped to the browser
 
 ---
 template: exercise
@@ -71,32 +158,95 @@ layout: false
 ## CSS Modules
 
 ---
+template: css-section
 
 ## Deeper Learning
 
 ---
+template: module-section
+layout: true
+
+# CSS
+## Deeper Learning
+
+---
+class: no-footer
 
 ### CSS-in-JS
 
 --
 
-* list
-* of 
-* css
-* in
-* js
-* options
+* [Styled Components](https://www.styled-components.com)
+* [Radium](https://github.com/FormidableLabs/radium)
+* [Emotion](https://github.com/emotion-js/emotion)
+* [Glamor](https://github.com/threepointone/glamor)
+* [Glamorous](https://github.com/paypal/glamorous)
+* [JSS](https://github.com/cssinjs/jss)
 
 ---
 
 ### Styled Components
 
+#### [styled-components.com](https://www.styled-components.com/)
+---
+template: level-3
+layout: false
+# CSS
+## Deeper Learning
+### Styled Components
+
+```jsx
+import styled from 'styled-components';
+
+const brandColor = 'blueviolet';
+
+const StyledFriend = styled.div`
+  color: ${brandColor};
+  border-bottom: 1px solid ${brandColor};
+`;
+
+function Friend({ name }) {
+ return <StyledFriend>{name}</StyledFriend>
+}
 ```
-example
-```
+
+???
+
+the code
 
 ---
 
+```css
+.31BtE {
+  color: blueviolet;
+  border-bottom: 1px solid blueviolet;
+}
+```
+.footnote[
+CSS
+]
+
+```html
+<div class="31BtE">Mr. Turtle</div>
+```
+.footnote[
+HTML
+]
+
+???
+
+shipped to the browser
+
+---
+template: css-section
+
+## Suggestions
+
+---
+template: module-section
+layout: true
+
+# CSS
 ## Suggestions
 
 ---
@@ -122,8 +272,12 @@ Component library probably warrants css-in-js
 ### Separation Of Concerns
 
 ---
+template: level-3
+layout: false
 
-### Separation Of Concerns |
+# CSS
+## Suggestions
+### Separation Of Concerns
 
 (the slide)
 

@@ -135,8 +135,11 @@ template: about-section
 
 ???
 
-background questions
+React devs?
 
+JavaScript/UI devs?
+
+What UI tools are they using? Angular? Ember? jQuery? 
 
 ---
 layout: true

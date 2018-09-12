@@ -13,6 +13,8 @@ name: state-section
 
 # State
 
+triangle
+
 ???
 
 Who has heard things about managing state in react?
