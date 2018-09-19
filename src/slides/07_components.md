@@ -40,6 +40,16 @@ layout: false
 
 TODO - draw an example from facebook
 
+???
+
+so instead of this page having a controller & a view,
+
+it really has a handful of components
+
+building blocks
+
+and each of those components is a concern
+
 ---
 
 template: exercise
@@ -63,6 +73,20 @@ layout: true
 ---
 
 TODO - example
+
+???
+
+I already helped you with this one a bit
+
+now go!
+
+---
+
+TODO - example 2
+
+---
+
+TODO - example 3
 
 ---
 template: components-section

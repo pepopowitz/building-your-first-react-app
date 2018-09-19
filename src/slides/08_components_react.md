@@ -689,6 +689,8 @@ REPEAT THEIR ANSWER!!!!
 
 drawing of HTML separate from CSS from JS
 
+???
+
 React components with JSX look like HTML + JS
 
 the instinct is to separate them

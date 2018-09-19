@@ -25,7 +25,6 @@ https://jestjs.io/
 ---
 
 ## Jest
-### Example
 
 ```javascript
 describe('A set of tests', () => {
@@ -39,6 +38,9 @@ describe('A set of tests', () => {
 ```
 
 ---
+template: module-section
+# Testing
+## Jest
 
 ### Assertions
 
@@ -59,9 +61,12 @@ http://airbnb.io/enzyme/
 ---
 
 ## Enzyme
-### Scenario
 
 drawing of component tree
+
+???
+
+scenario
 
 ---
 
@@ -148,6 +153,9 @@ layout: false
 ## Deeper Learning
 
 ---
+template: module-section
+# Testing
+## Deeper Learning
 
 ### react-testing-library
 
@@ -159,6 +167,13 @@ react-testing-library tries to keep the possibilities to things that users care 
 
 ---
 
+## Suggestions
+
+---
+template: module-section
+layout: true
+
+# Testing
 ## Suggestions
 
 ---
@@ -186,3 +201,5 @@ drawing
 ???
 
 You have all the context right now. You three months from now does not. Consider what they'll go through when they find a failing test! Make it easier for them to figure out.
+
+---

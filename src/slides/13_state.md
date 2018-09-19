@@ -5,6 +5,14 @@ layout: false
 # State
 ## State
 
+???
+
+Who has heard things about managing state in react?
+
+...
+
+state mgmt in react is a controversial topic.
+
 ---
 
 layout: true
@@ -13,25 +21,62 @@ name: state-section
 
 # State
 
-triangle
+---
 
-???
+triangle (props only)
 
-Who has heard things about managing state in react?
+
+---
+template: module-section
+layout: true
+# State
+## Props vs. State
 
 ---
 
-## Props Vs State
-
+```jsx
+class FriendDetail extends React.Component {
+  render() {
+    return <img 
+*     alt={this.props.name} 
+*     src={this.props.url} />
+  }
+}
 ```
+
+.footnote[
 props
+]
+
+???
+
+syntactical differences
+
+---
+
+```jsx
+class FriendDetail extends React.Component {
+  render() {
+    return <img 
+*     alt={this.state.name} 
+*     src={this.state.url} />
+  }
+}
 ```
 
-```
+.footnote[
 state
-```
+]
 
-??? 
+???
+
+but also, conceptual: 
+
+---
+
+drawing of props vs state
+
+???
 
 props are passed into a component
 
@@ -46,79 +91,260 @@ This component? It's state.
 Someone else? It's props passed in.
 
 ---
-
-state only exists on a "stateful" component / one that inherits from React.Component
+template: state-section
+layout: true
 
 ---
+class: no-footer
 
-somehow to show that state can be passed down to children as props
+## Stateful Components Must Extend React.Component
+
+```jsx
+class FriendDetail extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>{this.state.friend.name}</h1>
+        <img 
+          alt={this.state.friend.name} 
+          src={this.state.friend.url} />
+      </div>
+    );
+  }
+}
+```
 
 ???
 
-and this looks like...
+we've been looking at a lot of stateless functions
+
+but to have a component with state...it has to be a class component.
 
 ---
 
-## Unidirectional Flow
+## State Is Passed Into Child Components As Props
 
-(drawing)
+(drawing of child component with props & state being passed in, both as props)
+
+---
+class: no-footer
+
+```jsx
+class FriendDetail extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>{this.state.friend.name}</h1>
+*       <FriendImage friend={this.state.friend} />
+      </div>
+    );
+  }
+}
+```
 
 ???
 
-and the data that flows through one way gets updated by...
+here, it's state.
+
+we pass friend=this.state.friend
+
+--
+
+```jsx
+class FriendImage extends React.Component {
+  render() {
+    return (<img 
+*     alt={this.props.friend.name} 
+*     src={this.props.friend.url} />
+    );
+  }
+}
+```
+
+???
+
+the child component gets that friend in its props
+
+...
+
+looking back at our triangle, we can fill in some more...
+
+---
+
+triangle with props & state
+
+???
+
+we can fill in our final gap, too - 
+
+the function that will update these inputs, or at least the state, is called...
 
 ---
 
 ## setState
 
+--
+
+```jsx
+class ThemeSwitcher extends React.Component {
+  render() {
+    // ...
+  }
+
+  switchTheme() {
+*   this.setState({
+*     theme: 'light'
+*   });
+  }
+}
 ```
-example
-```
+
+???
+
+simple api
+
+tell it what to update
 
 ---
 
+## Unidirectional Flow
+
+(full triangle)
+
+???
+
+in React, we call this a unidirectional flow of data
+
+there's no two-way binding 
+
+things get passed into a component, 
+
+the data source gets edited, 
+
+and then new things get passed in, and react re-renders our component.
+
+---
+template: module-section
+layout: true
+# State
+## setState
+
+---
+class: no-footer
+
 ### State Is Merged
 
+
+```javascript
+{
+  name: 'Flower',
+  colors: ['black', 'white']
+}
 ```
-show how setState merges only the state we want to change
+
+???
+
+before
+
+--
+
+```javascript
+this.setState({
+  name: 'Sneezy'
+});
 ```
+
+--
+
+```javascript
+{
+* name: 'Sneezy',
+  colors: ['black', 'white']
+}
+```
+
+???
+after
+
+more things to know about setState:
 
 ---
 
 ### setState({ })
 
+```javascript
+this.setState({
+  name: 'Sneezy'
+});
 ```
-example using regular call
-```
+
+???
+
+the basic way to call 
+
+but you can't always use it.
 
 ---
 
 ### Asynchronous
 
-```
-incorrect example using this.state.value in setState
+???
+
+because setState calls are asynchronous
+
+and they might be batched, for performance reasons
+
+what that means is that you can't modify your state based on the current state
+
+because you don't necessarily know what that current state is when the state modification actually executes.
+
+--
+
+```javascript
+this.setState({
+  theme: this.state.theme === 'light' 
+    ? 'dark' 
+    : 'light'
+});
 ```
 
 ???
 
-setState calls are asynchronous
+in this case, if setstate got called a couple times very quickly, 
 
-and they might be batched, for performance reasons
+we don't reliably know what this.state.theme is when it is called.
 
-to avoid weirdness, use ....
+so it might set it to 'light' three times in a row
+
+...
+
+to avoid this weirdness, there's a second way to call setState.
 
 ---
 
 ### setState(prevState => { })
 
-```
-example
+???
+
+with a function as an argument
+
+and that function has a parameter - the previous state.
+
+--
+
+```javascript
+this.setState(prevState => {
+  return {
+    theme: prevState.theme === 'light' 
+      ? 'dark' 
+      : 'light'
+  }
+});
 ```
 
 ???
 
 this allows us to compare to previous state
-
 
 ---
 template: exercise
@@ -135,6 +361,7 @@ layout: false
 ## Modern JS: Async/Await
 
 ---
+template: state-section
 
 ## Lifecycle Methods
 
@@ -143,38 +370,72 @@ layout: false
 so we can do things like load state from an api
 
 ---
+layout: true
+template: module-section
+# State
+## Lifecycle
+
+---
 
 ### Initialization (Constructor)
 
 ```
-constructor(props) {
-  super(props);
-  this.state = {
-    isChecked: false
+class FriendDetail extends React.Component {
+  constructor(props) {
+    super(props);
+
+*   this.state = {
+*     friend: {}
+*   }
   }
+
+  render() { ... }
 }
 ```
 
 ???
 
+there are a couple ways we can initialize state
+
 via constructor
+
+super(props)
 
 ---
 
 ### Initialization (Class Property)
 
 ```
-state = {
-  isChecked: false
+class FriendDetail extends React.Component {
+* state = {
+*   friend: {}
+* }
+
+  render() { ... }
 }
 ```
 
 ---
+class: hide-footer
 
 ### componentDidMount
 
 ```
-example
+import callApi from './callApi';
+
+class FriendDetail extends React.Component {
+  async componentDidMount() {
+*   const friend = await callApi(this.props.friendId);
+*
+*   this.setState({
+*     friend
+*   });
+  }
+
+  state = { ... }
+
+  render() { ... }
+}
 ```
 
 ???
@@ -182,20 +443,40 @@ example
 invoked immediately after a component is mounted (inserted into the tree)
 
 ---
+class: component-did-mount
 
 ### componentDidMount
-#### Load Data From API
-#### Subscribe To Things
+
+* Load data from APIs
+
+--
+
+* Integrate with non-React APIs
+
+???
+
+integrating with non-react api's
 
 ---
+class: no-footer
 
 ### componentDidUpdate
 
 ```
-componentDidUpdate(prevProps) {
-  if (this.props.userID !== prevProps.userID) {
-    this.fetchData(this.props.userID);
+import callApi from './callApi';
+
+class FriendDetail extends React.Component {
+  async componentDidUpdate(prevProps) {
+*   if (this.props.friendId !== prevProps.friendId) {
+*     const friend = await callApi(this.props.friendId);
+*  
+*     this.setState({
+*       friend
+*     });
+*   }
   }
+
+  // ...
 }
 ```
 
@@ -205,6 +486,14 @@ invoked when a component is updated
 
 happens more often than you probably need it to, so check the props
 
+---
+
+### componentDidUpdate
+
+* React to changes to inputs
+
+???
+
 This is a good place to react to changes to your inputs that render can't handle
 
 ---
@@ -212,12 +501,30 @@ This is a good place to react to changes to your inputs that render can't handle
 ### componentWillUnmount
 
 ```
-example?
+class FriendsChart extends React.Component {
+  componentDidMount () {
+    this.graph = this._initGraph();
+  }
+
+* componentWillUnmount () {
+*   this.graph.destroy();
+* }
+
+  // ...
+}
 ```
 
 ???
 
 invoked immediately before a component is unmounted and destroyed.
+
+---
+
+### componentWillUnmount
+
+* Clean up integrations with non-React APIs
+
+???
 
 any subscriptions you set up in componentDidMount - cancel them here.
 
@@ -234,87 +541,170 @@ layout: false
 ## Loading Data
 
 ---
+template: state-section
 
-## Problem: Prop Drilling
-
-```
-example
-```
+## Suggestions
 
 ---
+template: module-section
+
+# State
+## Suggestions
+### Elevate State
+
+--
+
+drawing of tree with state
+
+---
+template: level-3
+# State
+## Suggestions
+### Elevate State
+#### Prop Drilling
+
+(drawing of prop drilling)
+
+???
+
+there's a problem you can run into in a react app
+
+...
+
+elevating state & passing props down isn't inherently bad
+
+and there's nothing really wrong with this
+
+but sometimes your components can be really far apart
+
+and all this prop drilling can feel like a burden, and noisy
+
+and generally what it means is you're dealing with APP-level state
+---
+template: state-section
 
 ## Context
 
 ???
 
+and for app-level state, there's a new api in react
+
 new in React 16.2?
 
----
 
-### How Context Solves It
+---
+template: state-section
+
+## Context
 
 drawing - attach a provider at the top component, and consumers along the way down
 
 ???
 
+how context solves prop drilling
+
+
 sometimes the same data needs to be accessible by many components in the tree, and at different nesting levels. Context lets you “broadcast” such data, and changes to it, to all components below. Common examples where using context might be simpler than the alternatives include managing the current locale, theme, or a data cache.
 
+---
+template: module-section
+layout: true
+
+# State
+## Context
 ---
 
 ### createContext()
 
 ```javascript
-const {Provider, Consumer} = React.createContext(defaultValue);
+const {Provider, Consumer} = React.createContext();
 ```
+
+???
+
+the first thing you have to do is create a context
+
+this doesn't happen inside of a component
+
+it's something that executes alongside your components
+
+you get a provider & a consumer
 
 ---
 
 ### Provider
 
-```javascript
-<Provider value={this.state.user}>
+```jsx
+render() {
+  <Provider value={this.state.user}>
+    <yourComponentTree />
+  </Provider>
+}
 ```
+
+???
+
+the provider will get wrapped around your component tree
 
 ---
 
 ### Provider
 
-```javascript
-<Provider value={{ theme: this.state.theme, onThemeChanged: this.handleThemeChanged }>
+```jsx
+render() {
+  <Provider value={{ 
+      user: this.state.user, 
+      onThemeChanged: this.handleThemeChanged }>
+    <yourComponentTree />
+  </Provider>
+}
 ```
 
 ???
 
 value can be an object, if there are multiple things you want to pass down
 
+(including actions that will change the value)
 ---
 
 ### Consumer
 
-```javascript
-<Consumer>
-  {value => <div>{value.userName}</div>}
-</Consumer>
+```jsx
+render() {
+  <Consumer>
+    {value => <div>{value.userName}</div>}
+  </Consumer>
+}
 ```
 
 ???
 
-render props
+and then you have consumers
+
+and they just want to know what the value of the context is
+
+uses a pattern called render props
 
 ---
 
 ### Consumer
 
-```javascript
-<Consumer>
-  {value => (
-    <div>
-      Theme: {value.userName}
-      <button onClick={value.onThemeChanged}>Change Theme</button>
-    </div>
-  )}
-</Consumer>
+```jsx
+render() {
+  <Consumer>
+    {value => (
+      <div>
+        Current User: {value.userName}
+        <button onClick={value.onUserChanged}>Change User</button>
+      </div>
+    )}
+  </Consumer>
+}
 ```
+
+???
+
+for multiple things passed down via context...
 
 ---
 template: exercise
@@ -324,7 +714,14 @@ layout: false
 ## React Context
 
 ---
+template: state-section
 
+## Deeper Learning
+
+---
+template: module-section
+layout: true
+# State
 ## Deeper Learning
 
 ---
@@ -364,14 +761,15 @@ updates get automatically applied
 similar concept to rxjs 
 
 ---
+template: state-section
 
 ## Suggestions
 
 ---
-
-### Elevate State
-
-drawing of tree with state
+template: module-section
+layout: true
+# State
+## Suggestions
 
 ---
 

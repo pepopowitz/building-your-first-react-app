@@ -99,7 +99,6 @@ argument destructuring
 ## Syntax
 
 ```jsx
-
 class Friend extends React.Component {
   render() {
 *   const { isLoading, name } = props;
@@ -152,7 +151,7 @@ class FriendImage extends React.Component {
   render() {
     const { name, url } = this.props;
     
-    return <img alt={name} src={url} />;
+    return <img alt={name} src={url} />
   }
 
 * static defaultProps = {
@@ -192,7 +191,7 @@ function FriendImage(
 *   url = 'http://placekitten.com/200' 
   }
 ) {
-  return <img alt={name} src={url} />;
+  return <img alt={name} src={url} />
 }
 ```
 

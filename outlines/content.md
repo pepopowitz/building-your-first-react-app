@@ -343,9 +343,9 @@ testing???
   extract logic from components & test in isolation
   enzyme
 
-2gether exercise (22): write a test that renders a conditional component
+2gether exercise (18): write a test that renders a conditional component
 
-2gether exercise (23): write a test that simulates an event?
+2gether exercise (19): write a test that simulates an event?
 
   next: react-testing-library
   

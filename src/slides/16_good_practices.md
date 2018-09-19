@@ -22,37 +22,34 @@ name: good-practices-section
 ???
 
 ---
-
+template: module-section
+layout: true
+# Good Practices
 ## Thinking In React
-
-### Step 1: Break The UI Into A Component Hierarchy
-
---
-
-### Step 2: Build A Static Version in React
-
---
-
-### Step 3: Identify The Minimal (but complete) Representation Of UI State
-
---
-
-### Step 4: Identify Where Your State Should Live
-
---
-
-### Step 5: Add Inverse Data Flow
 
 ---
 
-## Composition Over Inheritance
+#### **Step 1:** Break The UI Into A Component Hierarchy
 
-```javascript
-example
-```
-???
+--
 
-but why????
+#### **Step 2:** Build A Static Version in React
+
+--
+
+#### **Step 3:** Identify The Minimal (but complete) Representation Of UI State
+
+--
+
+#### **Step 4:** Identify Where Your State Should Live
+
+--
+
+#### **Step 5:** Add Inverse Data Flow
+
+---
+template: good-practices-section
+layout: true
 
 ---
 

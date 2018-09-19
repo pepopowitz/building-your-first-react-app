@@ -13,6 +13,8 @@ name: events-section
 
 # Handling Events
 
+---
+
 triangle
 
 ???
@@ -21,10 +23,10 @@ how do we make the state change, based on user actions?
 
 ---
 
-## In Containers/React.Components
+## In React.Components
 
-```javascript
-class Component extends React.Component {
+```jsx
+class MyCheckBox extends React.Component {
   state = {
     checked: false
   }
@@ -45,10 +47,10 @@ synthetic events
 
 ---
 
-## In Stateless Function Components
+## In Containers
 
-```javascript
-class Container extends React.Component {
+```jsx
+class MyCheckBoxContainer extends React.Component {
   state = {
     checked: false
   }
@@ -58,15 +60,16 @@ class Container extends React.Component {
   }
 
   render() {
-    <Component onValueChanged={this.handleChanged} />
+    return <MyCheckBox onValueChanged={this.handleChanged} />
   }
 }
 ```
 
---
+---
+## In Stateless Function Components
 
-```javascript
-export default function Component({onValueChanged}) {
+```jsx
+export default function MyCheckBox({onValueChanged}) {
   return <input type="checkbox" onChanged={onValueChanged} />
 }
 ```
@@ -76,6 +79,12 @@ export default function Component({onValueChanged}) {
 ## Binding Events
 
 ---
+template: module-section
+layout: true
+# Handling Events
+## Binding
+
+---
 
 ### Why?
 
@@ -83,27 +92,43 @@ export default function Component({onValueChanged}) {
 
 You usually want access to this.state and/or this.props in your event handlers
 
+--
+
+```jsx
+class MyCheckBox extends React.Component {
+  handleChanged = (e) => {
+    this.setState({checked: e.target.checked})  
+  }
+
+  render() {
+    return <input type="checkbox" onChanged={this.handleChanged} />
+  }
+}
+```
+
+???
+
 So you need to make sure that a handler passed into an event is bound to the correct scope
 
 Because by nature, it's not.
 
 ---
-
+class: no-footer
 ### Constructor Binding
 
-TODO - unify these examples
-
 ```javascript
-class Foo extends Component {
+class MyCheckBox extends Component {
   constructor(props) {
     super(props);
-*    this.handleClick = this.handleClick.bind(this);
+*   this.handleChanged = this.handleChanged.bind(this);
   }
-  handleClick() {
-    console.log('Click happened');
+
+  handleChanged() {
+    this.setState(...);
   }
+  
   render() {
-*    return <button onClick={this.handleClick}>Click Me</button>;
+*   return <input type="checkbox" onChanged={this.handleClick} />;
   }
 }
 ```
@@ -112,12 +137,15 @@ class Foo extends Component {
 ### Render Binding
 
 ```javascript
-class Foo extends Component {
-*  handleClick() {
-    console.log('Click happened');
+class MyCheckBox extends Component {
+* handleChanged() {
+    this.setState(...);
   }
+
   render() {
-*    return <button onClick={this.handleClick.bind(this)}>Click Me</button>;
+    return <input 
+      type="checkbox" 
+*     onChanged={this.handleChanged.bind(this)} />;
   }
 }
 ```
@@ -128,15 +156,18 @@ caution: might cause performance problems, if you render this component a lot
 
 ---
 
-### Render Binding With Arrow Function
+### Render Binding (Arrow)
 
 ```javascript
-class Foo extends Component {
-  handleClick() {
-    console.log('Click happened');
+class MyCheckBox extends Component {
+* handleChanged() {
+    this.setState(...);
   }
+
   render() {
-*    return <button onClick={() => this.handleClick()}>Click Me</button>;
+    return <input 
+      type="checkbox" 
+*     onChanged={() => this.handleChanged()} />;
   }
 }
 ```
@@ -150,39 +181,48 @@ caution: might cause performance problems, if you render this component a lot
 ### Class Fields
 
 ```javascript
-class Component extends React.Component {
-  state = {
-    checked: false
-  }
-
-  handleChanged = (e) => {
-    this.setState({checked: e.target.checked})  
+class MyCheckBox extends React.Component {
+* handleChanged = (e) => {
+    this.setState(...)  
   }
 
   render() {
-    return <input type="checkbox" onChanged={this.handleChanged} />
+    return <input 
+      type="checkbox" 
+*     onChanged={this.handleChanged} />
   }
 }
 ```
 
----
+???
 
-## setState
+this works because the fat arrow is binding to 'this' at the time of declaration
+
+which is what we want it to bind to
+
+---
+template: events-section
+layout: true
+---
+class: no-footer
+
+## state
 
 ```javascript
-class Component extends React.Component {
+class MyCheckBox extends React.Component {
 *  state = {
 *    checked: false
 *  }
 
   handleChanged = (e) => {
-*    this.setState({checked: e.target.checked})  
+*   this.setState({checked: e.target.checked})  
   }
 
   render() {
-    return <input type="checkbox" 
-*                  checked={this.state.checked} 
-                  onChanged={this.handleChanged} />
+    return <input 
+      type="checkbox" 
+*     checked={this.state.checked} 
+      onChanged={this.handleChanged} />
   }
 }
 ```
@@ -200,25 +240,27 @@ event = this.handleChanged
 state = this.setState
 
 ---
+class: no-footer
 
 ## Async/Await
 
 
 ```javascript
-class Component extends React.Component {
+class MyCheckBox extends React.Component {
   state = {
     checked: false
   }
 
-*  handleChanged = async (e) => {
-*    await callApi();
+* handleChanged = async (e) => {
+*   await callApi();
     this.setState({checked: e.target.checked})  
   }
 
   render() {
-    return <input type="checkbox" 
-                  checked={this.state.checked} 
-                  onChanged={this.handleChanged} />
+    return <input 
+      type="checkbox" 
+      checked={this.state.checked} 
+      onChanged={this.handleChanged} />
   }
 }
 ```
@@ -228,10 +270,6 @@ class Component extends React.Component {
 sometimes you'll hvae to wait for something to happen asynchronously
 
 you can just mark the event handlers as async!
-
----
-
-## Example
 
 ---
 template: exercise

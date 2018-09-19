@@ -88,6 +88,7 @@ layout: true
 ## CSS Modules
 
 ---
+class: no-footer
 
 ### Why?
 

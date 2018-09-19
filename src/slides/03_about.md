@@ -111,6 +111,7 @@ class: collaborative
 
 Teaching is one of the best ways to learn
 
+(meet neighbors comes later)
 
 ---
 

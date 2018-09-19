@@ -22,6 +22,7 @@ About
   Me
   This Workshop
     Project Structure
+    The App
     Collaborative
     Schedule
     Feedback(?)
@@ -125,8 +126,7 @@ Routing
       component
     <Link>
     <NavLink>
-  Exercise 12 - build router
-  Exercise 13 - header component
+  Exercise 12 - build router; header component
   Deeper Learning
     Transitions
 
@@ -140,8 +140,8 @@ State
     Batching
     ({})
     (prevState => {})
-  Exercise 14 - return only the state we want to update
-  Exercise 15 - Modern JS - async/await
+  Exercise 13 - return only the state we want to update
+  Exercise 14 - Modern JS - async/await
 
   Lifecycle Methods
     constructor
@@ -153,8 +153,10 @@ State
   Containers
     Problem Solved
 
-  Exercise 16 - load data into grid, from api
-  Exercise 17 - load list/friend from api endpoint in detail pages
+  Exercise 15 - load data into grid, from api
+    include refactoring to a container
+  --2gether ^^^^; solo vvvvv    
+    load list/friend from api endpoint in detail pages
 
   Context
     Prop Drilling
@@ -162,8 +164,9 @@ State
     Context
     Provider
     Consumer
-    Exercise 18 - Write context.provider/consumer together
-    Exercise 19 - write context.provider/consumer on your own
+    Exercise 16 - Context
+      Write context.provider/consumer together
+      write context.provider/consumer on your own
   
   Deeper Learning
   Suggestions
@@ -181,8 +184,9 @@ Events
   async/await
     (often you need to do this before you can setState)
   Example
-  Exercise 20 - addFriendToList
-  Exercise 21 - removeFriendFromList
+  Exercise 17
+    2gether - addFriendToList
+    solo - removeFriendFromList
 
 Testing
   Jest
@@ -192,11 +196,11 @@ Testing
     render
     mount
 
-  Exercise 22 - test a conditional component
+  Exercise 18 - test a conditional component
 
     simulate
     
-  Exercise 23 - simulate an event
+  Exercise 19 - simulate an event
 
   Deeper Learning
   Suggestions
