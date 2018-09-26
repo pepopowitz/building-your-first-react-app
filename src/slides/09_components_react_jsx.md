@@ -253,6 +253,7 @@ layout: true
 ## Stateless Functions
 
 ---
+class: no-footer
 
 ```jsx
 class Friend extends React.Component {
@@ -268,6 +269,8 @@ class Friend extends React.Component {
 --
 
 ```jsx
+import React from 'react';
+
 function Friend(props) {
   if (props.isLoading) {
     return null;
@@ -338,9 +341,9 @@ layout: true
 ### Components Must Return Something
 
 ```jsx
-export default function({ name }) {
+export default function(props) {
   <div>
-    {name}
+    {props.name}
   </div>
 }
 ```
@@ -356,10 +359,10 @@ the problem?
 ### Components Must Return Something
 
 ```jsx
-export default function({ name }) {
+export default function(props) {
   return (
     <div>
-      {name}
+      {props.name}
     </div>
   );
 }
@@ -374,10 +377,10 @@ it's not actually RETURNING the jsx.
 ### Components Must Return Something
 
 ```jsx
-export default function({ name }) {
+export default function(props) {
   return 
     <div>
-      {name}
+      {props.name}
     </div>
   ;
 }
@@ -396,10 +399,10 @@ that return is returning!
 ### Components Must Return Something
 
 ```jsx
-export default function({ name }) {
+export default function(props) {
 * return (
     <div>
-      {name}
+      {props.name}
     </div>
 * );
 }

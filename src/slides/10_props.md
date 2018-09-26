@@ -101,7 +101,7 @@ argument destructuring
 ```jsx
 class Friend extends React.Component {
   render() {
-*   const { isLoading, name } = props;
+*   const { isLoading, name } = this.props;
     if (isLoading) {
       return null;
     }
@@ -125,16 +125,16 @@ specify defaults for props
 --
 
 ```jsx
-class FriendImage extends React.Component {
+class FriendProfile extends React.Component {
   render() {
-    const { name, url } = this.props;
+    const { name, image } = this.props;
 
-    return <img alt={name} src={url} />
+    return <img alt={name} src={image} />
   }
 }
 
-*FriendImage.defaultProps = {
-* url: 'http://placekitten.com/200'
+*FriendProfile.defaultProps = {
+* image: 'http://placekitten.com/200'
 *}
 ```
 
@@ -147,15 +147,15 @@ class, set afterward
 ## Default Props
 
 ```jsx
-class FriendImage extends React.Component {
+class FriendProfile extends React.Component {
   render() {
-    const { name, url } = this.props;
+    const { name, image } = this.props;
     
-    return <img alt={name} src={url} />
+    return <img alt={name} src={image} />
   }
 
 * static defaultProps = {
-*   url: 'http://placekitten.com/200'
+*   image: 'http://placekitten.com/200'
 * }
 }
 ```
@@ -168,12 +168,12 @@ class, static method
 ## Default Props
 
 ```jsx
-function FriendImage({ name, url }) {
-  return <img alt={name} src={url} />
+function FriendProfile({ name, image }) {
+  return <img alt={name} src={image} />
 }
 
-*FriendImage.defaultProps = {
-* url: 'http://placekitten.com/200'
+*FriendProfile.defaultProps = {
+* image: 'http://placekitten.com/200'
 *}
 ```
 
@@ -185,13 +185,13 @@ stateless function
 ## Default Props
 
 ```jsx
-function FriendImage(
+function FriendProfile(
   { 
     name, 
-*   url = 'http://placekitten.com/200' 
+*   image = 'http://placekitten.com/200' 
   }
 ) {
-  return <img alt={name} src={url} />
+  return <img alt={name} src={image} />
 }
 ```
 
@@ -299,13 +299,15 @@ npm install --save prop-types
 ---
 
 ```jsx
-function FriendImage({ name, url }) {
-  return <img alt={name} src={url} />;
+import propTypes from 'prop-types';
+
+function FriendProfile({ name, image }) {
+  return <img alt={name} src={image} />;
 }
 
-*FriendImage.propTypes = {
+*FriendProfile.propTypes = {
 * name: propTypes.string.isRequired,
-* age: propTypes.number.isRequired,
+* image: propTypes.string.isRequired,
 *}
 ```
 
@@ -316,17 +318,19 @@ stateless functional
 ---
 
 ```jsx
-class FriendImage extends React.Component {
-  render() {
-    const { name, url } = this.props;
+import propTypes from 'prop-types';
 
-    return <img alt={name} src={url} />
+class FriendProfile extends React.Component {
+  render() {
+    const { name, image } = this.props;
+
+    return <img alt={name} src={image} />
   }
 }
 
-*FriendImage.propTypes = {
+*FriendProfile.propTypes = {
 * name: propTypes.string.isRequired,
-* age: propTypes.number.isRequired,
+* image: propTypes.string.isRequired,
 *}
 ```
 
@@ -337,16 +341,18 @@ class + set after
 ---
 
 ```jsx
-class FriendImage extends React.Component {
-  render() {
-    const { name, url } = this.props;
+import propTypes from 'prop-types';
 
-    return <img alt={name} src={url} />
+class FriendProfile extends React.Component {
+  render() {
+    const { name, image } = this.props;
+
+    return <img alt={name} src={image} />
   }
 
 * static propTypes = {
 *   name: propTypes.string.isRequired,
-*   age: propTypes.number.isRequired,`
+*   image: propTypes.string.isRequired,
 * }
 }
 ```
@@ -365,6 +371,27 @@ layout: false
 
 ---
 template: props-section
+layout: false
+
+## Suggestions
+
+---
+template: module-section
+layout: true
+
+# Props
+## Suggestions
+
+---
+
+### Turn off propType validation in production
+
+???
+
+propTypes are a development tool
+
+---
+template: props-section
 
 ## Deeper Learning
 
@@ -380,16 +407,16 @@ layout: true
 ### TypeScript
 
 ```jsx
-*interface IFriendImageProps {
+*interface IFriendProfileProps {
 * name: string;
-* age: number;
+* image: string;
 *}
 
-*class FriendImage extends React.Component<IFriendImageProps, {}> {
+*class FriendProfile extends React.Component<IFriendProfileProps, {}> {
   render() {
-    const { name, url } = this.props;
+    const { name, image } = this.props;
 
-    return <img alt={name} src={url} />
+    return <img alt={name} src={image} />
   }
 }
 ```
@@ -405,15 +432,15 @@ class
 ### TypeScript
 
 ```jsx
-*interface IFriendImageProps {
+*interface IFriendProfileProps {
 * name: string;
-* age: number;
+* image: string;
 *}
 
-*function FriendImage(props: IFriendImageProps) {
-  const { name, url } = props;
+*function FriendProfile(props: IFriendProfileProps) {
+  const { name, image } = props;
 
-  return <img alt={name} src={url} />;
+  return <img alt={name} src={image} />;
 }
 ```
 
@@ -427,16 +454,16 @@ stateless functional
 ### Flow
 
 ```jsx
-*type FriendImageProps = {
+*type FriendProfileProps = {
 * name: string;
-* age: number;
+* image: string;
 *};
 
-*class FriendImage extends React.Component<FriendImageProps> {
+*class FriendProfile extends React.Component<FriendProfileProps> {
   render() {
-    const { name, url } = this.props;
+    const { name, image } = this.props;
 
-    return <img alt={name} src={url} />
+    return <img alt={name} src={image} />
   }
 }
 ```
@@ -449,15 +476,15 @@ class
 ### Flow
 
 ```jsx
-*type FriendImageProps = {
+*type FriendProfileProps = {
 * name: string;
-* age: number;
+* image: string;
 *}
 
-*function FriendImage(props: FriendImageProps) {
-  const { name, url } = props;
+*function FriendProfile(props: FriendProfileProps) {
+  const { name, image } = props;
 
-  return <img alt={name} src={url} />;
+  return <img alt={name} src={image} />;
 }
 ```
 

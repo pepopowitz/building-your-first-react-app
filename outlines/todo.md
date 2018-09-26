@@ -37,3 +37,7 @@ examples
     kittens who are coming to my party
 
 describe project structure?
+
+figure out how to explain implicit return for fat arrows
+
+replace <ExerciseFinished> with <Exercise>

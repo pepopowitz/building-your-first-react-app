@@ -129,47 +129,11 @@ compresses & minifies our bundle
 good development experience
 
 ---
-
-## 3. create-react-app
-
-???
-
-problem solved: setting up webpack & react & other dependencies is difficult
-
----
-layout: true
-template: module-section
-
-# JavaScript
-## create-react-app
----
-
-drawing of cra creating an app for us
-
-???
-
-spins up an app for us
-
-sensible defaults
-
-hides complexity of webpack, etc from us
-
----
-
-drawing of ejected cra
-
-???
-
-we've **ejected**, so some complexity is back
-
-if I were starting an app, I would use create-react-app.
-
----
 layout: true
 template: javascript-section
 ---
 
-## 4. ES-modern
+## 3. ES-modern
 ### ES6+, ES2015+, ...
 
 ???

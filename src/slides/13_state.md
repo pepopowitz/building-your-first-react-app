@@ -351,7 +351,7 @@ template: exercise
 layout: false
 
 # Exercise 13
-## Updating State
+## Managing Component State
 
 ---
 template: exercise

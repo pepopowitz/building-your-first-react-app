@@ -15,6 +15,35 @@ name: good-practices-section
 
 ---
 
+## create-react-app
+### https://bit.ly/create-react-app
+
+???
+
+problem solved: setting up webpack & react & other dependencies is difficult
+
+---
+layout: false
+template: module-section
+
+# Good Practices
+## create-react-app
+
+drawing of cra creating an app for us
+
+???
+
+spins up an app for us
+
+sensible defaults
+
+hides complexity of webpack, etc from us
+
+if I were starting an app, I would use create-react-app.
+
+---
+
+
 ## Thinking In React
 
 ### https://reactjs.org/docs/thinking-in-react.html
