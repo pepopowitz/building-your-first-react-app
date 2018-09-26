@@ -126,7 +126,7 @@ expect(
 template: exercise
 layout: false
 
-# Exercise 18
+# Exercise 17
 ## Testing Component Render
 
 ---
@@ -145,7 +145,7 @@ expect(wrapper.find('.added').length).toEqual(1);
 template: exercise
 layout: false
 
-# Exercise 19
+# Exercise 18
 ## Testing Component Events
 
 ---

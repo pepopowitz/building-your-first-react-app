@@ -77,3 +77,77 @@ Virtual DOM
 --
 
 (drawing of reconciliation)
+
+
+
+
+
+
+events - 
+
+---
+
+## In Containers
+
+```jsx
+class MyCheckBoxContainer extends React.Component {
+  state = {
+    checked: false
+  }
+
+  handleChanged = (e) => {
+    this.setState({checked: e.target.checked})  
+  }
+
+  render() {
+    return <MyCheckBox onValueChanged={this.handleChanged} />
+  }
+}
+```
+
+---
+## In Stateless Function Components
+
+```jsx
+export default function MyCheckBox({onValueChanged}) {
+  return <input type="checkbox" onChanged={onValueChanged} />
+}
+```
+
+---
+
+
+
+template: events-section
+class: no-footer
+
+## Async/Await
+
+
+```javascript
+class MyCheckBox extends React.Component {
+  state = {
+    checked: false
+  }
+
+* handleChanged = async (e) => {
+*   await callApi();
+    this.setState({checked: e.target.checked})  
+  }
+
+  render() {
+    return <input 
+      type="checkbox" 
+      checked={this.state.checked} 
+      onChanged={this.handleChanged} />
+  }
+}
+```
+
+???
+
+sometimes you'll hvae to wait for something to happen asynchronously
+
+you can just mark the event handlers as async!
+
+---

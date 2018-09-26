@@ -11,19 +11,12 @@ layout: true
 template: module
 name: events-section
 
-# Handling Events
+# Events
 
 ---
+class: no-footer
 
-triangle
-
-???
-
-how do we make the state change, based on user actions?
-
----
-
-## In React.Components
+## Handling Events
 
 ```jsx
 class MyCheckBox extends React.Component {
@@ -36,53 +29,29 @@ class MyCheckBox extends React.Component {
   }
 
   render() {
-    return <input type="checkbox" onChanged={this.handleChanged} />
+    return <input 
+      type="checkbox" 
+      checked={this.state.checked} 
+      onChanged={this.handleChanged} 
+      />
   }
 }
 ```
 
 ???
 
-synthetic events
+as we've seen already...
+
 
 ---
 
-## In Containers
-
-```jsx
-class MyCheckBoxContainer extends React.Component {
-  state = {
-    checked: false
-  }
-
-  handleChanged = (e) => {
-    this.setState({checked: e.target.checked})  
-  }
-
-  render() {
-    return <MyCheckBox onValueChanged={this.handleChanged} />
-  }
-}
-```
-
----
-## In Stateless Function Components
-
-```jsx
-export default function MyCheckBox({onValueChanged}) {
-  return <input type="checkbox" onChanged={onValueChanged} />
-}
-```
-
----
-
-## Binding Events
+## Binding Event Handlers
 
 ---
 template: module-section
 layout: true
-# Handling Events
-## Binding
+# Events
+## Binding Event Handlers
 
 ---
 
@@ -96,8 +65,9 @@ You usually want access to this.state and/or this.props in your event handlers
 
 ```jsx
 class MyCheckBox extends React.Component {
-  handleChanged = (e) => {
-    this.setState({checked: e.target.checked})  
+* handleChanged() {
+*   this.setState(...)
+    // ^^^ doesn't know what this.setState is.
   }
 
   render() {
@@ -123,12 +93,12 @@ class MyCheckBox extends Component {
 *   this.handleChanged = this.handleChanged.bind(this);
   }
 
-  handleChanged() {
+* handleChanged() {
     this.setState(...);
   }
   
   render() {
-*   return <input type="checkbox" onChanged={this.handleClick} />;
+*   return <input type="checkbox" onChanged={this.handleChanged} />;
   }
 }
 ```
@@ -201,82 +171,5 @@ this works because the fat arrow is binding to 'this' at the time of declaration
 which is what we want it to bind to
 
 ---
-template: events-section
-layout: true
----
-class: no-footer
 
-## state
-
-```javascript
-class MyCheckBox extends React.Component {
-*  state = {
-*    checked: false
-*  }
-
-  handleChanged = (e) => {
-*   this.setState({checked: e.target.checked})  
-  }
-
-  render() {
-    return <input 
-      type="checkbox" 
-*     checked={this.state.checked} 
-      onChanged={this.handleChanged} />
-  }
-}
-```
-
-???
-
-usually, your events are tied to state somehow
-
-the triangle is all here:
-
-render = render (& checked={this.state.checked})
-
-event = this.handleChanged
-
-state = this.setState
-
----
-class: no-footer
-
-## Async/Await
-
-
-```javascript
-class MyCheckBox extends React.Component {
-  state = {
-    checked: false
-  }
-
-* handleChanged = async (e) => {
-*   await callApi();
-    this.setState({checked: e.target.checked})  
-  }
-
-  render() {
-    return <input 
-      type="checkbox" 
-      checked={this.state.checked} 
-      onChanged={this.handleChanged} />
-  }
-}
-```
-
-???
-
-sometimes you'll hvae to wait for something to happen asynchronously
-
-you can just mark the event handlers as async!
-
----
-template: exercise
-layout: false
-
-# Exercise 17
-## Handling Events
-
----
 

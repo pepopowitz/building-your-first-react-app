@@ -23,6 +23,14 @@ name: state-section
 
 ---
 
+layout: true
+template: module-section
+name: state-module-section
+
+# State
+
+---
+
 triangle (props only)
 
 
@@ -345,47 +353,28 @@ this.setState(prevState => {
 ???
 
 this allows us to compare to previous state
-
----
-template: exercise
-layout: false
-
-# Exercise 13
-## Managing Component State
-
----
-template: exercise
-layout: false
-
-# Exercise 14
-## Modern JS: Async/Await
-
 ---
 template: state-section
 
-## Lifecycle Methods
+## Initialization
 
 ???
 
-so we can do things like load state from an api
+there are a couple ways we can initialize state
 
 ---
-layout: true
-template: module-section
-# State
-## Lifecycle
+template: state-module-section
 
----
-
-### Initialization (Constructor)
+## Initialization
+### Constructor
 
 ```
-class FriendDetail extends React.Component {
+class MyCheckBox extends React.Component {
   constructor(props) {
     super(props);
 
 *   this.state = {
-*     friend: {}
+*     checked: false
 *   }
   }
 
@@ -394,21 +383,21 @@ class FriendDetail extends React.Component {
 ```
 
 ???
-
-there are a couple ways we can initialize state
 
 via constructor
 
 super(props)
 
 ---
+template: state-module-section
 
-### Initialization (Class Property)
+## Initialization
+### Class Property
 
 ```
-class FriendDetail extends React.Component {
+class MyCheckBox extends React.Component {
 * state = {
-*   friend: {}
+*   checked: false
 * }
 
   render() { ... }
@@ -416,139 +405,68 @@ class FriendDetail extends React.Component {
 ```
 
 ---
-class: hide-footer
+template: state-section
 
-### componentDidMount
+## Handling Events
 
-```
-import callApi from './callApi';
+---
+template: state-module-section
 
-class FriendDetail extends React.Component {
-  async componentDidMount() {
-*   const friend = await callApi(this.props.friendId);
-*
-*   this.setState({
-*     friend
-*   });
+## Handling Events
+
+(triangle with focus on event)
+
+???
+
+how do we make the state change, based on user actions?
+
+---
+template: state-module-section
+
+## Handling Events
+
+
+```jsx
+class MyCheckBox extends React.Component {
+  state = {
+    checked: false
   }
 
-  state = { ... }
-
-  render() { ... }
-}
-```
-
-???
-
-invoked immediately after a component is mounted (inserted into the tree)
-
----
-class: component-did-mount
-
-### componentDidMount
-
-* Load data from APIs
-
---
-
-* Integrate with non-React APIs
-
-???
-
-integrating with non-react api's
-
----
-class: no-footer
-
-### componentDidUpdate
-
-```
-import callApi from './callApi';
-
-class FriendDetail extends React.Component {
-  async componentDidUpdate(prevProps) {
-*   if (this.props.friendId !== prevProps.friendId) {
-*     const friend = await callApi(this.props.friendId);
-*  
-*     this.setState({
-*       friend
-*     });
-*   }
-  }
-
-  // ...
-}
-```
-
-???
-
-invoked when a component is updated
-
-happens more often than you probably need it to, so check the props
-
----
-
-### componentDidUpdate
-
-* React to changes to inputs
-
-???
-
-This is a good place to react to changes to your inputs that render can't handle
-
----
-
-### componentWillUnmount
-
-```
-class FriendsChart extends React.Component {
-  componentDidMount () {
-    this.graph = this._initGraph();
-  }
-
-* componentWillUnmount () {
-*   this.graph.destroy();
+* handleChanged = (e) => {
+    this.setState({checked: e.target.checked})  
 * }
 
-  // ...
+  render() {
+    return <input 
+      type="checkbox" 
+      checked={this.state.checked} 
+*     onChanged={this.handleChanged} 
+      />
+  }
 }
 ```
 
 ???
 
-invoked immediately before a component is unmounted and destroyed.
+synthetic events
 
 ---
 
-### componentWillUnmount
 
-* Clean up integrations with non-React APIs
-
-???
-
-any subscriptions you set up in componentDidMount - cancel them here.
-
-...
-
-There are others, but they are rarely used. These are all you need to know for this workshop.
-
-
----
 template: exercise
 layout: false
 
-# Exercise 15
-## Loading Data
-
+# Exercise 13
+## Managing Component State
 ---
+
 template: state-section
 
 ## Suggestions
 
 ---
-template: module-section
+template: state-module-section
 
-# State
 ## Suggestions
 ### Elevate State
 
@@ -557,229 +475,3 @@ template: module-section
 drawing of tree with state
 
 ---
-template: level-3
-# State
-## Suggestions
-### Elevate State
-#### Prop Drilling
-
-(drawing of prop drilling)
-
-???
-
-there's a problem you can run into in a react app
-
-...
-
-elevating state & passing props down isn't inherently bad
-
-and there's nothing really wrong with this
-
-but sometimes your components can be really far apart
-
-and all this prop drilling can feel like a burden, and noisy
-
-and generally what it means is you're dealing with APP-level state
----
-template: state-section
-
-## Context
-
-???
-
-and for app-level state, there's a new api in react
-
-new in React 16.2?
-
-
----
-template: state-section
-
-## Context
-
-drawing - attach a provider at the top component, and consumers along the way down
-
-???
-
-how context solves prop drilling
-
-
-sometimes the same data needs to be accessible by many components in the tree, and at different nesting levels. Context lets you “broadcast” such data, and changes to it, to all components below. Common examples where using context might be simpler than the alternatives include managing the current locale, theme, or a data cache.
-
----
-template: module-section
-layout: true
-
-# State
-## Context
----
-
-### createContext()
-
-```javascript
-const {Provider, Consumer} = React.createContext();
-```
-
-???
-
-the first thing you have to do is create a context
-
-this doesn't happen inside of a component
-
-it's something that executes alongside your components
-
-you get a provider & a consumer
-
----
-
-### Provider
-
-```jsx
-render() {
-  <Provider value={this.state.user}>
-    <yourComponentTree />
-  </Provider>
-}
-```
-
-???
-
-the provider will get wrapped around your component tree
-
----
-
-### Provider
-
-```jsx
-render() {
-  <Provider value={{ 
-      user: this.state.user, 
-      onThemeChanged: this.handleThemeChanged }>
-    <yourComponentTree />
-  </Provider>
-}
-```
-
-???
-
-value can be an object, if there are multiple things you want to pass down
-
-(including actions that will change the value)
----
-
-### Consumer
-
-```jsx
-render() {
-  <Consumer>
-    {value => <div>{value.userName}</div>}
-  </Consumer>
-}
-```
-
-???
-
-and then you have consumers
-
-and they just want to know what the value of the context is
-
-uses a pattern called render props
-
----
-
-### Consumer
-
-```jsx
-render() {
-  <Consumer>
-    {value => (
-      <div>
-        Current User: {value.userName}
-        <button onClick={value.onUserChanged}>Change User</button>
-      </div>
-    )}
-  </Consumer>
-}
-```
-
-???
-
-for multiple things passed down via context...
-
----
-template: exercise
-layout: false
-
-# Exercise 16
-## React Context
-
----
-template: state-section
-
-## Deeper Learning
-
----
-template: module-section
-layout: true
-# State
-## Deeper Learning
-
----
-
-### Redux
-
-> Redux is a predictable state container for JavaScript apps.
-
-.footnote[
-https://redux.js.org/
-]
-
-???
-
-one store to hold all the data
-
-and you connect your components to that state,
-
-so that when it changes, your component re-renders.
-
----
-
-### Mobx
-
-> Simple, scalable state management
-
-.footnote[
-https://mobx.js.org/
-]
-
-???
-
-reactive, observables
-
-updates get automatically applied
-
-similar concept to rxjs 
-
----
-template: state-section
-
-## Suggestions
-
----
-template: module-section
-layout: true
-# State
-## Suggestions
-
----
-
-### Use The Right Tool
-
-???
-
-Component state: use setState
-
-Distant components: use context or Redux/mobx
-
----
-
