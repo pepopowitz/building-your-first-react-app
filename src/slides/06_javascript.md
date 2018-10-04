@@ -93,6 +93,8 @@ chart of npm growth
 
 ???
 
+(rolling 28 day downloads - drawing is based on old chart, up to >25 million)
+
 NPM usage is growing at a crazy rate
 
 Tons of packages
@@ -164,5 +166,11 @@ layout: false
 ???
 
 Follow along!
+
+git checkout master
+
+git pull
+
+npm run test-exercise-1
 
 ---

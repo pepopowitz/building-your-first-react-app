@@ -60,11 +60,7 @@ You are correct.
 
 ???
 
-This used to say "full-stack developer", but everyone hates that term now
-
-This is more descriptive of what I do
-
-*AND* it's actually my job title.
+This might be changing next week
 
 
 ---
@@ -83,16 +79,67 @@ name: about
 ## This Workshop
 
 ---
-### Project Structure
 
----
-### The App
-
-#### https://github.com/pepopowitz/listy
+### Me: Talk
+### You: Exercise
+### Me: Recap
 
 ???
 
-Quick demo?
+18 exercises
+
+---
+
+### Instructions: README.md
+
+---
+
+### 👉: Specific Task
+
+---
+
+### Answers: SOLUTIONS.md
+
+???
+
+linked from README
+
+--
+
+### Answers: ./finished
+
+---
+class: no-footer
+
+.col.col-10[
+![](images/this-app-1.png)
+]
+
+???
+
+view our kitten friends
+
+---
+class: no-footer
+
+.col.col-10[
+![](images/this-app-2.png)
+]
+
+???
+
+change theme
+
+---
+class: no-footer
+
+.col.col-10[
+![](images/this-app-3.png)
+]
+
+???
+
+details about a kitten
 
 ---
 class: collaborative
@@ -118,6 +165,10 @@ Teaching is one of the best ways to learn
 ### Feedback
 
 #### Green = Good; Yellow = Okay; Pink = Bad
+
+--
+
+#### Comments Welcome!
 
 ???
 

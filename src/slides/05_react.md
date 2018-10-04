@@ -133,11 +133,17 @@ name: react-is-declarative
 
 **Imperative**: directions
 
+???
+
+imperative
+
 --
 
 **Declarative**: address
 
 ???
+
+declarative - abstracts the imperative
 
 Obviously some code, at some point,
 
@@ -157,10 +163,34 @@ So our app can call it declaratively.
 ---
 
 ```javascript
-example of declarative js vs imperative (.map vs for loop?)
+var kittensComingToMyParty = [];
+
+for (var i = 0; i < kittens.length; i++) {
+  var kitten = kittens[i];
+  if (kitten.rsvp === true) {
+    kittensComingToMyParty.push(kitten);
+  }
+}
 ```
 
 ???
+
+if I wanted to know which kittens were coming to my party, I could write code like this
+
+imperative
+
+--
+
+```javascript
+var kittensComingToMyParty = kittens.filter(
+  kitten => kitten.rsvp === true);
+```
+
+???
+
+...
+
+declarative
 
 ...
 
@@ -201,6 +231,10 @@ https://facebook.github.io/react/
 ]
 
 ???
+
+(read)
+
+...
 
 We'll talk more about components in a bit
 

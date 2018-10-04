@@ -385,17 +385,6 @@ debugging
   react dev tools
   hot module reloading
 
-props as children???
-  find a way to work this in.
-  <SecondaryPage>
-
 error boundaries?
 
 
-
-potential exercises
-  return loading message when friends haven't loaded yet
-  bonus exercises: build out friend detail pages?
-  
-TODO - figure out when to introduce create-react-app, and how to cover it. Maybe a super early getting started slide, & just show what it looks like????
-  if it gets a "next", that's ejecting & learning about webpack

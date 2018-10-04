@@ -50,7 +50,7 @@ Examples of assertions
 
 ---
 
-## Enzyme
+## react-testing-library
 
 > Enzyme is a JavaScript Testing utility for React that makes it easier to assert, manipulate, and traverse your React Components' output.
 
@@ -84,20 +84,6 @@ drawing of shallow
 
 ---
 
-### render
-
-```javascript
-const wrapper = render(<FriendsList friends={testFriends} />);
-```
-
----
-
-### render
-
-drawing of render
-
----
-
 ### mount
 
 ```javascript
@@ -115,11 +101,18 @@ drawing of mount
 ### Finding Elements
 
 ```javascript
-const wrapper = mount(<FriendsList friends={testFriends} />);
+it('renders my friends', () => {
+  const friends = [
+    {...}, {...}, {...}, {...}, {...}
+  ];
 
-expect(
-  wrapper.find('.friend').length
-).toEqual(5);
+  const wrapper = mount(<Friends friends={testFriends} />);
+
+  expect(
+    wrapper.find('.friendProfile').length
+  ).toEqual(5);
+});
+
 ```
 
 ---
@@ -131,7 +124,7 @@ layout: false
 
 ---
 
-### simulate
+### fireEvent
 
 ```javascript
 const wrapper = mount(<Friends friend={testFriend} />);
@@ -146,7 +139,7 @@ template: exercise
 layout: false
 
 # Exercise 18
-## Testing Component Events
+## Testing Component Interactions
 
 ---
 
@@ -157,7 +150,11 @@ template: module-section
 # Testing
 ## Deeper Learning
 
-### react-testing-library
+### Enzyme
+
+.footnote[
+http://airbnb.io/enzyme/
+]
 
 ???
 
@@ -183,6 +180,19 @@ layout: true
 ???
 
 testing logic outside of components is easier than testing logic inside of components
+
+---
+
+### Test What The User Experiences
+#### Not Implementation
+
+???
+
+Avoid testing for presence of css classes, unless it's the only way to prove something is working
+
+Prefer testing presence of text elements
+
+react-testing-library forces you to do this
 
 ---
 

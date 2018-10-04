@@ -55,23 +55,6 @@ class FriendsList extends React.Component {
 ```
 
 ---
-template: module-section
-layout: false
-
-# Components + React
-## React.Component
-
-```javascript
-import React, { Component } from 'react';
-
-class FriendsList extends Component {
-
-  // ...Details about this component
-
-}
-```
-
----
 
 ## render()
 
@@ -120,6 +103,14 @@ https://reactjs.org/docs/
 ???
 
 one important thing to remember about render:
+
+...
+
+2 parts to "pure": 
+
+1.doesn't modify state
+
+2.returns same value with same args
 
 ...
 

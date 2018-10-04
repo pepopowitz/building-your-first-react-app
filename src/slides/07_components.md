@@ -72,11 +72,13 @@ layout: true
 
 ---
 
-TODO - example
+TODO - twitter example
 
 ???
 
-I already helped you with this one a bit
+again, an example
+
+I already helped you with this
 
 now go!
 
