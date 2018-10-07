@@ -3,7 +3,6 @@ template: module-title
 layout: false
 
 # Lifecycle
-## Lifecycle
 
 ???
 
@@ -28,6 +27,12 @@ layout: false
 
 # Exercise 14
 ## Modern JS: Async/Await
+
+???
+
+look at code samples together
+
+(no need to start anything up)
 
 ---
 
@@ -169,4 +174,11 @@ layout: false
 
 # Exercise 15
 ## Loading Data
+
+???
+
+from an api
+
+& rendering components based on the results
+
 ---

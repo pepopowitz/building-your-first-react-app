@@ -3,7 +3,6 @@ template: module-title
 layout: false
 
 # Components + React
-## Components + React
 
 ---
 
@@ -27,6 +26,10 @@ layout: false
 
 # Exercise 3
 ## Modern JavaScript: Class Syntax
+
+???
+
+instructor-led, follow along
 
 ---
 
@@ -219,9 +222,8 @@ layout: true
 ### props
 
 ---
-
-drawing of triangle: 
-props -> render -> ??? -> props
+class: bg-contain
+background-image: url('images/drawings/loop-1.jpg')
 
 ---
 
@@ -359,11 +361,13 @@ layout: true
 ### render()
 
 ---
+class: bg-contain
+background-image: url('images/drawings/loop-1.jpg')
 
-#### One-way Data Flow
+???
 
-drawing of triangle: 
-props -> render -> ??? -> props
+they call this one-way data flow
+
 
 ---
 
@@ -677,8 +681,8 @@ REPEAT THEIR ANSWER!!!!
 #### Separation Of Concerns
 
 ---
-
-drawing of HTML separate from CSS from JS
+class: bg-contain
+background-image: url('images/drawings/slicing-horizontal.jpg')
 
 ???
 
@@ -705,7 +709,16 @@ It's that friend
 
 or that list of friends
 
+
+---
+class: bg-contain
+background-image: url('images/drawings/slicing-vertical.jpg')
+
+???
+
 And it takes HTML + JS to render them
+
+You can think of components changing the way we're slicing the app
 
 ...
 
@@ -783,11 +796,19 @@ layout: false
 # Exercise 4
 ## Modern JavaScript: Working With Objects
 
+???
+
+instructor-led, follow along
+
 ---
 template: exercise
 layout: false
 
 # Exercise 5
 ## JSX Fundamentals
+
+???
+
+different things you can do with jsx
 
 ---

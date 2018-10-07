@@ -3,7 +3,6 @@ template: module-title
 layout: false
 
 # React
-## What Is React?
 
 ???
 
@@ -129,17 +128,21 @@ name: react-is-declarative
 
 ### How do you get to my house?
 
---
+---
+class: bg-contain, hide-footer
+background-image: url('images/drawings/imperative.jpg')
 
-**Imperative**: directions
+### How do you get to my house?
 
 ???
 
 imperative
 
---
+---
+class: bg-contain, hide-footer
+background-image: url('images/drawings/declarative.jpg')
 
-**Declarative**: address
+### How do you get to my house?
 
 ???
 

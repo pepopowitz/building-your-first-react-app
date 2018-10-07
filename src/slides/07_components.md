@@ -3,7 +3,6 @@ template: module-title
 layout: false
 
 # Components
-## Components
 
 ---
 
@@ -33,16 +32,24 @@ But React says controllers & views are the same concern
 
 ---
 template: module-section
-layout: false
+layout: true
 
 # Components
 ## The "Component" Mindset
 
-TODO - draw an example from facebook
+---
+class: bg-contain, hide-footer
+background-image: url('images/drawings/twitter-1.jpg')
 
 ???
 
 so instead of this page having a controller & a view,
+
+---
+class: bg-contain, hide-footer
+background-image: url('images/drawings/twitter-2.jpg')
+
+???
 
 it really has a handful of components
 
@@ -51,10 +58,28 @@ building blocks
 and each of those components is a concern
 
 ---
+class: bg-contain, hide-footer
+background-image: url('images/drawings/twitter-3.jpg')
+
+???
+
+and it goes further than that - 
+
+each of those components is composed...
+
+---
+class: bg-contain, hide-footer
+background-image: url('images/drawings/twitter-4.jpg')
+
+???
+
+of more components
+
+---
 
 template: exercise
 layout: false
-
+ 
 # Exercise 2
 ## Identifying Components
 
@@ -71,24 +96,14 @@ layout: true
 #### Draw the boundaries of individual components on each page
 
 ---
-
-TODO - twitter example
-
-???
-
-again, an example
-
-I already helped you with this
-
-now go!
+template: exercise
+class: bg-contain, no-footer
+background-image: url('images/drawings/component-exercise-1.jpg')
 
 ---
-
-TODO - example 2
-
----
-
-TODO - example 3
+template: exercise
+class: bg-contain, no-footer
+background-image: url('images/drawings/component-exercise-2.jpg')
 
 ---
 template: components-section
@@ -120,14 +135,17 @@ It's easy to think we are doing this to make reuse easier
 
 But it's really more about isolation
 
+
+---
+class: bg-contain
+background-image: url('images/drawings/building-blocks.jpg')
+
+???
+
 Components are like building blocks.
 
 Smaller ones that do fewer things are easier to understand
 
 And easier to assemble (so they aid reuse).
-
----
-
-TODO - drawing of large building blocks (many colors with blurry edges) vs small building blocks (many colors but discrete edges)
 
 ---

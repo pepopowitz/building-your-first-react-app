@@ -3,7 +3,6 @@ template: module-title
 layout: false
 
 # Setup
-## Setup
 
 ---
 template: module

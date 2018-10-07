@@ -3,7 +3,6 @@ template: module-title
 layout: false
 
 # Props
-## Props
 
 ---
 
@@ -14,10 +13,12 @@ name: props-section
 # Props
 
 ---
+class: bg-contain
+background-image: url('images/drawings/loop-1.jpg')
 
-## Component Inputs
+???
 
-(triangle drawing)
+Our Component Inputs
 
 ---
 
@@ -210,7 +211,7 @@ Every component gets a special prop
 --
 
 ```jsx
-<Title>Welcome to listy!</Title>
+<Title>Hello, friends!</Title>
 ```
 
 --
@@ -226,7 +227,7 @@ function Title({ children }) {
 --
 ```html
 <div id="title">
-  Welcome to listy!
+  Hello, friends!
 </div>
 ```
 
@@ -251,9 +252,11 @@ layout: true
 
 allows us to compose our components, instead of inherit them
 
-...
+easier to assemble building blocks
 
-TODO - why is this valuable, and how do I see the value?
+easier to refactor/change
+
+(less brittle than inheritance)
 
 ---
 template: exercise
@@ -261,6 +264,10 @@ layout: false
 
 # Exercise 8
 ## Composition & props.children
+
+???
+
+building components that aid composability
 
 ---
 template: props-section

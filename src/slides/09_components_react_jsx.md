@@ -3,7 +3,6 @@ template: module-title
 layout: false
 
 # Components + React + JSX
-## Components + React + JSX
 
 ---
 
@@ -155,7 +154,7 @@ It used to be that you had to wrap things in a div, instead of a fragment (pollu
 ```jsx
 class Friend extends React.Component {
   render() {
-*   return {this.props.name};
+*   return this.props.name;
   }
 }
 ```
@@ -173,7 +172,7 @@ These are rendered as text nodes in the DOM.
 ```jsx
 class Friend extends React.Component {
   render() {
-*   return {null};
+*   return null;
   }
 }
 ```
@@ -214,6 +213,9 @@ layout: false
 # Exercise 6
 ## render() Results
 
+???
+
+the different types of things a component can render
 
 ---
 template: components-react-jsx-section
@@ -285,6 +287,10 @@ layout: false
 
 # Exercise 7
 ## Convert A Component
+
+???
+
+from class syntax to stateless, & back
 
 ---
 template: components-react-jsx-section

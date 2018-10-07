@@ -3,7 +3,6 @@ template: module-title
 layout: false
 
 # Testing
-## Testing
 
 ---
 
@@ -27,6 +26,8 @@ https://jestjs.io/
 ## Jest
 
 ```javascript
+import aFunctionUnderTest from './a-function-under-test.js';
+
 describe('A set of tests', () => {
   it('does a certain thing', () => {
     const result = aFunctionUnderTest();
@@ -37,83 +38,127 @@ describe('A set of tests', () => {
 
 ```
 
+???
+
+describe
+
+it
+
+expect
+
 ---
 template: module-section
 # Testing
 ## Jest
 
-### Assertions
+### Matchers (Assertions)
 
-```javascript
-Examples of assertions
+```js
+expect(a).toEqual(b);
+
+expect(a).not.toEqual(b);
+
+expect(a).toBeGreaterThan(b);
+
+expect(a).toBeNull();
+
+expect(a).toBeUndefined();
 ```
+
+???
+
+35 available, some are valid only against certain types
 
 ---
 
 ## react-testing-library
 
-> Enzyme is a JavaScript Testing utility for React that makes it easier to assert, manipulate, and traverse your React Components' output.
+> Simple and complete React DOM testing utilities that encourage good testing practices.
 
 .footnote[
-http://airbnb.io/enzyme/
+https://github.com/kentcdodds/react-testing-library/
 ]
-
----
-
-## Enzyme
-
-drawing of component tree
 
 ???
 
-scenario
+...
+
+there are 3 things you're going to do in a test using react-testing-library:
 
 ---
+template: module-section
+layout: true
+name: react-testing-library
 
-### shallow
-
-```javascript
-const wrapper = shallow(<FriendsList friends={testFriends} />);
-```
-
----
-
-### shallow
-
-drawing of shallow
+# Testing
+## react-testing-library
 
 ---
+class: no-footer
 
-### mount
+### 1. Render Components
 
-```javascript
-const wrapper = mount(<FriendsList friends={testFriends} />);
-```
+```jsx
+*import { render } from 'react-testing-library';
 
----
+import FriendDetail from './FriendDetail';
 
-### mount
+describe('FriendDetail', () => {
+  it('renders something', () => {
+    const friend = { ... };
 
-drawing of mount
+*   const context = render(
+      <FriendDetail friend={friend} />
+*   );
 
----
-
-### Finding Elements
-
-```javascript
-it('renders my friends', () => {
-  const friends = [
-    {...}, {...}, {...}, {...}, {...}
-  ];
-
-  const wrapper = mount(<Friends friends={testFriends} />);
-
-  expect(
-    wrapper.find('.friendProfile').length
-  ).toEqual(5);
+    // ...
+  });
 });
-
 ```
+
+???
+
+you're going to render your component 
+
+---
+
+### 2. Find Elements
+
+???
+
+find elements that were rendered
+
+...
+
+and find them the way a user would - 
+
+--
+
+```jsx
+    const context = render(<FriendDetail ... />);
+
+*   const loadingText = context.queryByText('Loading...');
+```
+
+--
+
+```jsx
+    const context = render(<FriendDetail ... />);
+
+*   const friendImage = context.queryByAlt('Mr. Cat The Mystery Cat');
+```
+
+--
+
+```jsx
+    const context = render(<FriendDetail ... />);
+
+*   const loadingText = context.queryByTestId('friend-container');
+```
+
+???
+
+you might make assertions against what was rendered & found
 
 ---
 template: exercise
@@ -124,15 +169,29 @@ layout: false
 
 ---
 
-### fireEvent
+### 3. Fire Events
 
-```javascript
-const wrapper = mount(<Friends friend={testFriend} />);
+```jsx
+*import { render, fireEvent } from 'react-testing-library';
 
-wrapper.find('.toggleCheckbox').simulate('click');
+describe('...', () => {
+  it('...', () => {
+    const context = render(<FriendDetail ... />);
 
-expect(wrapper.find('.added').length).toEqual(1);
+    const button = context.queryByText('Details >');
+
+*   fireEvent.click(button);
+  });
+});
 ```
+
+???
+
+To test interactions of components, 
+
+you'll fire DOM events against the elements, 
+
+using fireEvent.
 
 ---
 template: exercise
@@ -142,6 +201,7 @@ layout: false
 ## Testing Component Interactions
 
 ---
+template: testing-section
 
 ## Deeper Learning
 
@@ -151,10 +211,7 @@ template: module-section
 ## Deeper Learning
 
 ### Enzyme
-
-.footnote[
-http://airbnb.io/enzyme/
-]
+#### http://airbnb.io/enzyme/
 
 ???
 
@@ -163,6 +220,19 @@ enzyme does a LOT of stuff;
 react-testing-library tries to keep the possibilities to things that users care about
 
 ---
+template: module-section
+# Testing 
+## Deeper Learning
+
+### Jest-DOM
+#### https://github.com/gnapse/jest-dom
+
+???
+
+for more matchers that let you identify classes, attributes, things on DOM elements
+
+---
+template: testing-section
 
 ## Suggestions
 
@@ -195,18 +265,66 @@ Prefer testing presence of text elements
 react-testing-library forces you to do this
 
 ---
+class: bg-contain
+background-image: url('images/drawings/testing-pyramid.jpg')
 
-### Component Tests Don't Matter That Much
+### Write "Unigration" Tests
+
 
 ???
 
-if you're looking at adding component tests and you don't have all your business logic covered, start there instead.
+unit tests are small 
+
+& people can be overly dogmatic about what defines a "unit"
+
+integration tests are too slow
+
+& we can tell a lot from our app without pulling in db/api's
+
+---
+class: bg-contain
+background-image: url('images/drawings/testing-pyramid-unigration.jpg')
+### Write "Unigration" Tests
+
+???
+
+somewhere in the middle of those is the "unigration" zone
+
+
+---
+template: level-3
+layout: false
+class: bg-contain, no-footer
+background-image: url('images/drawings/unigration-tree-1.jpg')
+
+# Testing
+## Suggestions
+### Write "Unigration" Tests
+
+
+???
+
+if you're trying to test that component at the top of this subtree,
+
+---
+template: level-3
+layout: false
+class: bg-contain, no-footer
+background-image: url('images/drawings/unigration-tree-2.jpg')
+
+# Testing
+## Suggestions
+### Write "Unigration" Tests
+
+???
+
+test component tree with all helper functions included
+
+mock things that are slow/we don't own (api's)
 
 ---
 
 ### Write Tests For Future You
-
-drawing
 
 ???
 

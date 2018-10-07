@@ -6,7 +6,6 @@ var gulp = require('gulp');
 var server = require('./browser-sync').server;
 require('./dist');
 require('./fonts');
-require('./imagemin');
 require('./jade');
 require('./js');
 require('./stylus');
@@ -19,7 +18,6 @@ module.exports = gulp.task(
     'js',
     'jade',
     'stylus',
-    'imagemin',
     'fonts',
     server,
     'watch',

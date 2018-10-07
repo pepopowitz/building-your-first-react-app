@@ -3,7 +3,6 @@ template: module-title
 layout: false
 
 # Application State
-## Application State
 
 ---
 
@@ -14,19 +13,14 @@ name: app-state-section
 # Application State
 
 ---
-
-(drawing of app state vs component state)
+class: bg-contain
+background-image: url('images/drawings/state-tree-drilling.jpg')
 
 ???
 
 app state is state that the entire app needs, or distant portions of it need.
 
-
----
-
-(drawing of prop drilling)
-
-???
+...
 
 if we're elevating state, this means we have to pass props basically through the entire app
 
@@ -52,9 +46,13 @@ new in React 16.2?
 
 
 ---
+template: module-section
+class: bg-contain
+background-image: url('images/drawings/state-tree-ctx.jpg')
+
+# Application State
 ## Context
 
-drawing - attach a provider at the top component, and consumers along the way down
 
 ???
 

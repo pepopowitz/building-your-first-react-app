@@ -3,7 +3,6 @@ template: module-title
 layout: false
 
 # CSS
-## CSS
 
 ---
 
@@ -207,11 +206,13 @@ const StyledFriend = styled.div`
 `;
 
 function Friend({ name }) {
- return <StyledFriend>{name}</StyledFriend>
+  return <StyledFriend>{name}</StyledFriend>
 }
 ```
 
 ???
+
+(tagged template literals)
 
 the code
 
@@ -275,12 +276,12 @@ Component library probably warrants css-in-js
 ---
 template: level-3
 layout: false
+class: bg-contain
+background-image: url('images/drawings/slicing-vertical.jpg')
 
 # CSS
 ## Suggestions
 ### Separation Of Concerns
-
-(the slide)
 
 ---
 

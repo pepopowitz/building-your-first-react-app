@@ -3,7 +3,6 @@ template: module-title
 layout: false
 
 # State
-## State
 
 ???
 
@@ -13,13 +12,6 @@ Who has heard things about managing state in react?
 
 state mgmt in react is a controversial topic.
 
----
-
-layout: true
-template: module
-name: state-section
-
-# State
 
 ---
 
@@ -31,8 +23,15 @@ name: state-module-section
 
 ---
 
-triangle (props only)
+layout: true
+template: module
+name: state-section
 
+# State
+
+---
+class: bg-contain
+background-image: url('images/drawings/loop-2-state.jpg')
 
 ---
 template: module-section
@@ -81,8 +80,16 @@ state
 but also, conceptual: 
 
 ---
+class: bg-contain
+background-image: url('images/drawings/props-vs-state.jpg')
 
-drawing of props vs state
+???
+
+both are inputs to the component, but...
+
+---
+class: bg-contain
+background-image: url('images/drawings/props-vs-state-2.jpg')
 
 ???
 
@@ -132,7 +139,11 @@ but to have a component with state...it has to be a class component.
 
 ## State Is Passed Into Child Components As Props
 
-(drawing of child component with props & state being passed in, both as props)
+---
+
+class: bg-contain
+background-image: url('images/drawings/state-turns-into-props.jpg')
+
 
 ---
 class: no-footer
@@ -178,8 +189,8 @@ the child component gets that friend in its props
 looking back at our triangle, we can fill in some more...
 
 ---
-
-triangle with props & state
+class: bg-contain
+background-image: url('images/drawings/loop-3-setstate.jpg')
 
 ???
 
@@ -214,10 +225,11 @@ simple api
 tell it what to update
 
 ---
+template: state-module-section
+class: bg-contain
+background-image: url('images/drawings/loop-3-setstate.jpg')
 
 ## Unidirectional Flow
-
-(full triangle)
 
 ???
 
@@ -411,14 +423,17 @@ template: state-section
 
 ---
 template: state-module-section
+class: bg-contain
+background-image: url('images/drawings/loop-4-complete.jpg')
 
 ## Handling Events
 
-(triangle with focus on event)
 
 ???
 
 how do we make the state change, based on user actions?
+
+notice: i filled in one more thing in the loop (event)
 
 ---
 template: state-module-section
@@ -458,6 +473,11 @@ layout: false
 
 # Exercise 13
 ## Managing Component State
+
+???
+
+build a component that uses state to manage which view is being shown
+
 ---
 
 template: state-section
@@ -470,8 +490,30 @@ template: state-module-section
 ## Suggestions
 ### Elevate State
 
---
+---
+template: level-3
+layout: true
 
-drawing of tree with state
+# State
+## Suggestions
+### Elevate State
+
+---
+class: bg-contain
+background-image: url('images/drawings/state-tree-leaves.jpg')
+
+???
+
+if I've got components down here that need the same state...
+
+---
+class: bg-contain
+background-image: url('images/drawings/state-tree-drilling.jpg')
+
+???
+
+I can elevate it to the lowest common ancestor
+
+and manage the state there
 
 ---

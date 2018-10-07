@@ -3,7 +3,6 @@ template: module-title
 layout: false
 
 # Good Practices
-## Good Practices
 
 ---
 
@@ -25,11 +24,12 @@ problem solved: setting up webpack & react & other dependencies is difficult
 ---
 layout: false
 template: module-section
+class: bg-contain, no-footer
+background-image: url('images/drawings/create-react-app.jpg')
 
 # Good Practices
 ## create-react-app
 
-drawing of cra creating an app for us
 
 ???
 

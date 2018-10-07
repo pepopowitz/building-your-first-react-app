@@ -3,7 +3,6 @@ template: module-title
 layout: false
 
 # About
-## About
 
 ---
 
@@ -106,7 +105,7 @@ linked from README
 
 --
 
-### Answers: ./finished
+### Answers: ./complete
 
 ---
 class: no-footer

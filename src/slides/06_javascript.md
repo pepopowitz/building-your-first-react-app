@@ -3,7 +3,6 @@ template: module-title
 layout: false
 
 # JavaScript
-## JavaScript
 
 ???
 
@@ -37,25 +36,25 @@ template: module-section
 
 ---
 
---
-
-drawing of downloading a library?
+---
+class: bg-contain
+background-image: url('images/drawings/dependencies-old-school.jpg')
 
 ???
 
 oldest way (1): download a library & put it in a folder
 
---
-
-drawing of bower
+---
+class: bg-contain
+background-image: url('images/drawings/dependencies-bower.jpg')
 
 ???
 
 old way (2): bower
 
---
-
-drawing of npm
+---
+class: bg-contain
+background-image: url('images/drawings/dependencies-npm.jpg')
 
 ???
 
@@ -66,16 +65,16 @@ new way (3): npm
 we're going to use npm for a couple things
 
 ---
-
-draw package dependencies
+class: bg-contain, hide-footer
+background-image: url('images/drawings/npm-dependencies.jpg')
 
 ???
 
 1. to collect & organize our dependencies
 
 ---
-
-draw scripts
+class: bg-contain, hide-footer
+background-image: url('images/drawings/npm-scripts.jpg')
 
 ???
 
@@ -88,8 +87,8 @@ A cool thing the package.json also allows you to do is define scripts
 so 2. we'll **run app & tests**, via npm scripts 
 
 ---
-
-chart of npm growth
+class: bg-contain, hide-footer
+background-image: url('images/drawings/npm-chart.jpg')
 
 ???
 
@@ -116,11 +115,11 @@ problem solved: large javascript downloads
 
 ---
 template: module-section
+class: bg-contain, hide-footer
+background-image: url('images/drawings/webpack.jpg')
 
 # JavaScript
 ## webpack
-
-drawing of webpack turning dependencies into bundle
 
 ???
 
