@@ -89,6 +89,16 @@ name: about
 
 ---
 
+### Goal: Survey React Landscape
+
+???
+
+because you're going to need more than react to build an app
+
+I want you to be prepared to build your next app.
+
+---
+
 ### Instructions: README.md
 
 ---
@@ -171,13 +181,11 @@ Teaching is one of the best ways to learn
 
 ???
 
-explain the system
+Q's: 
 
-red, yellow, green cards
+How did you like the format?
 
-put in bag
-
-leave comments if you'd like
+Amount & depth of content?
 
 ---
 template: about-section
