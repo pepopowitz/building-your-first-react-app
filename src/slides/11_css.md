@@ -1,4 +1,3 @@
-
 template: module-title
 layout: false
 
@@ -29,11 +28,13 @@ A few different approaches.
 ## Method 1: Component CSS Files
 
 ---
+
 template: module-section
 layout: false
 
 # CSS
-## CSS Imports
+
+## Component CSS Files
 
 ```css
 .friend {
@@ -41,6 +42,7 @@ layout: false
   border-bottom: 1px solid blueviolet;
 }
 ```
+
 .footnote[
 friend.css
 ]
@@ -52,6 +54,7 @@ function Friend({ name }) {
 * return <div className="friend">{name}</div>
 });
 ```
+
 .footnote[
 friend.jsx
 ]
@@ -65,15 +68,9 @@ Note that this works because we're using **webpack with style-loader**
 (it effectively turns our css into a js object that we can import)
 
 ---
-template: exercise
-layout: false
-
-# Exercise 10
-## Component CSS Files
-
----
 
 ## Method 2: CSS Modules
+
 ### https://github.com/css-modules/css-modules
 
 .css-modules[
@@ -81,20 +78,24 @@ layout: false
 ]
 
 ---
+
 template: module-section
 layout: true
+
 # CSS
+
 ## CSS Modules
 
 ---
+
 class: no-footer
 
 ### Why?
 
-> * modular and reusable CSS!
-> * No more conflicts.
-> * Explicit dependencies.
-> * No global scope.
+> - modular and reusable CSS!
+> - No more conflicts.
+> - Explicit dependencies.
+> - No global scope.
 
 .footnote[
 [CSS Modules](https://github.com/css-modules/css-modules)
@@ -108,6 +109,7 @@ class: no-footer
   border-bottom: 1px solid blueviolet;
 }
 ```
+
 .footnote[
 friend.css
 ]
@@ -119,6 +121,7 @@ function Friend({ name }) {
 * return <div className={styles.friend}>{name}</div>
 }
 ```
+
 .footnote[
 friend.jsx
 ]
@@ -135,6 +138,7 @@ what it looks like in your code
   border-bottom: 1px solid blueviolet;
 }
 ```
+
 .footnote[
 CSS
 ]
@@ -142,6 +146,7 @@ CSS
 ```html
 <div class="Friend__friend__31BtE">Mr. Turtle</div>
 ```
+
 .footnote[
 HTML
 ]
@@ -151,49 +156,23 @@ HTML
 what gets shipped to the browser
 
 ---
-template: exercise
-layout: false
 
-# Exercise 11
-## CSS Modules
-
----
 template: css-section
 
-## Deeper Learning
+## Method 3: Styled Components
+
+### [styled-components.com](https://www.styled-components.com/)
 
 ---
+
 template: module-section
 layout: true
 
 # CSS
-## Deeper Learning
+
+## Styled Components
 
 ---
-class: no-footer
-
-### CSS-in-JS
-
---
-
-* [Styled Components](https://www.styled-components.com)
-* [Radium](https://github.com/FormidableLabs/radium)
-* [Emotion](https://github.com/emotion-js/emotion)
-* [Glamor](https://github.com/threepointone/glamor)
-* [Glamorous](https://github.com/paypal/glamorous)
-* [JSS](https://github.com/cssinjs/jss)
-
----
-
-### Styled Components
-
-#### [styled-components.com](https://www.styled-components.com/)
----
-template: level-3
-layout: false
-# CSS
-## Deeper Learning
-### Styled Components
 
 ```jsx
 import styled from 'styled-components';
@@ -206,24 +185,25 @@ const StyledFriend = styled.div`
 `;
 
 function Friend({ name }) {
-  return <StyledFriend>{name}</StyledFriend>
+  return <StyledFriend>{name}</StyledFriend>;
 }
 ```
 
 ???
 
-(tagged template literals)
+styles are in the component!!!
 
-the code
+tagged template literals
 
 ---
 
 ```css
-.31BtE {
+.31bte {
   color: blueviolet;
   border-bottom: 1px solid blueviolet;
 }
 ```
+
 .footnote[
 CSS
 ]
@@ -231,6 +211,7 @@ CSS
 ```html
 <div class="31BtE">Mr. Turtle</div>
 ```
+
 .footnote[
 HTML
 ]
@@ -240,15 +221,57 @@ HTML
 shipped to the browser
 
 ---
+
+template: exercise
+layout: false
+
+# Exercise 10
+
+## CSS: Three Ways To Style
+
+---
+
+template: css-section
+
+## Deeper Learning
+
+---
+
+template: module-section
+layout: true
+
+# CSS
+
+## Deeper Learning
+
+---
+
+class: no-footer
+
+### CSS-in-JS
+
+--
+
+- [Styled Components](https://www.styled-components.com)
+- [Radium](https://github.com/FormidableLabs/radium)
+- [Emotion](https://github.com/emotion-js/emotion)
+- [Glamor](https://github.com/threepointone/glamor)
+- [Glamorous](https://github.com/paypal/glamorous)
+- [JSS](https://github.com/cssinjs/jss)
+
+---
+
 template: css-section
 
 ## Suggestions
 
 ---
+
 template: module-section
 layout: true
 
 # CSS
+
 ## Suggestions
 
 ---
@@ -265,7 +288,7 @@ People who use css-in-js REALLY like it
 
 I've never felt like managing CSS scope was a problem
 
-But it might depend on what you're building - 
+But it might depend on what you're building -
 
 Component library probably warrants css-in-js
 
@@ -274,13 +297,16 @@ Component library probably warrants css-in-js
 ### Separation Of Concerns
 
 ---
+
 template: level-3
 layout: false
 class: bg-contain
 background-image: url('images/drawings/slicing-vertical.jpg')
 
 # CSS
+
 ## Suggestions
+
 ### Separation Of Concerns
 
 ---

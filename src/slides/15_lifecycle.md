@@ -1,4 +1,3 @@
-
 template: module-title
 layout: false
 
@@ -10,7 +9,6 @@ things like load state from an api,
 
 manage non-react dependencies,
 
-
 ---
 
 layout: true
@@ -21,11 +19,11 @@ name: lifecycle-section
 
 ---
 
-
 template: exercise
 layout: false
 
-# Exercise 14
+# Exercise 13
+
 ## Modern JS: Async/Await
 
 ???
@@ -48,12 +46,17 @@ class FriendFlipper extends React.Component {
 }
 ```
 
+???
+
+lifecycle events are most often associated with managing state
+
 ---
+
 class: hide-footer
 
 ## componentDidMount
 
-```
+```jsx
 import callApi from './callApi';
 
 class FriendDetail extends React.Component {
@@ -78,21 +81,23 @@ invoked immediately after a component is mounted (inserted into the tree)
 (uses on next slide...)
 
 ---
+
 class: component-did-mount
 
 ## componentDidMount
 
-* Load data from APIs
+- Load data from APIs
 
 --
 
-* Integrate with non-React APIs
+- Integrate with non-React APIs
 
 ???
 
 integrating with non-react api's
 
 ---
+
 class: no-footer
 
 ## componentDidUpdate
@@ -104,7 +109,7 @@ class FriendDetail extends React.Component {
   async componentDidUpdate(prevProps) {
 *   if (this.props.friendId !== prevProps.friendId) {
 *     const friend = await callApi(this.props.friendId);
-*  
+*
 *     this.setState({
 *       friend
 *     });
@@ -125,7 +130,7 @@ happens more often than you probably need it to, so check the props
 
 ## componentDidUpdate
 
-* React to changes to inputs
+- React to changes to inputs
 
 ???
 
@@ -157,7 +162,7 @@ invoked immediately before a component is unmounted and destroyed.
 
 ## componentWillUnmount
 
-* Clean up integrations with non-React APIs
+- Clean up integrations with non-React APIs
 
 ???
 
@@ -167,12 +172,13 @@ any subscriptions you set up in componentDidMount - cancel them here.
 
 There are others, but they are rarely used. These are all you need to know for this workshop.
 
-
 ---
+
 template: exercise
 layout: false
 
-# Exercise 15
+# Exercise 14
+
 ## Loading Data
 
 ???

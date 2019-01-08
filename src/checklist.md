@@ -1,0 +1,8 @@
+- set up projection
+- set up clicker
+- set up keyboard & mouse & "monitor"
+- vs code size
+- set out instructor notes
+- set up feedback system
+- stickers?
+- keep track of timings!

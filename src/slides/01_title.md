@@ -33,6 +33,7 @@ title image - https://unsplash.com/photos/tjX_sniNzgQ
 timekillers:
 
 * where from?
+* stickers!
 * favorite talks
 * favorite speakers
 * poll about intro

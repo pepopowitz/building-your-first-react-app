@@ -1,4 +1,3 @@
-
 template: module-title
 layout: false
 
@@ -23,11 +22,13 @@ name: routing-section
 ...some things about react router:
 
 ---
+
 layout: true
 template: module-section
 name: react-router-section
 
 # Routing
+
 ## React Router
 
 ---
@@ -36,7 +37,7 @@ name: react-router-section
 
 --
 
-```jsx
+```javascript
 import { BrowserRouter, Route } from 'react-router-dom';
 
 function App() {
@@ -77,6 +78,7 @@ function App() {
   );
 }
 ```
+
 ---
 
 ### Routes Are Rendered Dynamically
@@ -109,11 +111,13 @@ import { BrowserRouter, Route } from 'react-router-dom';
 
 ???
 
+...
+
 look - the router/route components are in the "render" method
 
 It's a subtle difference
 
-But it allows you to write declarative routing 
+But it allows you to write declarative routing
 
 which is pretty easy to follow.
 
@@ -139,12 +143,13 @@ function App() {
 
 ???
 
+key components you'll use:
+
 A Router that targets the browser
 
 uses the HTML5 history API to keep your UI in sync with the URL.
 
 you'll generally put this at the top of your app
-
 
 ---
 
@@ -171,10 +176,14 @@ function App() {
 a few key arguments to a Route component
 
 ---
+
 template: level-3
 layout: true
+
 # Routing
+
 ## React Router
+
 ### &amp;lt;Route&ampgt;
 
 ---
@@ -182,7 +191,7 @@ layout: true
 #### path
 
 ```jsx
-<Route 
+<Route
 * path="/"
   component={FriendsList}
   exact
@@ -192,7 +201,7 @@ layout: true
 --
 
 ```jsx
-<Route 
+<Route
 * path="/lists/:id"
   component={ListDetail}
   />
@@ -203,7 +212,7 @@ layout: true
 #### component
 
 ```jsx
-<Route 
+<Route
   path="/lists/:id"
 * component={ListDetail}
   />
@@ -214,7 +223,7 @@ layout: true
 #### exact
 
 ```jsx
-<Route 
+<Route
   path="/"
   component={FriendsList}
 * exact
@@ -230,6 +239,7 @@ That's all it takes to define your routes!
 The other components you'll use from React-Router are for navigating
 
 ---
+
 template: react-router-section
 
 ### &amp;lt;Link&amp;gt;
@@ -238,15 +248,12 @@ template: react-router-section
 import { Link } from 'react-router-dom';
 
 function FriendInList({ friend }) {
-  return (
-    <Link to={'/friends/' + friend.id}>
-      {friend.name}
-    </Link>
-  );
+  return <Link to={'/friends/' + friend.id}>{friend.name}</Link>;
 }
 ```
 
 ---
+
 template: react-router-section
 
 ### &amp;lt;NavLink&amp;gt;
@@ -270,22 +277,27 @@ function FriendInList({ friend }) {
 like a link, but it also sets an "active" class when it is selected.
 
 ---
+
 template: exercise
 layout: false
 
-# Exercise 12
+# Exercise 11
+
 ## React Router
 
 ---
+
 template: routing-section
 
 ## Suggestions
 
 ---
+
 template: module-section
 class: no-footer
 
 # Routing
+
 ## Suggestions
 
 > To get your intuition in line with React Router’s, think about components, not static routes. Think about how to solve the problem with React’s declarative composability because nearly every “React Router question” is probably a “React question”.
@@ -295,14 +307,18 @@ https://reacttraining.com/react-router/web/guides/philosophy
 ]
 
 ---
+
 template: routing-section
+
 ## Deeper Learning
 
 ---
+
 template: module-section
 layout: true
 
 # Routing
+
 ## Deeper Learning
 
 ---

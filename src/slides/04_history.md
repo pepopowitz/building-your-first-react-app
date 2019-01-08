@@ -1,4 +1,3 @@
-
 template: module-title
 layout: false
 
@@ -24,8 +23,14 @@ name: history-section
 
 --
 
-* 👎 Hard to write
-* 👎 Hard to scale
+- 👎 Hard to write
+- 👎 Hard to scale
+
+???
+
+Hard to scale **the codebase**
+
+If you got it to work, you shipped it.
 
 ---
 
@@ -33,8 +38,8 @@ name: history-section
 
 --
 
-* 👍 Easy to write
-* 👎 Hard to scale
+- 👍 Easy to write
+- 👎 Hard to scale
 
 ---
 
@@ -46,18 +51,19 @@ Angular 1, Knockout, Backbone, ...
 
 --
 
-* 👍 Easy to scale
-* 👎 Hard to write
+- 👍 Easy to scale
+- 👎 Hard to write
 
 ???
 
 sometimes...
 
 ---
+
 ## MVC/MVVM
 
-* 👍 Easy to write
-* 👎 Hard to scale
+- 👍 Easy to write
+- 👎 Hard to scale
 
 ???
 
@@ -75,8 +81,8 @@ My favorite way to build a web app
 
 --
 
-* 👍 Easy to write
-* 👍 Easy to scale
+- 👍 Easy to write
+- 👍 Easy to scale
 
 ???
 

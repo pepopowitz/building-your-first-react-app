@@ -1,4 +1,3 @@
-
 template: module-title
 layout: false
 
@@ -13,6 +12,7 @@ name: props-section
 # Props
 
 ---
+
 class: bg-contain
 background-image: url('images/drawings/loop-1.jpg')
 
@@ -47,6 +47,10 @@ it's probably state (not a prop)
 
 ## Syntax
 
+???
+
+Depends on how you've implemented your component.
+
 --
 
 ```jsx
@@ -54,7 +58,7 @@ function Friend(props) {
   if (props.isLoading) {
     return null;
   }
-  return <div>{props.name}</div>
+  return <div>{props.name}</div>;
 }
 ```
 
@@ -81,6 +85,7 @@ function Friend(props) {
 object destructuring
 
 ---
+
 ## Syntax
 
 ```jsx
@@ -97,6 +102,7 @@ object destructuring
 argument destructuring
 
 ---
+
 ## Syntax
 
 ```jsx
@@ -151,7 +157,7 @@ class, set afterward
 class FriendProfile extends React.Component {
   render() {
     const { name, image } = this.props;
-    
+
     return <img alt={name} src={image} />
   }
 
@@ -166,6 +172,7 @@ class FriendProfile extends React.Component {
 class, static method
 
 ---
+
 ## Default Props
 
 ```jsx
@@ -183,13 +190,14 @@ function FriendProfile({ name, image }) {
 stateless function
 
 ---
+
 ## Default Props
 
 ```jsx
 function FriendProfile(
-  { 
-    name, 
-*   image = 'http://placekitten.com/200' 
+  {
+    name,
+*   image = 'http://placekitten.com/200'
   }
 ) {
   return <img alt={name} src={image} />
@@ -218,17 +226,14 @@ Every component gets a special prop
 
 ```jsx
 function Title({ children }) {
-  return (
-    <div id="title">{children}</div>
-  );
+  return <div id="title">{children}</div>;
 }
 ```
 
 --
+
 ```html
-<div id="title">
-  Hello, friends!
-</div>
+<div id="title">Hello, friends!</div>
 ```
 
 ???
@@ -238,10 +243,12 @@ function Title({ children }) {
 children prop is really powerful.
 
 ---
+
 template: module-section
 layout: true
 
 # Props
+
 ## Children
 
 ---
@@ -259,10 +266,12 @@ easier to refactor/change
 (less brittle than inheritance)
 
 ---
+
 template: exercise
 layout: false
 
 # Exercise 8
+
 ## Composition & props.children
 
 ???
@@ -270,6 +279,7 @@ layout: false
 building components that aid composability
 
 ---
+
 template: props-section
 layout: true
 
@@ -288,9 +298,12 @@ how do we make sure our component is getting the data it needs?
 ## PropTypes
 
 ---
+
 template: module-section
 layout: true
+
 # Props
+
 ## PropTypes
 
 ---
@@ -368,25 +381,54 @@ class FriendProfile extends React.Component {
 
 class + static method
 
+---
+
+```javascript
+static propTypes = {
+  friends: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+};
+```
+
+???
+
+arrays
+
+shapes
 
 ---
+
 template: exercise
 layout: false
 
 # Exercise 9
+
 ## Defining PropTypes
 
+???
+
+Skip for now!
+
+This is optional - finish this on your own, when you have time.
+
 ---
+
 template: props-section
 layout: false
 
 ## Suggestions
 
 ---
+
 template: module-section
 layout: true
 
 # Props
+
 ## Suggestions
 
 ---
@@ -398,15 +440,18 @@ layout: true
 propTypes are a development tool
 
 ---
+
 template: props-section
 
 ## Deeper Learning
 
 ---
+
 template: module-section
 layout: true
 
 # Props
+
 ## Deeper Learning
 
 ---
@@ -414,12 +459,12 @@ layout: true
 ### TypeScript
 
 ```jsx
-*interface IFriendProfileProps {
+*interface FriendProfileProps {
 * name: string;
 * image: string;
 *}
 
-*class FriendProfile extends React.Component<IFriendProfileProps, {}> {
+*class FriendProfile extends React.Component<FriendProfileProps, {}> {
   render() {
     const { name, image } = this.props;
 
@@ -439,12 +484,12 @@ class
 ### TypeScript
 
 ```jsx
-*interface IFriendProfileProps {
+*interface FriendProfileProps {
 * name: string;
 * image: string;
 *}
 
-*function FriendProfile(props: IFriendProfileProps) {
+*function FriendProfile(props: FriendProfileProps) {
   const { name, image } = props;
 
   return <img alt={name} src={image} />;
@@ -454,7 +499,6 @@ class
 ???
 
 stateless functional
-
 
 ---
 
@@ -480,6 +524,7 @@ stateless functional
 class
 
 ---
+
 ### Flow
 
 ```jsx
@@ -500,5 +545,9 @@ class
 stateless function
 
 better tooling from typescript
+
+...
+
+If I were starting a new project, I would use TypeScript.
 
 ---

@@ -1,4 +1,3 @@
-
 template: module-title
 layout: false
 
@@ -11,7 +10,6 @@ Who has heard things about managing state in react?
 ...
 
 state mgmt in react is a controversial topic.
-
 
 ---
 
@@ -30,13 +28,17 @@ name: state-section
 # State
 
 ---
+
 class: bg-contain
 background-image: url('images/drawings/loop-2-state.jpg')
 
 ---
+
 template: module-section
 layout: true
+
 # State
+
 ## Props vs. State
 
 ---
@@ -44,8 +46,8 @@ layout: true
 ```jsx
 class FriendDetail extends React.Component {
   render() {
-    return <img 
-*     alt={this.props.name} 
+    return <img
+*     alt={this.props.name}
 *     src={this.props.url} />
   }
 }
@@ -64,8 +66,8 @@ syntactical differences
 ```jsx
 class FriendDetail extends React.Component {
   render() {
-    return <img 
-*     alt={this.state.name} 
+    return <img
+*     alt={this.state.name}
 *     src={this.state.url} />
   }
 }
@@ -77,9 +79,10 @@ state
 
 ???
 
-but also, conceptual: 
+but also, conceptual:
 
 ---
+
 class: bg-contain
 background-image: url('images/drawings/props-vs-state.jpg')
 
@@ -88,6 +91,7 @@ background-image: url('images/drawings/props-vs-state.jpg')
 both are inputs to the component, but...
 
 ---
+
 class: bg-contain
 background-image: url('images/drawings/props-vs-state-2.jpg')
 
@@ -106,10 +110,12 @@ This component? It's state.
 Someone else? It's props passed in.
 
 ---
+
 template: state-section
 layout: true
 
 ---
+
 class: no-footer
 
 ## Stateful Components Must Extend React.Component
@@ -120,9 +126,7 @@ class FriendDetail extends React.Component {
     return (
       <div>
         <h1>{this.state.friend.name}</h1>
-        <img 
-          alt={this.state.friend.name} 
-          src={this.state.friend.url} />
+        <img alt={this.state.friend.name} src={this.state.friend.url} />
       </div>
     );
   }
@@ -144,8 +148,8 @@ but to have a component with state...it has to be a class component.
 class: bg-contain
 background-image: url('images/drawings/state-turns-into-props.jpg')
 
-
 ---
+
 class: no-footer
 
 ```jsx
@@ -172,8 +176,8 @@ we pass friend=this.state.friend
 ```jsx
 class FriendImage extends React.Component {
   render() {
-    return (<img 
-*     alt={this.props.friend.name} 
+    return (<img
+*     alt={this.props.friend.name}
 *     src={this.props.friend.url} />
     );
   }
@@ -189,12 +193,13 @@ the child component gets that friend in its props
 looking back at our triangle, we can fill in some more...
 
 ---
+
 class: bg-contain
 background-image: url('images/drawings/loop-3-setstate.jpg')
 
 ???
 
-we can fill in our final gap, too - 
+we can fill in our final gap, too -
 
 the function that will update these inputs, or at least the state, is called...
 
@@ -225,6 +230,7 @@ simple api
 tell it what to update
 
 ---
+
 template: state-module-section
 class: bg-contain
 background-image: url('images/drawings/loop-3-setstate.jpg')
@@ -235,25 +241,28 @@ background-image: url('images/drawings/loop-3-setstate.jpg')
 
 in React, we call this a unidirectional flow of data
 
-there's no two-way binding 
+there's no two-way binding
 
-things get passed into a component, 
+things get passed into a component,
 
-the data source gets edited, 
+the data source gets edited,
 
 and then new things get passed in, and react re-renders our component.
 
 ---
+
 template: module-section
 layout: true
+
 # State
+
 ## setState
 
 ---
+
 class: no-footer
 
 ### State Is Merged
-
 
 ```javascript
 {
@@ -270,7 +279,7 @@ before
 
 ```javascript
 this.setState({
-  name: 'Sneezy'
+  name: 'Sneezy',
 });
 ```
 
@@ -294,13 +303,13 @@ more things to know about setState:
 
 ```javascript
 this.setState({
-  name: 'Sneezy'
+  name: 'Sneezy',
 });
 ```
 
 ???
 
-the basic way to call 
+the basic way to call
 
 but you can't always use it.
 
@@ -322,15 +331,13 @@ because you don't necessarily know what that current state is when the state mod
 
 ```javascript
 this.setState({
-  theme: this.state.theme === 'light' 
-    ? 'dark' 
-    : 'light'
+  theme: this.state.theme === 'light' ? 'dark' : 'light',
 });
 ```
 
 ???
 
-in this case, if setstate got called a couple times very quickly, 
+in this case, if setstate got called a couple times very quickly,
 
 we don't reliably know what this.state.theme is when it is called.
 
@@ -355,17 +362,15 @@ and that function has a parameter - the previous state.
 ```javascript
 this.setState(prevState => {
   return {
-    theme: prevState.theme === 'light' 
-      ? 'dark' 
-      : 'light'
-  }
+    theme: prevState.theme === 'light' ? 'dark' : 'light',
+  };
 });
 ```
 
 ???
 
-this allows us to compare to previous state
----
+## this allows us to compare to previous state
+
 template: state-section
 
 ## Initialization
@@ -375,9 +380,11 @@ template: state-section
 there are a couple ways we can initialize state
 
 ---
+
 template: state-module-section
 
 ## Initialization
+
 ### Constructor
 
 ```
@@ -401,9 +408,11 @@ via constructor
 super(props)
 
 ---
+
 template: state-module-section
 
 ## Initialization
+
 ### Class Property
 
 ```
@@ -417,17 +426,18 @@ class MyCheckBox extends React.Component {
 ```
 
 ---
+
 template: state-section
 
 ## Handling Events
 
 ---
+
 template: state-module-section
 class: bg-contain
 background-image: url('images/drawings/loop-4-complete.jpg')
 
 ## Handling Events
-
 
 ???
 
@@ -436,10 +446,10 @@ how do we make the state change, based on user actions?
 notice: i filled in one more thing in the loop (event)
 
 ---
+
 template: state-module-section
 
 ## Handling Events
-
 
 ```jsx
 class MyCheckBox extends React.Component {
@@ -448,14 +458,14 @@ class MyCheckBox extends React.Component {
   }
 
 * handleChanged = (e) => {
-    this.setState({checked: e.target.checked})  
+    this.setState({checked: e.target.checked})
 * }
 
   render() {
-    return <input 
-      type="checkbox" 
-      checked={this.state.checked} 
-*     onChanged={this.handleChanged} 
+    return <input
+      type="checkbox"
+      checked={this.state.checked}
+*     onChanged={this.handleChanged}
       />
   }
 }
@@ -467,11 +477,11 @@ synthetic events
 
 ---
 
-
 template: exercise
 layout: false
 
-# Exercise 13
+# Exercise 12
+
 ## Managing Component State
 
 ???
@@ -485,20 +495,26 @@ template: state-section
 ## Suggestions
 
 ---
+
 template: state-module-section
 
 ## Suggestions
+
 ### Elevate State
 
 ---
+
 template: level-3
 layout: true
 
 # State
+
 ## Suggestions
+
 ### Elevate State
 
 ---
+
 class: bg-contain
 background-image: url('images/drawings/state-tree-leaves.jpg')
 
@@ -507,6 +523,7 @@ background-image: url('images/drawings/state-tree-leaves.jpg')
 if I've got components down here that need the same state...
 
 ---
+
 class: bg-contain
 background-image: url('images/drawings/state-tree-drilling.jpg')
 
