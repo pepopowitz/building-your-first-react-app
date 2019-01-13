@@ -2,6 +2,7 @@
 - set up clicker
 - set up keyboard & mouse & "monitor"
 - vs code size
+- do not disturb!!!
 - set out instructor notes
 - set up feedback system
 - stickers?

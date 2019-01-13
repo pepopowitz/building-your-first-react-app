@@ -1,112 +1,147 @@
-8:00-11:45, 1:00-5:00
-7:45 total
-3h45m morning, 4h afternoon
-225m morning, 240m afternoon
+# Agenda:
 
-Intro & setup
-20min
-  including getting started
+## Morning
 
-Intro to React
-20min
+(15m)
+Slides: 01/Title
+Slides: 02/Setup
+Slides: 03/About
 
-Exercise: Components
-20min
+---
 
-Intro to JSX
-20min
+(5m)
+Slides: 04/History
 
--- 1h20m (80m)
+---
 
-Break
-10min
+(15m)
+Slides: 05/React
 
-Exercise: JSX
-20min
+---
 
-Rendering a React Component
-20min
+(20m)
+Slides: 06/JavaScript
+5m
+Ex: 01/Modern JS
+15m
 
-Exercise: Rendering React Components
-30min
+---
 
--- 1h20m (80m)
+(15m)
+Slides: 07/Components
+10m
+Ex: 02/Identifying Components
+5m
 
-Break
-15min
+---
 
-Composing Components
-15min
-  props
+(45m)
+Slides: 08/Components + React
+5m
+Ex: 03/Class Syntax
+10m
+Ex: 04/Modern JavaScript: Working With Objects
+10m
+Ex: 05/JSX Fundamentals
+20m
 
-Exercise: Composing React Components
-35min
-  do some children-props stuff here?
+---
 
--- 1h5m (65m)
-
-LUNCH
-
-Styling Components
-15min
-
-Exercise: Styling Components
-30min
-
-Intro: Component State
-5min
-
-Managing Simple Component State
-10min
-
-Exercise: Managing Simple Component State
-20min
-
--- 1h20m (80m)
-
-Break
-10min
-
-Managing Deeper Component State
-10min
-
-Exercise: Managing Deeper Component State (Context)
-30min
-
-Managing Application State
-10min
-
-Managing Application Routes
-15min
-
--- 1h15m (75m), 2h35m (155) so far
-
-Break
-15min
-
-Exercise: React Router
-15min
-
-Testing React
-15min
-
-Exercise: Testing React
-30min
-
-Best Practices & Wrap-up
+(50m)
+Slides: 09/Components + React + JSX
+20m
+Ex: 06/render() Results
+20m
+Ex: 07/Convert a component
 10m
 
--- 1h25m (85m), 4h (240) so far
+---
 
+(20m)
+Slides: 10/Props
+10m
+Ex: 08/Composition/props.children
+10m
+Ex: 09/prop types
+On your own time!
 
+---
 
+(30m)
+Slides: 11/CSS
+10m
+Ex: 10/CSS
+20m
 
-Does this fit?????
+---
 
-Validating COmponent Inputs
-15min
+## Lunch!
 
-Exercise: PropTypes
-15min
+---
 
+## After lunch:
 
+Starting at 1:00
+
+Ex: 10/CSS???
+
+---
+
+(20m)
+Slides: 12/Routing
+5m
+Ex 11: React Router
+15m
+
+---
+
+(30m)
+Slides: 13/State
+10m
+Ex 12: Managing Component State
+20m
+
+---
+
+(15m)
+Slides: 14/Events
+5m
+Ex 13: Async/Await
+10m
+
+---
+
+(25m)
+Slides: 15/Lifecycle
+5m
+Ex 14: Loading Data
+20m
+
+---
+
+(20m)
+Slides: 16/App State
+Ex 15: React Context
+20m
+
+---
+
+(30m)
+Slides: 17/Hooks
+10m
+Ex 16: Hooks
+20m
+
+---
+
+(45m)
+Slides: 18/Testing
+10m
+Ex 17: Testing Render
+15m
+Ex 18: Testing Interactions
+20m
+
+(20m)
+
+### Good Practices/Questions
