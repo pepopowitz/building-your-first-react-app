@@ -22,8 +22,6 @@ git, node, npm, & repo
 
 If you **cloned before yesterday** - pull latest!
 
-If you **followed codemash instrux & downloaded repo** - clone instead!
-
 If **not set up**, do this while I talk! (point out url)
 
 _If lots didn't do it:_

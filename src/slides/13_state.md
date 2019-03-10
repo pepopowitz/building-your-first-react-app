@@ -480,7 +480,7 @@ synthetic events
 template: exercise
 layout: false
 
-# Exercise 12
+# Exercise 9
 
 ## Managing Component State
 

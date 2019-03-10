@@ -98,7 +98,7 @@ layout: true
 
 ## Exercise 2
 
-### Identify Components
+### Identifying Components
 
 ---
 

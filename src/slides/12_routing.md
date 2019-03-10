@@ -281,7 +281,7 @@ like a link, but it also sets an "active" class when it is selected.
 template: exercise
 layout: false
 
-# Exercise 11
+# Exercise 8
 
 ## React Router
 

@@ -2,14 +2,6 @@ template: module-title
 
 # Feedback
 
-## CodeMash app
-
----
-
-template: module-title
-
-# Feedback
-
 ## Green = Good; Yellow = Okay; Pink = Bad
 
 ---

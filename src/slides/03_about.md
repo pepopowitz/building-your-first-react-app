@@ -168,6 +168,19 @@ details about a kitten
 
 ---
 
+class: schedule
+
+### Schedule
+
+- .highlight[9:30 - 12:00] Setup, Intro, Modern JavaScript, JSX, React Components
+- .highlight[1:00 - 4:30] Composition, CSS, Routing, State Management, Lifecycle
+
+???
+
+Now is your chance to break!
+
+---
+
 class: collaborative
 
 ### Collaborative
@@ -185,12 +198,6 @@ class: collaborative
 Teaching is one of the best ways to learn
 
 (meet neighbors comes later)
-
----
-
-### Feedback
-
-#### CodeMash app
 
 ---
 

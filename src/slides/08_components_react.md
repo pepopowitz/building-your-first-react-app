@@ -14,37 +14,19 @@ name: components-react-section
 
 ---
 
-## Class Syntax
+## Components Are Functions
 
 ???
 
-React Components are usually written with ES2015 class syntax.
+TODO: write this section
 
----
-template: exercise
-layout: false
-
-# Exercise 3
-## Modern JavaScript: Class Syntax
-
-???
-
-instructor-led, follow along
-
----
-
-## React.Component
-
-???
-
-every component in react is a class that extends  React.Component.
 
 ---
 template: module-section
 layout: false
 
 # Components + React
-## React.Component
+## Component Functions
 
 
 ```javascript
@@ -56,41 +38,6 @@ class FriendsList extends React.Component {
 
 }
 ```
-
----
-
-## render()
-
-???
-
-The only requirement for a react component
-
-is that it implements a render() function
-
-this tells React how to render this component to the browser
-
----
-template: module-section
-layout: true
-
-# Components + React
-## render()
-
----
-
-```jsx
-class FriendsList extends React.Component {
-  render() {
-
-    return ...what the component actually renders...
-
-  }
-}
-```
-
-???
-
-Note: class instance methods!
 
 ---
 class: no-footer
@@ -126,7 +73,7 @@ template: level-3
 layout: true
 
 # Components + React
-## render()
+## Component Functions
 ### Pure Functions
 
 ---
@@ -793,8 +740,8 @@ class Friend extends React.Component {
 template: exercise
 layout: false
 
-# Exercise 4
-## Modern JavaScript: Working With Objects
+# Exercise 3
+## Modern JavaScript: Working With Variables
 
 ???
 
@@ -804,7 +751,7 @@ instructor-led, follow along
 template: exercise
 layout: false
 
-# Exercise 5
+# Exercise 4
 ## JSX Fundamentals
 
 ???

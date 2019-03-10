@@ -210,108 +210,12 @@ early-exit from a component
 template: exercise
 layout: false
 
-# Exercise 6
-## render() Results
+# Exercise 5
+## What can a component render?
 
 ???
 
 the different types of things a component can render
-
----
-template: components-react-jsx-section
-layout: false
-
-## Do We Need Class Syntax?
-
---
-
-```jsx
-*class Friend extends React.Component {
-* render() {
-    if (this.props.isLoading) {
-      return null;
-    }
-    return <div>{this.props.name}</div>
-* }
-*}
-```
-
----
-template: components-react-jsx-section
-
-## Stateless Functional Components
-
-???
-
-Components that are written with functions
-
-that don't have state
-
----
-template: module-section
-layout: true
-
-# Components/React/JSX
-## Stateless Functions
-
----
-class: no-footer
-
-```jsx
-class Friend extends React.Component {
-  render() {
-    if (this.props.isLoading) {
-      return null;
-    }
-    return <div>{this.props.name}</div>
-  }
-}
-```
-
---
-
-```jsx
-import React from 'react';
-
-function Friend(props) {
-  if (props.isLoading) {
-    return null;
-  }
-  return <div>{props.name}</div>
-}
-```
-
----
-template: exercise
-layout: false
-
-# Exercise 7
-## Convert A Component
-
-???
-
-from class syntax to stateless, & back
-
----
-template: components-react-jsx-section
-layout: false
-
-## Suggestions
-
----
-template: module-section
-layout: true
-
-# Components + React + JSX
-## Suggestions
-
----
-
-### Start With Stateless Functional
-
-???
-
-convert it to class only after you need to
 
 ---
 template: components-react-jsx-section

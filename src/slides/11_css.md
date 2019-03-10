@@ -225,7 +225,7 @@ shipped to the browser
 template: exercise
 layout: false
 
-# Exercise 10
+# Exercise 7
 
 ## CSS: Three Ways To Style
 

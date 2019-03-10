@@ -22,9 +22,9 @@ name: lifecycle-section
 template: exercise
 layout: false
 
-# Exercise 13
+# Exercise 10
 
-## Modern JS: Async/Await
+## Modern JS: `async`/`await`
 
 ???
 
@@ -177,7 +177,7 @@ There are others, but they are rarely used. These are all you need to know for t
 template: exercise
 layout: false
 
-# Exercise 14
+# Exercise 11
 
 ## Loading Data
 

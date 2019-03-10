@@ -1,3 +1,13 @@
+# Hooks
+
+- lead with hooks for useState
+- lead with hooks for useEffect
+- Move classes to a "legacy" section
+- Make sure all code & slides are functions until legacy
+- Rewrite Events
+- remove old hooks section
+- write "legacy" section
+
 # Talk
 
 - fill in resources
@@ -11,6 +21,10 @@
 - Add "suitcase" conversation to drive home the putting code together that changes together. (or maybe as good practices?)
 
 - Modern JS exercises need a "Welcome to JavaScript" slide at the end, where I put on a cowboy hat, say "welcome to javascript", show a slide with a wild wild west scene, and pretend to shoot a six-gun (with sound-effect!!!!)
+
+- Redo npm growth graph
+
+- stateless functional -> functional
 
 # maybe
 
@@ -27,17 +41,21 @@
 
 # Exercises
 
-- Fill in actual instructions for modern js exercises & tweet it.
+- replace classes with functions
+
+- write instrux for ex 1: modernjs: modules
+
+- write instrux for ex 2: identifying components
+
+- write instrux for ex 3: class syntax
+
+- write instrux for ex 4: working with objects
 
 - test windows subsystem for linux
 
 - test fish shell
 
 - Revisit all instructions. Add more detail & clarity.
-
-- Ex 6 had completed work in the exercise.
-
-- Ex 6 had a bad solution
 
 - Modern JS #4 is way too fast. Slow down, talk more about what you're doing.
 
@@ -56,6 +74,12 @@
 - Many modern JS features can be removed from "big up-front" exercises! Object destructuring, array destructuring, implicit return can all be held back until they see code without them - and sprinkle them in when they come up (just mention them)! There are probably other features that could do the same!
 
 # Schedule
+
+## ForwardJS
+
+9:30-12:00 (2:30) + 1:00-4:30 (3:30)
+
+skip app state, testing???
 
 ## Codemash
 

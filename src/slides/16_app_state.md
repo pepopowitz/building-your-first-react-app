@@ -169,7 +169,7 @@ for multiple things passed down via context...
 template: exercise
 layout: false
 
-# Exercise 15
+# Exercise 12
 
 ## React Context
 

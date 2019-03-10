@@ -270,9 +270,9 @@ easier to refactor/change
 template: exercise
 layout: false
 
-# Exercise 8
+# Exercise 6
 
-## Composition & props.children
+## Composition & `props.children`
 
 ???
 
@@ -399,21 +399,6 @@ static propTypes = {
 arrays
 
 shapes
-
----
-
-template: exercise
-layout: false
-
-# Exercise 9
-
-## Defining PropTypes
-
-???
-
-Skip for now!
-
-This is optional - finish this on your own, when you have time.
 
 ---
 
