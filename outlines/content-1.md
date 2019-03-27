@@ -140,9 +140,8 @@ Events TODO - rewrite w/ hooks
   Binding Event Handlers
 
 Lifecycle
-  Exercise 10(13): Modern JS: Async/Await
   useEffect
-  Exercise 11(14): Loading Data
+  Exercise 10(14): Loading Data
 
 Application State
   Prop Drilling
@@ -150,17 +149,17 @@ Application State
     createContext
     Provider
     Consumer
-  Exercise 12(15): React Context
+  Exercise 11(15): React Context
   Deeper Learning
   Suggestions
 
 Legacy
-  Exercise 13(3) - Modern JS - class syntax
+  Exercise 12(3) - Modern JS - class syntax
   
   Functional Vs React.Component
     Why?
     render()
-    Exercise 14(7) - convert a react.Component to a stateless functional
+    Exercise 13(7) - convert a react.Component to a stateless functional
 
   Component state management
     replacements for useState
@@ -178,7 +177,6 @@ Legacy
       Initialization
       Handling events
 
-      Exercise 15(new) - convert useState to setState
 
   Lifecycle
     replacements for useEffect
@@ -187,12 +185,14 @@ Legacy
     componentDidMount
     componentDidUpdate
     componentWillUnmount
-    Exercise 16(new) - convert useEffect to lifecycles
 
   Application state management
     replacements for useContext
       opposite of improvements
     TODO: details?    
+
+  Exercise 14(new) - Legacy State Management
+  Exercise 15(new) - Legacy Side Effects
 
 Testing
   Jest
@@ -200,9 +200,9 @@ Testing
   react-testing-library
     1. Render Components
     2. Find elements
-      Exercise 17: Testing Component Render
+      Exercise 16: Testing Component Render
     3. Fire events
-      Exercise 18: Testing Component Interactions
+      Exercise 17: Testing Component Interactions
   Deeper Learning
   Suggestions
 

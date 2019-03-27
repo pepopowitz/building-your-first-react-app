@@ -38,7 +38,7 @@ Ex: 02/Identifying Components
 (45m)
 Slides: 08/Components + React
 5m
-Ex: 03/Class Syntax
+Ex: 12/Class Syntax
 10m
 Ex: 04/Modern JavaScript: Working With Objects
 10m
@@ -52,7 +52,7 @@ Slides: 09/Components + React + JSX
 20m
 Ex: 06/render() Results
 20m
-Ex: 07/Convert a component
+Ex: 13/Converting components
 10m
 
 ---
@@ -146,64 +146,106 @@ Ex 18: Testing Interactions
 
 ### Good Practices/Questions
 
-
-
-
-
 Not accounted below - 2 breaks per 4 hours, ~10 minutes each. We'll take them when we need them.
 
 # Introduction (15m)
+
 ## Setup
+
 ## About this workshop
+
 # What is React? (15m)
+
 # JavaScript
+
 ## Slides (5m)
+
 ## Exercise: Modern JavaScript Features (15m)
-# Components 
+
+# Components
+
 ## Slides (10m)
+
 ## Exercise: Identifying Components (5m)
-# Components + React 
+
+# Components + React
+
 ## Slides (5m)
+
 ## Exercise: Class Syntax (10m)
+
 ## Exercise: More modern JavaScript Features (10m)
+
 ## Exercise: JSX Fundamentals (20m)
+
 # Components + React + JSX
+
 ## Slides (20m)
+
 ## Exercise: render() Results (20m)
-## Exercise: Convert a component (10m)
+
+## Exercise: Converting Components (10m)
+
 # Props
+
 ## Slides (10m)
+
 ## Exercise: Composition/props.children (10m)
+
 # CSS
+
 ## Slides (10m)
+
 ## Exercise: CSS (20m)
 
 # Lunch!
 
 # Routing
+
 ## Slides (5m)
+
 ## Exercise: React Router (15m)
+
 # State Management
+
 ## Slides (10m)
+
 ## Exercise: Managing Component State (20m)
+
 # Events
+
 ## Slides (5m)
+
 ## Exercise: Async/Await (10m)
+
 # Lifecycle
+
 ## Slides (5m)
+
 ## Exercise: Loading Data (20m)
+
 # Application State
+
 ## Slides (5m)
+
 ## Exercise: React Context (20m)
+
 # Hooks
+
 ## Slides (10m)
+
 ## Exercise (20m)
+
 # Testing
+
 ## Slides (10m)
+
 ## Exercise: Testing Render (15m)
+
 ## Exercise: Testing Interactions (20m)
+
 # Wrapping Up
+
 ## Good Practices (5m)
+
 ## Questions (15m)
-
-

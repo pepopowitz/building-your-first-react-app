@@ -1,4 +1,3 @@
-
 template: module-title
 layout: false
 
@@ -16,35 +15,35 @@ name: components-react-section
 
 ## Components Are Functions
 
-???
-
-TODO: write this section
-
-
 ---
+
 template: module-section
 layout: false
 
 # Components + React
-## Component Functions
 
+## Component Functions
 
 ```javascript
 import React from 'react';
 
-class FriendsList extends React.Component {
-
+function FriendsList {
   // ...Details about this component
-
 }
 ```
 
+???
+
+- import react
+- FriendsList component is a function
+
 ---
+
 class: no-footer
 
 ### Pure Functions
 
-> The render() function should be pure, meaning that it does not modify component state, it returns the same result each time it’s invoked, and it does not directly interact with the browser.
+> [a component function...] should be pure, meaning that it does not modify component state, it returns the same result each time it’s invoked, and it does not directly interact with the browser.
 
 .footnote[
 https://reactjs.org/docs/
@@ -52,11 +51,11 @@ https://reactjs.org/docs/
 
 ???
 
-one important thing to remember about render:
+Ideally, these component functions should be pure
 
 ...
 
-2 parts to "pure": 
+2 parts to "pure":
 
 1.doesn't modify state
 
@@ -69,18 +68,19 @@ let's look at some examples of pure & impure functions
 to give you clarity on the difference
 
 ---
-template: level-3
+
+template: level-2
 layout: true
 
 # Components + React
-## Component Functions
-### Pure Functions
+
+## Pure Functions
 
 ---
 
 ```javascript
 function add(a, b) {
-  return a+b;
+  return a + b;
 }
 ```
 
@@ -119,10 +119,8 @@ it doesn't return the same result each time
 ---
 
 ```jsx
-class Friend extends React.Component {
-  render() {
-    this.x = this.x - 1;
-  }
+function Friend() {
+  this.x = this.x - 1;
 }
 ```
 
@@ -141,15 +139,18 @@ note: I used the worried face, not sad face
 cuz impure functions cause you to worry about side-effects & unpredictability
 
 ---
+
 template: components-react-section
 
 ## Inputs
 
 ---
+
 template: module-section
 layout: true
 
 # Components + React
+
 ## Inputs
 
 ---
@@ -157,32 +158,41 @@ layout: true
 > Conceptually, components are like JavaScript functions. They accept arbitrary inputs (called “props”) and return React elements describing what should appear on the screen.
 
 .footnote[
-  https://reactjs.org/docs/
+https://reactjs.org/docs/
 ]
 
-
 ---
+
 template: level-3
 layout: true
+
 # Components + React
+
 ## Inputs
+
 ### props
 
 ---
+
 class: bg-contain
 background-image: url('images/drawings/loop-1.jpg')
+
+TODO: redraw props as inputs to function
 
 ---
 
 ```jsx
-class Friend extends React.Component {
-  render() {
-*    console.log(this.props.name, this.props.url);
-  }
+function Friend(props) {
+*  console.log(props.name, props.url);
 }
 ```
 
+???
+
+- taking in props
+
 ---
+
 template: components-react-section
 layout: false
 
@@ -190,38 +200,45 @@ layout: false
 
 ???
 
-
 How do we actually get something on the screen?
 
-we know it goes in render()
+we know it goes in our function
 
 but what actually renders markup?
 
 ---
+
 template: module-section
 layout: false
 
 # Components + React
+
 ## Output
 
 ### React.createElement()
 
 ---
+
 template: level-3
 layout: true
+
 # Components + React
+
 ## Output
+
 ### createElement()
 
 ---
 
 ```jsx
-class Friend extends React.Component {
-  render() {
-    return React.createElement('div');
-  }
+function Friend() {
+  return React.createElement('div');
 }
 ```
+
+???
+
+create a simple element
 
 --
 
@@ -229,13 +246,15 @@ class Friend extends React.Component {
 <div />
 ```
 
+???
+
+emits a div
+
 ---
 
 ```jsx
-class Friend extends React.Component {
-  render() {
-    return React.createElement('button');
-  }
+function Friend() {
+  return React.createElement('button');
 }
 ```
 
@@ -243,13 +262,15 @@ class Friend extends React.Component {
 <button />
 ```
 
+???
+
+other element types
+
 ---
 
 ```jsx
-class Friend extends React.Component {
-  render() {
-    return React.createElement('div', { id: 'friend-wrapper'});
-  }
+function Friend() {
+  return React.createElement('div', { id: 'friend-wrapper' });
 }
 ```
 
@@ -259,15 +280,17 @@ class Friend extends React.Component {
 
 ???
 
-can pass as many props as you want
+- 2nd argument (optional): "props"
+
+- props to apply to rendered element
+
+- pass as many props as you want
 
 ---
 
 ```jsx
-class Friend extends React.Component {
-  render() {
-    return React.createElement('div', { id: 'friend-wrapper'}, 'Hi!');
-  }
+function Friend() {
+  return React.createElement('div', { id: 'friend-wrapper' }, 'Hi!');
 }
 ```
 
@@ -275,17 +298,21 @@ class Friend extends React.Component {
 <div id="friend-wrapper">Hi!</div>
 ```
 
+???
+
+- 3rd arg (optional): children
+
+- text node, in this example
+
 ---
 
 ```jsx
-class Friend extends React.Component {
-  render() {
-    return React.createElement(
-      'div', 
-      { id: 'friend-wrapper'},
-*     this.props.name
-    );
-  }
+function Friend(props) {
+  return React.createElement(
+    'div',
+    { id: 'friend-wrapper'},
+*   props.name
+  );
 }
 ```
 
@@ -295,37 +322,42 @@ class Friend extends React.Component {
 
 ???
 
-**Outputs are re-rendered as their inputs change**
+- props as text node!
 
-React handles this for you!
+- **Outputs are re-rendered as their inputs change**
 
+- React handles this for you!
 
 ---
+
 template: level-3
 layout: true
+
 # Components + React
+
 ## Output
+
 ### render()
 
 ---
+
 class: bg-contain
 background-image: url('images/drawings/loop-1.jpg')
+
+TODO: redraw this image, or remove this slide
 
 ???
 
 they call this one-way data flow
 
-
 ---
 
 ```jsx
-class Friend extends React.Component {
-  render() {
-    if (this.props.name === 'Potatoes') {
-      return React.createElement('div', null, 'We`re best friends!');
-    }
-    return React.createElement('div', null, 'We`re not best friends.');
+function Friend(props) {
+  if (props.name === 'Potatoes') {
+    return React.createElement('div', null, 'We`re best friends!');
   }
+  return React.createElement('div', null, 'We`re not best friends.');
 }
 ```
 
@@ -341,6 +373,10 @@ we can do things like conditional rendering
 <div>We`re best friends!</div>
 ```
 
+???
+
+- shows when name is Potatoes
+
 --
 
 ```html
@@ -349,17 +385,17 @@ we can do things like conditional rendering
 
 ???
 
+- shows in other cases
+
 ---
 
 ```jsx
-class Friend extends React.Component {
-  render() {
-    return React.createElement('div', null,
-      React.createElement('h1', null, 
-        'Hello, ' + this.props.name
-      )
-    );
-  }
+function Friend(props) {
+  return React.createElement(
+    'div',
+    null,
+    React.createElement('h1', null, 'Hello, ' + props.name)
+  );
 }
 ```
 
@@ -371,7 +407,9 @@ class Friend extends React.Component {
 
 ???
 
-we can also nest elements
+- nest calls to React.createElement
+
+- emits nested elements
 
 ...
 
@@ -409,25 +447,34 @@ here's what our createElement statement looks like for this -
 
 ---
 
+class: no-footer, medium
+
 ```jsx
-class Friend extends React.Component {
-  render() {
-    return React.createElement('div', { id: 'friend' },
-      React.createElement('div', { id: 'title' },
-        React.createElement('h1', null, this.props.name),
-        React.createElement('h2', null, this.props.age)
-      ),
-      React.createElement('div', { id: 'photo' },
-        React.createElement('a', { 
-          href: '/friends/' + this.props.id },
-          React.createElement('img', {
-            src: this.props.profileImageUrl,
-            alt: this.props.name,
-          })
-        )
+function Friend(props) {
+  return React.createElement(
+    'div',
+    { id: 'friend' },
+    React.createElement(
+      'div',
+      { id: 'title' },
+      React.createElement('h1', null, props.name),
+      React.createElement('h2', null, props.age)
+    ),
+    React.createElement(
+      'div',
+      { id: 'photo' },
+      React.createElement(
+        'a',
+        {
+          href: '/friends/' + props.id,
+        },
+        React.createElement('img', {
+          src: props.profileImageUrl,
+          alt: props.name,
+        })
       )
     )
-  }
+  );
 }
 ```
 
@@ -442,18 +489,23 @@ I'd even describe it as "barfy"
 this is where another library comes in
 
 ---
+
 template: module-section
 layout: false
 
 # Components + React
+
 ## Output
 
 ### JSX
 
 ---
+
 template: level-3
 layout: true
+
 # Components + React
+
 ## Output
 
 ### JSX
@@ -477,43 +529,36 @@ here's what it looks like
 ---
 
 ```jsx
-class Friend extends React.Component {
-  render() {
-    return React.createElement('div');
-  }
+function Friend() {
+  return React.createElement('div');
 }
 ```
 
 ???
 
-An example from earlier.
-
+as createElement: An example from earlier.
 
 --
 
 ```jsx
-class Friend extends React.Component {
-  render() {
-    return <div />;
-  }
+function Friend() {
+  return <div />;
 }
 ```
 
 ???
 
-Looks like the markup we want to render!
+as jsx: Looks like the markup we want to render!
 
 ---
 
 ```jsx
-class Friend extends React.Component {
-  render() {
-    return React.createElement('div', null,
-      React.createElement('h1', null, 
-        'Hello, ' + this.props.name
-      )
-    );
-  }
+function Friend(props) {
+  return React.createElement(
+    'div',
+    null,
+    React.createElement('h1', null, 'Hello, ' + props.name)
+  );
 }
 ```
 
@@ -521,19 +566,15 @@ class Friend extends React.Component {
 
 another example - more complicated
 
----
+--
 
 ```jsx
-class Friend extends React.Component {
-  render() {
-    return (
-      <div>
-        <h1>
-          {this.props.name}
-        </h1>
-      </div>
-    );
-  }
+function Friend(props) {
+  return (
+    <div>
+      <h1>Hello, {props.name}</h1>
+    </div>
+  );
 }
 ```
 
@@ -555,25 +596,34 @@ it's like a horror film from 2004.
 
 ---
 
+class: no-footer, medium
+
 ```jsx
-class Friend extends React.Component {
-  render() {
-    return React.createElement('div', { id: 'friend' },
-      React.createElement('div', { id: 'title' },
-        React.createElement('h1', null, this.props.name),
-        React.createElement('h2', null, this.props.age)
-      ),
-      React.createElement('div', { id: 'photo' },
-        React.createElement('a', { 
-          href: '/friends/' + this.props.id },
-          React.createElement('img', {
-            src: this.props.profileImageUrl,
-            alt: this.props.name,
-          })
-        )
+function Friend(props) {
+  return React.createElement(
+    'div',
+    { id: 'friend' },
+    React.createElement(
+      'div',
+      { id: 'title' },
+      React.createElement('h1', null, props.name),
+      React.createElement('h2', null, props.age)
+    ),
+    React.createElement(
+      'div',
+      { id: 'photo' },
+      React.createElement(
+        'a',
+        {
+          href: '/friends/' + props.id,
+        },
+        React.createElement('img', {
+          src: props.profileImageUrl,
+          alt: props.name,
+        })
       )
     )
-  }
+  );
 }
 ```
 
@@ -584,22 +634,20 @@ remember our most complicated createElement example ?
 ---
 
 ```jsx
-class Friend extends React.Component {
-  render() {
-    return (
-      <div id="friend">
-        <div id="title">
-          <h1>{this.props.name}</h1>
-          <h2>{this.props.age}</h2>
-        </div>
-        <div id="photo">
-          <a href={'/friends/' + this.props.id} >
-            <img src={this.props.profileImageUrl} alt={this.props.name} />
-          </a>
-        </div>
+function Friend(props) {
+  return (
+    <div id="friend">
+      <div id="title">
+        <h1>{props.name}</h1>
+        <h2>{props.age}</h2>
       </div>
-    );
-  }
+      <div id="photo">
+        <a href={'/friends/' + props.id}>
+          <img src={props.profileImageUrl} alt={props.name} />
+        </a>
+      </div>
+    </div>
+  );
 }
 ```
 
@@ -628,6 +676,7 @@ REPEAT THEIR ANSWER!!!!
 #### Separation Of Concerns
 
 ---
+
 class: bg-contain
 background-image: url('images/drawings/slicing-horizontal.jpg')
 
@@ -638,6 +687,7 @@ React components with JSX look like HTML + JS
 the instinct is to separate them
 
 ---
+
 class: no-footer
 
 #### Separation Of Technologies
@@ -656,8 +706,8 @@ It's that friend
 
 or that list of friends
 
-
 ---
+
 class: bg-contain
 background-image: url('images/drawings/slicing-vertical.jpg')
 
@@ -675,7 +725,6 @@ The rub...
 
 #### Browsers Just Don't Understand
 
-
 ???
 
 So we have to transpile.
@@ -687,22 +736,20 @@ But remember, we're already using webpack to minimize our dependencies from npm
 ---
 
 ```jsx
-class Friend extends React.Component {
-  render() {
-    return (
-      <div id="friend">
-        <div id="title">
-          <h1>{this.props.name}</h1>
-          <h2>{this.props.age}</h2>
-        </div>
-        <div id="photo">
-          <a href={'/friends/' + this.props.id} >
-            <img src={this.props.profileImageUrl} alt={this.props.name} />
-          </a>
-        </div>
+function Friend(props) {
+  return (
+    <div id="friend">
+      <div id="title">
+        <h1>{props.name}</h1>
+        <h2>{props.age}</h2>
       </div>
-    );
-  }
+      <div id="photo">
+        <a href={'/friends/' + props.id}>
+          <img src={props.profileImageUrl} alt={props.name} />
+        </a>
+      </div>
+    </div>
+  );
 }
 ```
 
@@ -712,28 +759,36 @@ Does anyone want to guess what this transpiles to?
 
 ---
 
+class: no-footer, medium
+
 ```jsx
-class Friend extends React.Component {
-  render() {
-    return React.createElement('div', { id: 'friend' },
-      React.createElement('div', { id: 'title' },
-        React.createElement('h1', null, this.props.name),
-        React.createElement('h2', null, this.props.age)
-      ),
-      React.createElement('div', { id: 'photo' },
-        React.createElement('a', { 
-          href: '/friends/' + this.props.id },
-          React.createElement('img', {
-            src: this.props.profileImageUrl,
-            alt: this.props.name,
-          })
-        )
+function Friend(props) {
+  return React.createElement(
+    'div',
+    { id: 'friend' },
+    React.createElement(
+      'div',
+      { id: 'title' },
+      React.createElement('h1', null, props.name),
+      React.createElement('h2', null, props.age)
+    ),
+    React.createElement(
+      'div',
+      { id: 'photo' },
+      React.createElement(
+        'a',
+        {
+          href: '/friends/' + props.id,
+        },
+        React.createElement('img', {
+          src: props.profileImageUrl,
+          alt: props.name,
+        })
       )
     )
-  }
+  );
 }
 ```
-
 
 ---
 
@@ -741,17 +796,20 @@ template: exercise
 layout: false
 
 # Exercise 3
+
 ## Modern JavaScript: Working With Variables
 
 ???
 
-instructor-led, follow along
+New features to make it easier to work with objects
 
 ---
+
 template: exercise
 layout: false
 
 # Exercise 4
+
 ## JSX Fundamentals
 
 ???

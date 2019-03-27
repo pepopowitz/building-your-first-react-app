@@ -1,12 +1,27 @@
 # Hooks
 
 - lead with hooks for useState
-- lead with hooks for useEffect
-- Move classes to a "legacy" section
-- Make sure all code & slides are functions until legacy
+  Note: also talk about functional updater (setValue(c => c + 1))
+
+  Dan Abramov: When setting a state variable depends on the current value of another state variable, you might want to try replacing them both with useReducer. https://overreacted.io/a-complete-guide-to-useeffect/
+
+  Good example of useReducer: https://codesandbox.io/s/xzr480k0np
+
 - Rewrite Events
+  Make sure I mention that you can hook up an event like this:
+  `onClick={value.onThemeChanged}`
 - remove old hooks section
-- write "legacy" section
+- hooks mentions in talk
+
+  after useContext:
+  "we've looked at three different hooks, ..."
+  why?
+  https://reactjs.org/docs/hooks-intro.html#motivation
+  rules
+  https://reactjs.org/docs/hooks-rules.html
+  custom hooks
+
+- rewrite legacy talk
 
 # Talk
 
@@ -22,20 +37,20 @@
 
 - Modern JS exercises need a "Welcome to JavaScript" slide at the end, where I put on a cowboy hat, say "welcome to javascript", show a slide with a wild wild west scene, and pretend to shoot a six-gun (with sound-effect!!!!)
 
-- Redo npm growth graph
+- Modern JS: give guidance/recap after each exercise.
+  - ex 1: "we'll use default in most cases, named when a file does/could do multiple things."
+    - some people prefer always using named for refactoring/finding function names
 
-- stateless functional -> functional
+* Redo npm growth graph
+
+* stateless functional -> functional
+
+* talk about async & waiting in testing interactions
+  https://testing-library.com/docs/api-async#wait
 
 # maybe
 
 - Slide downloads? tweet if you do.
-
-- Talk about forms? right after state conversation?
-
-- Add a slight delay to the API so you can see loading
-
-  - there is a setting in json-server for this
-  - `--delay 500`
 
 - Add time for 20 minutes? of questions at the end
 
@@ -72,6 +87,40 @@
 - At least one place has the wrong name of prevState/prevProps. Check them!
 
 - Many modern JS features can be removed from "big up-front" exercises! Object destructuring, array destructuring, implicit return can all be held back until they see code without them - and sprinkle them in when they come up (just mention them)! There are probably other features that could do the same!
+
+---
+
+Things I need before exercise 5:
+
+X modules
+X fat arrows
+
+Array.map
+ternary
+
+things to introduce later:
+
+implicit return - no, just avoid it until I _need_ it later
+
+1: Modern JS: Modules & fat-arrow
+2: Component worksheets
+3: Modern JS: Transforming var's (was 4)
+4: JSX Fundamentals (was 5)
+5: What can a component render? (was 6)
+6: Props.children (was 8)
+7: CSS (was 10)
+8: React Router (was 11)
+9: Managing component state (was 12)
+10: Loading data (was 14)
+11: React Context (was 15)
+12: Modern JS: Class syntax (was 3)
+13: Converting Components (was 7)
+15: Convert useState to setState (new)
+16: Convert useEffect to lifecycles (new)
+17: Testing component render
+18: Testing component interactions
+
+---
 
 # Schedule
 
