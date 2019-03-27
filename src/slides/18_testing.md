@@ -164,7 +164,7 @@ you might make assertions against what was rendered & found
 template: exercise
 layout: false
 
-# Exercise 17
+# Exercise 16
 ## Testing Component Render
 
 ---
@@ -197,7 +197,7 @@ using fireEvent.
 template: exercise
 layout: false
 
-# Exercise 18
+# Exercise 17
 ## Testing Component Interactions
 
 ---

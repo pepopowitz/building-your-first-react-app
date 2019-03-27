@@ -14,16 +14,16 @@ Slides: 04/History
 
 ---
 
-(15m)
+(5m)
 Slides: 05/React
 
 ---
 
-(20m)
+(15m)
 Slides: 06/JavaScript
 5m
 Ex: 01/Modern JS
-15m
+10m
 
 ---
 
@@ -35,25 +35,21 @@ Ex: 02/Identifying Components
 
 ---
 
-(45m)
+(40m)
 Slides: 08/Components + React
-5m
-Ex: 12/Class Syntax
 10m
-Ex: 04/Modern JavaScript: Working With Objects
+Ex: 04/Modern JavaScript: Working With Variables
 10m
 Ex: 05/JSX Fundamentals
 20m
 
 ---
 
-(50m)
+(40m)
 Slides: 09/Components + React + JSX
 20m
-Ex: 06/render() Results
+Ex: 06/what can a component render?
 20m
-Ex: 13/Converting components
-10m
 
 ---
 

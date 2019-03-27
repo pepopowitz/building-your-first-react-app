@@ -50,7 +50,7 @@ JavaScript
     webpack
     es-modern
   Features
-    Exercise 1 - Modern JS - modules & fat-arrow
+    Exercise 1 - Modern JS: Modules
 
 Components
   Component Mindset

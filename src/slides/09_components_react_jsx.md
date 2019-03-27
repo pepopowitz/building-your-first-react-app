@@ -1,4 +1,3 @@
-
 template: module-title
 layout: false
 
@@ -14,20 +13,22 @@ name: components-react-jsx-section
 
 ---
 
-## render()
+## A component can `return` 5\* things
 
 ???
 
-can return five things*
+can return five things\*
 
 (actually more but we're only going to talk about 5)
 
 ---
+
 template: module-section
 layout: true
 
 # Components + React + JSX
-## render()
+
+## Can `return`
 
 ---
 
@@ -36,38 +37,34 @@ layout: true
 --
 
 ```jsx
-class Friend extends React.Component {
-  render() {
-*   return (
-*     <div>
-*       {this.props.name}
-*     </div>
-*   );
-  }
+function Friend(props) {
+  return (
+*   <div>
+*     {props.name}
+*   </div>
+  );
 }
 ```
 
 ???
-render a DOM node
+
+return a DOM node
 
 ---
 
 ### 1. Element/React Component
 
-
 ```jsx
-class Friend extends React.Component {
-  render() {
-*   return (
-*     <FriendImage friend={this.props.friend} />
-*   );
-  }
+function Friend(props) {
+  return (
+*   <FriendImage friend={props.friend} />
+  );
 }
 ```
 
 ???
 
-render another user-defined component.
+return another user-defined component.
 
 ---
 
@@ -76,19 +73,17 @@ render another user-defined component.
 --
 
 ```jsx
-class FriendsList extends React.Component {
-  render() {
-*   return [
-*     <FriendImage friend={this.props.friendA} />,
-*     <FriendImage friend={this.props.friendB} />,
-*   ]
-  }
+function Friend(props) {
+* return [
+*   <FriendImage friend={props.friendA} />,
+*   <FriendImage friend={props.friendB} />,
+* ]
 }
 ```
 
 ???
 
-Let you return multiple elements from render
+Let you return multiple elements
 
 it's more valuable than you think
 
@@ -99,15 +94,12 @@ this example is not something you'll do a lot of...
 ### 2. Array
 
 ```jsx
-class FriendsList extends React.Component {
-  render() {
-*   return this.props.friends.map(friend =>
-*     <Friend name={friend.name} />
-*   );
-  }
+function Friend(props) {
+* return props.friends.map(friend =>
+*   <Friend name={friend.name} />
+* );
 }
 ```
-
 
 ???
 
@@ -124,17 +116,16 @@ mapping from an array to an array of react components.
 ```jsx
 import React, { Fragment } from 'react';
 
-class FriendsList extends React.Component {
-  render() {
-*   return (
-*     <Fragment>
-*       <FriendImage friend={this.props.friendA} />
-*       <FriendImage friend={this.props.friendB} />
-*     </Fragment>
-*   );
-  }
+function Friend(props) {
+  return (
+*   <Fragment>
+*     <FriendImage friend={props.friendA} />
+*     <FriendImage friend={props.friendB} />
+*   </Fragment>
+  );
 }
 ```
+
 ???
 
 Nicer syntax than returning an array,
@@ -147,15 +138,37 @@ It used to be that you had to wrap things in a div, instead of a fragment (pollu
 
 ---
 
+---
+
+### 3. Fragment
+
+```jsx
+import React from 'react';
+
+function Friend(props) {
+  return (
+*   <>
+*     <FriendImage friend={props.friendA} />
+*     <FriendImage friend={props.friendB} />
+*   </>
+  );
+}
+```
+
+???
+
+Shortcut for rendering a fragment
+
+- don't need to import Fragment
+- "empty" tag
+
 ### 4. String/Number
 
 --
 
 ```jsx
-class Friend extends React.Component {
-  render() {
-*   return this.props.name;
-  }
+function Friend(props) {
+* return props.name;
 }
 ```
 
@@ -170,10 +183,8 @@ These are rendered as text nodes in the DOM.
 --
 
 ```jsx
-class Friend extends React.Component {
-  render() {
-*   return null;
-  }
+function Friend() {
+* return null;
 }
 ```
 
@@ -192,13 +203,11 @@ you WILL do this, though
 ### 5. null
 
 ```jsx
-class Friend extends React.Component {
-  render() {
-*   if (this.props.isLoading) {
-*     return null;
-*   }
-    return <div>{this.props.name}</div>
-  }
+function Friend(props) {
+* if (props.isLoading) {
+*   return null;
+* }
+  return <div>{props.name}</div>
 }
 ```
 
@@ -207,10 +216,12 @@ class Friend extends React.Component {
 early-exit from a component
 
 ---
+
 template: exercise
 layout: false
 
 # Exercise 5
+
 ## What can a component render?
 
 ???
@@ -218,16 +229,19 @@ layout: false
 the different types of things a component can render
 
 ---
+
 template: components-react-jsx-section
 layout: false
 
 ## Common Errors
 
 ---
+
 template: module-section
 layout: true
 
 # Components + React + JSX
+
 ## Common Errors
 
 ---
@@ -235,26 +249,26 @@ layout: true
 ### Component Names Must Be Capitalized
 
 .error[
+
 > The tag &lt; friendsList &gt; is unrecognized in this browser. If you meant to render a React component, start its name with an uppercase letter.`
-]
+> ]
 
 ---
 
 ### Components Must Return Something
 
 .error[
+
 > Nothing was returned from render. This usually means a return statement is missing. Or, to render nothing, return null.`
-]
+> ]
 
 ---
 
 ### Components Must Return Something
 
 ```jsx
-export default function(props) {
-  <div>
-    {props.name}
-  </div>
+function Friend(props) {
+  <div>{props.name}</div>;
 }
 ```
 
@@ -269,12 +283,8 @@ the problem?
 ### Components Must Return Something
 
 ```jsx
-export default function(props) {
-  return (
-    <div>
-      {props.name}
-    </div>
-  );
+function Friend(props) {
+  return <div>{props.name}</div>;
 }
 ```
 
@@ -288,11 +298,10 @@ it's not actually RETURNING the jsx.
 
 ```jsx
 export default function(props) {
-  return 
+  return
     <div>
       {props.name}
-    </div>
-  ;
+    </div>;
 }
 ```
 

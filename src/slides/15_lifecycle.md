@@ -177,7 +177,7 @@ There are others, but they are rarely used. These are all you need to know for t
 template: exercise
 layout: false
 
-# Exercise 11
+# Exercise 10
 
 ## Loading Data
 
