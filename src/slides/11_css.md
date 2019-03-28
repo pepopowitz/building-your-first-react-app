@@ -17,9 +17,13 @@ name: css-section
 
 ???
 
+most important thing to know:
+
 gone are the days of one massive stylesheet for an entire app
 
 with react's focus on components, we want to put our styles with our components.
+
+...
 
 A few different approaches.
 
@@ -61,7 +65,9 @@ friend.jsx
 
 ???
 
-**className**
+- css file: specific to friend component
+- friend component imports css file
+- className refers to class from .css file
 
 Note that this works because we're using **webpack with style-loader**
 
@@ -101,6 +107,10 @@ class: no-footer
 [CSS Modules](https://github.com/css-modules/css-modules)
 ]
 
+???
+
+the problems css-modules aims to solve:
+
 ---
 
 ```css
@@ -128,7 +138,11 @@ friend.jsx
 
 ???
 
-what it looks like in your code
+what it looks like in your code:
+
+- css file specific to friend
+- import into component **as default dep**
+- reference classname as a property on styles
 
 ---
 
@@ -154,6 +168,8 @@ HTML
 ???
 
 what gets shipped to the browser
+
+- name-mangled
 
 ---
 
@@ -191,9 +207,10 @@ function Friend({ name }) {
 
 ???
 
-styles are in the component!!!
-
-tagged template literals
+- import styled
+- styles are in the component!
+- tagged template literal to create styled component
+- styled component in return statement
 
 ---
 
@@ -258,6 +275,10 @@ class: no-footer
 - [Glamor](https://github.com/threepointone/glamor)
 - [Glamorous](https://github.com/paypal/glamorous)
 - [JSS](https://github.com/cssinjs/jss)
+
+???
+
+soooo many ways
 
 ---
 

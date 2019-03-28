@@ -331,4 +331,6 @@ export default function(props) {
 
 we need parens on the same line, to tell it not to just terminate that statement.
 
+with modern editors this is harder to do now than it was a year ago, but still something to be aware of.
+
 ---

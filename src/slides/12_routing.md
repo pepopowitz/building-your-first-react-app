@@ -53,6 +53,12 @@ function App() {
 }
 ```
 
+???
+
+- imports
+- browserrouter wrapper
+- routes specify which components handle which urls
+
 ---
 
 ### Routes Are Components
@@ -68,13 +74,13 @@ import { BrowserRouter, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <BrowserRouter>
+*   <BrowserRouter>
       <div className="App">
 *       <Route exact path="/" component={FriendsList} />
 *       <Route path="/lists/:id" component={ListDetail} />
 *       <Route path="/friends/:id" component={FriendDetail} />
       </div>
-    </BrowserRouter>
+*   </BrowserRouter>
   );
 }
 ```
@@ -113,7 +119,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 
 ...
 
-look - the router/route components are in the "render" method
+look - the router/route components are in the return statement
 
 It's a subtle difference
 
@@ -198,6 +204,11 @@ layout: true
   />
 ```
 
+???
+
+- Which url is covered
+- can be static
+
 --
 
 ```jsx
@@ -206,6 +217,10 @@ layout: true
   component={ListDetail}
   />
 ```
+
+???
+
+- or can be dynamic, with arguments in it
 
 ---
 
@@ -217,6 +232,10 @@ layout: true
 * component={ListDetail}
   />
 ```
+
+???
+
+which component handles this route?
 
 ---
 
@@ -231,6 +250,10 @@ layout: true
 ```
 
 ???
+
+does the path need to match exactly?
+
+without this, the root path would _always_ match.
 
 ...
 
@@ -251,6 +274,10 @@ function FriendInList({ friend }) {
   return <Link to={'/friends/' + friend.id}>{friend.name}</Link>;
 }
 ```
+
+???
+
+effectively an anchor/href
 
 ---
 
@@ -274,7 +301,8 @@ function FriendInList({ friend }) {
 
 ???
 
-like a link, but it also sets an "active" class when it is selected.
+- like a link, but it also sets an "active" class when it is selected.
+- useful in navigation where you want to identify current page
 
 ---
 
@@ -327,9 +355,10 @@ layout: true
 
 ???
 
-blocking navigation;
+can use to:
 
-animated transitions with react-transition-group
+- block navigation (i.e. not authorized)
+- animate transitions
 
 ---
 
@@ -339,6 +368,7 @@ animated transitions with react-transition-group
 
 ???
 
-accessibility
+- written by co-author of react router
+- focused on accessibility
 
 ---

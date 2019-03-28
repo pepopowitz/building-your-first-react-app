@@ -16,6 +16,8 @@ name: props-section
 class: bg-contain
 background-image: url('images/drawings/loop-1.jpg')
 
+TODO: replace this image (props as inputs)
+
 ???
 
 Our Component Inputs
@@ -30,9 +32,6 @@ Our Component Inputs
 function Friend(props) {
 * props.name = 'Mr. Cat The Mystery Cat';
 
-  if (props.isLoading) {
-    return null;
-  }
   return <div>{props.name}</div>
 }
 ```
@@ -49,12 +48,13 @@ it's probably state (not a prop)
 
 ???
 
-Depends on how you've implemented your component.
+We've seen in some examples already
 
 --
 
 ```jsx
-function Friend(props) {
+*function Friend(props) {
+
   if (props.isLoading) {
     return null;
   }
@@ -64,7 +64,9 @@ function Friend(props) {
 
 ???
 
-stateless function
+`props` arg is passed in
+
+and it contains a property for each individual prop
 
 ---
 
@@ -72,7 +74,9 @@ stateless function
 
 ```jsx
 function Friend(props) {
+
 * const { isLoading, name } = props;
+
   if (isLoading) {
     return null;
   }
@@ -90,6 +94,7 @@ object destructuring
 
 ```jsx
 *function Friend({ isLoading, name }) {
+
   if (isLoading) {
     return null;
   }
@@ -103,26 +108,6 @@ argument destructuring
 
 ---
 
-## Syntax
-
-```jsx
-class Friend extends React.Component {
-  render() {
-*   const { isLoading, name } = this.props;
-    if (isLoading) {
-      return null;
-    }
-    return <div>{name}</div>
-  }
-}
-```
-
-???
-
-class syntax + destructuring
-
----
-
 ## Default Props
 
 ???
@@ -130,50 +115,6 @@ class syntax + destructuring
 specify defaults for props
 
 --
-
-```jsx
-class FriendProfile extends React.Component {
-  render() {
-    const { name, image } = this.props;
-
-    return <img alt={name} src={image} />
-  }
-}
-
-*FriendProfile.defaultProps = {
-* image: 'http://placekitten.com/200'
-*}
-```
-
-???
-
-class, set afterward
-
----
-
-## Default Props
-
-```jsx
-class FriendProfile extends React.Component {
-  render() {
-    const { name, image } = this.props;
-
-    return <img alt={name} src={image} />
-  }
-
-* static defaultProps = {
-*   image: 'http://placekitten.com/200'
-* }
-}
-```
-
-???
-
-class, static method
-
----
-
-## Default Props
 
 ```jsx
 function FriendProfile({ name, image }) {
@@ -187,7 +128,7 @@ function FriendProfile({ name, image }) {
 
 ???
 
-stateless function
+assign to the function afterward
 
 ---
 
@@ -222,6 +163,12 @@ Every component gets a special prop
 <Title>Hello, friends!</Title>
 ```
 
+???
+
+example: a Title component
+
+the children are everything inside of the Title element
+
 --
 
 ```jsx
@@ -230,6 +177,10 @@ function Title({ children }) {
 }
 ```
 
+???
+
+Title component gets children passed in
+
 --
 
 ```html
@@ -237,6 +188,10 @@ function Title({ children }) {
 ```
 
 ???
+
+this is what gets emitted to the DOM
+
+note the children being wrapped inside the div
 
 ...
 
@@ -276,7 +231,7 @@ layout: false
 
 ???
 
-building components that aid composability
+building components that aid composition
 
 ---
 
@@ -285,7 +240,7 @@ layout: true
 
 ---
 
-## How do we validate props?
+## Prop Validation
 
 ???
 
@@ -310,11 +265,21 @@ layout: true
 
 ### Optional
 
+???
+
+You don't need them to build an app
+
 ---
 
 ```
 npm install --save prop-types
 ```
+
+???
+
+Used to be part of React
+
+Now an external library
 
 ---
 
@@ -333,58 +298,12 @@ function FriendProfile({ name, image }) {
 
 ???
 
-stateless functional
+syntax: append after
 
 ---
 
-```jsx
-import propTypes from 'prop-types';
-
-class FriendProfile extends React.Component {
-  render() {
-    const { name, image } = this.props;
-
-    return <img alt={name} src={image} />
-  }
-}
-
-*FriendProfile.propTypes = {
-* name: propTypes.string.isRequired,
-* image: propTypes.string.isRequired,
-*}
-```
-
-???
-
-class + set after
-
----
-
-```jsx
-import propTypes from 'prop-types';
-
-class FriendProfile extends React.Component {
-  render() {
-    const { name, image } = this.props;
-
-    return <img alt={name} src={image} />
-  }
-
-* static propTypes = {
-*   name: propTypes.string.isRequired,
-*   image: propTypes.string.isRequired,
-* }
-}
-```
-
-???
-
-class + static method
-
----
-
-```javascript
-static propTypes = {
+```js
+Friends.propTypes = {
   friends: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
@@ -399,6 +318,33 @@ static propTypes = {
 arrays
 
 shapes
+
+isRequired
+
+---
+
+### Validate At Run-Time
+
+???
+
+You fire up a browser, view your component, & see an error in the console
+
+---
+
+```js
+index.js:1446 Warning: Failed prop type: The prop `age` is
+  marked as required in `FriendProfile`, but its value is `undefined`.
+    in FriendProfile (at Exercise.js:10)
+    in Friends (at Exercise.js:5)
+    in Exercise (at App.js:13)
+    in div (at App.js:12)
+    in div (at App.js:7)
+    in App (at exercise-6/index.js:6)
+```
+
+???
+
+This is what the error looks like
 
 ---
 
@@ -449,31 +395,6 @@ layout: true
 * image: string;
 *}
 
-*class FriendProfile extends React.Component<FriendProfileProps, {}> {
-  render() {
-    const { name, image } = this.props;
-
-    return <img alt={name} src={image} />
-  }
-}
-```
-
-???
-
-will give you a compile-time error if it doesn't get those types
-
-class
-
----
-
-### TypeScript
-
-```jsx
-*interface FriendProfileProps {
-* name: string;
-* image: string;
-*}
-
 *function FriendProfile(props: FriendProfileProps) {
   const { name, image } = props;
 
@@ -483,30 +404,7 @@ class
 
 ???
 
-stateless functional
-
----
-
-### Flow
-
-```jsx
-*type FriendProfileProps = {
-* name: string;
-* image: string;
-*};
-
-*class FriendProfile extends React.Component<FriendProfileProps> {
-  render() {
-    const { name, image } = this.props;
-
-    return <img alt={name} src={image} />
-  }
-}
-```
-
-???
-
-class
+will give you a **compile-time** error if it doesn't get those types
 
 ---
 
@@ -527,9 +425,11 @@ class
 
 ???
 
-stateless function
+- looks similar to ts
 
-better tooling from typescript
+- also compile-time
+
+- better tooling from typescript
 
 ...
 
