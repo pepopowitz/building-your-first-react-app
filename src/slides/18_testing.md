@@ -1,4 +1,3 @@
-
 template: module-title
 layout: false
 
@@ -21,6 +20,7 @@ name: testing-section
 .footnote[
 https://jestjs.io/
 ]
+
 ---
 
 ## Jest
@@ -35,7 +35,6 @@ describe('A set of tests', () => {
     expect(result).toEqual('a value');
   });
 });
-
 ```
 
 ???
@@ -47,8 +46,11 @@ it
 expect
 
 ---
+
 template: module-section
+
 # Testing
+
 ## Jest
 
 ### Matchers (Assertions)
@@ -86,14 +88,17 @@ https://github.com/kentcdodds/react-testing-library/
 there are 3 things you're going to do in a test using react-testing-library:
 
 ---
+
 template: module-section
 layout: true
 name: react-testing-library
 
 # Testing
+
 ## react-testing-library
 
 ---
+
 class: no-footer
 
 ### 1. Render Components
@@ -118,7 +123,7 @@ describe('FriendDetail', () => {
 
 ???
 
-you're going to render your component 
+you're going to render your component
 
 ---
 
@@ -130,7 +135,7 @@ find elements that were rendered
 
 ...
 
-and find them the way a user would - 
+and find them the way a user would -
 
 --
 
@@ -160,11 +165,17 @@ and find them the way a user would -
 
 you might make assertions against what was rendered & found
 
+- like ex 1 exists
+- there's 2 of ex 2
+- ex 3 doesn't exist
+
 ---
+
 template: exercise
 layout: false
 
 # Exercise 16
+
 ## Testing Component Render
 
 ---
@@ -187,30 +198,37 @@ describe('...', () => {
 
 ???
 
-To test interactions of components, 
+To test interactions of components,
 
-you'll fire DOM events against the elements, 
+you'll fire DOM events against the elements,
 
 using fireEvent.
 
 ---
+
 template: exercise
 layout: false
 
 # Exercise 17
+
 ## Testing Component Interactions
 
 ---
+
 template: testing-section
 
 ## Deeper Learning
 
 ---
+
 template: module-section
+
 # Testing
+
 ## Deeper Learning
 
 ### Enzyme
+
 #### http://airbnb.io/enzyme/
 
 ???
@@ -220,11 +238,15 @@ enzyme does a LOT of stuff;
 react-testing-library tries to keep the possibilities to things that users care about
 
 ---
+
 template: module-section
-# Testing 
+
+# Testing
+
 ## Deeper Learning
 
 ### Jest-DOM
+
 #### https://github.com/gnapse/jest-dom
 
 ???
@@ -232,16 +254,69 @@ template: module-section
 for more matchers that let you identify classes, attributes, things on DOM elements
 
 ---
+
 template: testing-section
 
 ## Suggestions
 
 ---
+
 template: module-section
 layout: true
 
 # Testing
+
 ## Suggestions
+
+---
+
+### Async Helpers
+
+```jsx
+  it('', async () => {
+    const context = render(<FriendDetail />);
+
+    const button = context.getByText('Details');
+
+    fireEvent.click(button);
+
+*   const details = await waitForElement(() =>
+*     context.getByText('snuggles like a champion'));
+
+    // ...
+  });
+```
+
+???
+
+specific to react-testing-library
+
+async events are usually hard to test
+
+but not with rtl
+
+- A: render
+- B: click a button
+- C: wait for an element to appear
+- D: make some assertion, ...
+
+---
+
+### Async Helpers
+
+```jsx
+  async wait
+
+  async waitForElement
+
+  async waitForDomChange
+```
+
+???
+
+Async helpers available
+
+- all wait 4500 ms by default
 
 ---
 
@@ -249,11 +324,14 @@ layout: true
 
 ???
 
+more general suggestions:
+
 testing logic outside of components is easier than testing logic inside of components
 
 ---
 
 ### Test What The User Experiences
+
 #### Not Implementation
 
 ???
@@ -265,15 +343,15 @@ Prefer testing presence of text elements
 react-testing-library forces you to do this
 
 ---
+
 class: bg-contain
 background-image: url('images/drawings/testing-pyramid.jpg')
 
 ### Write "Unigration" Tests
 
-
 ???
 
-unit tests are small 
+unit tests are small
 
 & people can be overly dogmatic about what defines a "unit"
 
@@ -282,38 +360,44 @@ integration tests are too slow
 & we can tell a lot from our app without pulling in db/api's
 
 ---
+
 class: bg-contain
 background-image: url('images/drawings/testing-pyramid-unigration.jpg')
+
 ### Write "Unigration" Tests
 
 ???
 
 somewhere in the middle of those is the "unigration" zone
 
-
 ---
+
 template: level-3
 layout: false
 class: bg-contain, no-footer
 background-image: url('images/drawings/unigration-tree-1.jpg')
 
 # Testing
-## Suggestions
-### Write "Unigration" Tests
 
+## Suggestions
+
+### Write "Unigration" Tests
 
 ???
 
 if you're trying to test that component at the top of this subtree,
 
 ---
+
 template: level-3
 layout: false
 class: bg-contain, no-footer
 background-image: url('images/drawings/unigration-tree-2.jpg')
 
 # Testing
+
 ## Suggestions
+
 ### Write "Unigration" Tests
 
 ???

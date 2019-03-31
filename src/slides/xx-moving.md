@@ -12,7 +12,7 @@ React Components are usually written with ES2015 class syntax.
 template: exercise
 layout: false
 
-# Exercise 13
+# Exercise 12
 ## Modern JavaScript: Class Syntax
 
 ???
@@ -153,8 +153,8 @@ function Friend(props) {
 template: exercise
 layout: false
 
-# Exercise 14
-## Convert A Component
+# Exercise 13
+## Converting Components
 
 ???
 

@@ -303,7 +303,7 @@ export default function ThemeSwitcher() {
 template: exercise
 layout: false
 
-# Exercise 16
+# Exercise 15
 
 ## Hooks
 

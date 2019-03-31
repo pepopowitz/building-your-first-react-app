@@ -10,8 +10,6 @@
 - Rewrite Events
   Make sure I mention that you can hook up an event like this:
   `onClick={value.onThemeChanged}`
-- remove old hooks section
-- hooks mentions in talk
 
   after useContext:
   "we've looked at three different hooks, ..."
@@ -28,10 +26,6 @@
 - fill in resources
 
 - add agenda/schedule
-
-- explain state better
-
-- context is too big of a leap. remove context & useContext; mention context as another "future". This should give me enough time to get through state AND testing, and maybe even have space at the end for questions.
 
 - Add "suitcase" conversation to drive home the putting code together that changes together. (or maybe as good practices?)
 
@@ -55,16 +49,6 @@
 - Add time for 20 minutes? of questions at the end
 
 # Exercises
-
-- replace classes with functions
-
-- write instrux for ex 1: modernjs: modules
-
-- write instrux for ex 2: identifying components
-
-- write instrux for ex 3: class syntax
-
-- write instrux for ex 4: working with objects
 
 - test windows subsystem for linux
 
@@ -153,3 +137,62 @@ break - 2:30
 s14,x13,s15 2:30-2:55
 x14 load data 2:55-3:15
 we skipped context & testing exercises & just talked through & looked at code.
+
+- state management
+- component = f(props)
+  - we were here
+- component = f(props, state)
+  - now we're here
+- what is state?
+  - drawing of props passed in & state looping
+  - passed into children as props
+    - drawing of props passed in & state looping & component boundary
+- hooks
+  - definition
+  - components are "pure" functions - hooks allow you to escape that.
+- hooks
+  - examples (useState, useEffect, useReducer, useMemo)
+- useState hook
+  - syntax (array destructuring)
+  - initial value
+  - state modifier
+    - when you call it, react will re-render the component
+  - calling from a click event
+    - example
+- exercise
+- guidance
+
+  - hooks must go at top of function & not be conditionally applied
+  - elevate state
+  - managing many state properties
+    - example of how it can get out of control
+    - solutions
+      - custom hook
+      - useReducer
+      - 3rd party library (formik)
+
+- Side Effects
+  things like loading state from an api, managing non-react deps
+- useEffect hook
+  - syntax
+    - "at time of firing effect"
+    - "at time of effect cleanup"
+    - deps array
+      - optional
+      - when to re-run effect
+      - sometimes it's an empty array
+- examples
+  - Loading Data
+    - async/await
+      - quick description (they can read later)
+    - "at time of firing effect"
+    - deps array
+  - Charting integration
+    - fire effect
+    - clean up effect
+    - deps?
+  - Sockets
+    - fire effect
+    - clean up effect
+    - deps
+- exercise: loading data

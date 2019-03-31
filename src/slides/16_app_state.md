@@ -58,7 +58,15 @@ background-image: url('images/drawings/state-tree-ctx.jpg')
 
 how context solves prop drilling
 
-sometimes the same data needs to be accessible by many components in the tree, and at different nesting levels. Context lets you “broadcast” such data, and changes to it, to all components below. Common examples where using context might be simpler than the alternatives include managing the current locale, theme, or a data cache.
+- the top-most component will use the context as a "provider"
+
+- bottom components as "consumers"
+
+- anything under provider will have access to data from this context
+
+- w/o having to have props passed in
+
+- so props don't have to be drilled
 
 ---
 
@@ -74,7 +82,7 @@ layout: true
 ### createContext()
 
 ```javascript
-const { Provider, Consumer } = React.createContext();
+const UserContext = React.createContext();
 ```
 
 ???
@@ -87,33 +95,44 @@ it's something that executes alongside your components
 
 you get a provider & a consumer
 
+- like namespacing your context
+
 ---
 
 ### Provider
 
 ```jsx
-render() {
-  <Provider value={this.state.user}>
-    <yourComponentTree />
-  </Provider>
+function App() {
+  <UserContext.Provider value={this.state.user}>
+    <MySubTree />
+  </UserContext.Provider>;
 }
 ```
 
 ???
 
+-
+
 the provider will get wrapped around your component tree
+
+- value = the data you want to pass to consumers
 
 ---
 
 ### Provider
 
 ```jsx
-render() {
-  <Provider value={{
-      user: this.state.user,
-      onThemeChanged: this.handleThemeChanged }}>
-    <yourComponentTree />
-  </Provider>
+function App() {
+  return (
+    <UserContext.Provider
+      value={{
+        user: this.state.user,
+        onThemeChanged: this.handleThemeChanged,
+      }}
+    >
+      <MySubTree />
+    </UserContext.Provider>
+  );
 }
 ```
 
@@ -128,10 +147,12 @@ including **actions** that will change the value
 ### Consumer
 
 ```jsx
-render() {
-  <Consumer>
-    {value => <div>{value.userName}</div>}
-  </Consumer>
+import React, { useContext } from 'react';
+
+function UserName() {
+  const value = useContext(UserContext);
+
+  return <div>{value.user.name}</div>;
 }
 ```
 
@@ -141,22 +162,22 @@ and then all the places in the subtree that you need access to the state, you ha
 
 and they just want to know what the value of the context is
 
-uses a pattern called render props
+using a hook named useContext
 
 ---
 
 ### Consumer
 
 ```jsx
-render() {
-  <Consumer>
-    {value => (
-      <div>
-        Current User: {value.userName}
-        <button onClick={value.onUserChanged}>Change User</button>
-      </div>
-    )}
-  </Consumer>
+function CurrentUser() {
+  const value = useContext(UserContext);
+
+  return (
+    <div>
+      Current User: {value.userName}
+      <button onClick={value.onUserChanged}>Change User</button>
+    </div>
+  );
 }
 ```
 
@@ -224,11 +245,9 @@ https://mobx.js.org/
 
 ???
 
-reactive, observables
+reactive programming, observables
 
 updates get automatically applied
-
-similar concept to rxjs
 
 ---
 
