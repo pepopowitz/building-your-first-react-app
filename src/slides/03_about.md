@@ -173,7 +173,7 @@ class: schedule
 ### Schedule
 
 - .highlight[9:30 - 12:00] Setup, Intro, Modern JavaScript, JSX, React Components, Composition
-- .highlight[1:00 - 4:30] CSS, Routing, State Management, Loading Data, Testing
+- .highlight[1:00 - 4:30] CSS, Routing, State Management, Loading Data, Legacy Components, Testing
 
 ???
 

@@ -14,14 +14,21 @@
 
 - [x] stateless functional -> functional
 
-- [ ] write legacy sections
+- [x] write legacy sections
 
-  - [ ] Modern JS: Class syntax (was 3)
-  - [ ] Converting Components (was 7)
-  - [ ] Convert useState to setState (new)
-  - [ ] Convert useEffect to lifecycles (new)
+  - [x] Modern JS: Class syntax (was 3)
+  - [x] Converting Components (was 7)
+  - [x] Convert useState to setState (new)
+  - [x] Convert useEffect to lifecycles (new)
 
-- [ ] Redo npm growth graph
+Image redos
+
+- [ ] npm growth graph
+- [ ] Props as inputs to functions
+- [ ] (component as f(props))
+- [ ] (component as f(props, state))
+- [ ] (props AND state, with state looping, & component boundary)
+- [ ] Welcome to JavaScript
 
 # maybe
 
@@ -38,26 +45,6 @@
 - [ ] Modern JS: give guidance/recap after each exercise.
   - ex 1: "we'll use default in most cases, named when a file does/could do multiple things."
     - some people prefer always using named for refactoring/finding function names
-
----
-
-1: Modern JS: Modules & fat-arrow
-2: Component worksheets
-3: Modern JS: Transforming var's (was 4)
-4: JSX Fundamentals (was 5)
-5: What can a component render? (was 6)
-6: Props.children (was 8)
-7: CSS (was 10)
-8: React Router (was 11)
-9: Managing component state (was 12)
-10: Loading data (was 14)
-11: React Context (was 15)
-12: Modern JS: Class syntax (was 3)
-13: Converting Components (was 7)
-15: Convert useState to setState (new)
-16: Convert useEffect to lifecycles (new)
-17: Testing component render
-18: Testing component interactions
 
 ---
 

@@ -332,27 +332,6 @@ function Friend(props) {
 
 ---
 
-template: level-3
-layout: true
-
-# Components + React
-
-## Output
-
-### render()
-
----
-
-class: bg-contain
-background-image: url('images/drawings/loop-1.jpg')
-
-???
-TODO: redraw this image, or remove this slide
-
-they call this one-way data flow
-
----
-
 ```jsx
 function Friend(props) {
   if (props.name === 'Potatoes') {
