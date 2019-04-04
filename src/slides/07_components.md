@@ -45,6 +45,8 @@ background-image: url('images/drawings/twitter-1.jpg')
 
 ???
 
+twitter
+
 so instead of this page having a controller & a view,
 
 ---

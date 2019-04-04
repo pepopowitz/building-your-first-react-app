@@ -1,90 +1,45 @@
-# Hooks
-
-- lead with hooks for useState
-  Note: also talk about functional updater (setValue(c => c + 1))
-
-  Dan Abramov: When setting a state variable depends on the current value of another state variable, you might want to try replacing them both with useReducer. https://overreacted.io/a-complete-guide-to-useeffect/
-
-  Good example of useReducer: https://codesandbox.io/s/xzr480k0np
-
-- Rewrite Events
-  Make sure I mention that you can hook up an event like this:
-  `onClick={value.onThemeChanged}`
-
-  after useContext:
-  "we've looked at three different hooks, ..."
-  why?
-  https://reactjs.org/docs/hooks-intro.html#motivation
-  rules
-  https://reactjs.org/docs/hooks-rules.html
-  custom hooks
-
-- rewrite legacy talk
-
 # Talk
 
-- fill in resources
+- [x] Events:
+      Make sure I mention that you can hook up an event like this:
+      `onClick={value.onThemeChanged}`
 
-- add agenda/schedule
+- [x] after useContext, deeper learning:
+      "we've looked at three different hooks, ..."
+      why?
+      https://reactjs.org/docs/hooks-intro.html#motivation
+      rules
+      https://reactjs.org/docs/hooks-rules.html
+      custom hooks
 
-- Add "suitcase" conversation to drive home the putting code together that changes together. (or maybe as good practices?)
+- [x] stateless functional -> functional
 
-- Modern JS exercises need a "Welcome to JavaScript" slide at the end, where I put on a cowboy hat, say "welcome to javascript", show a slide with a wild wild west scene, and pretend to shoot a six-gun (with sound-effect!!!!)
+- [ ] write legacy sections
 
-- Modern JS: give guidance/recap after each exercise.
-  - ex 1: "we'll use default in most cases, named when a file does/could do multiple things."
-    - some people prefer always using named for refactoring/finding function names
+  - [ ] Modern JS: Class syntax (was 3)
+  - [ ] Converting Components (was 7)
+  - [ ] Convert useState to setState (new)
+  - [ ] Convert useEffect to lifecycles (new)
 
-* Redo npm growth graph
-
-* stateless functional -> functional
-
-* talk about async & waiting in testing interactions
-  https://testing-library.com/docs/api-async#wait
+- [ ] Redo npm growth graph
 
 # maybe
 
-- Slide downloads? tweet if you do.
-
 - Add time for 20 minutes? of questions at the end
 
-# Exercises
+- [ ] Modern JS exercises need a "Welcome to JavaScript" slide at the end, where I put on a cowboy hat, say "welcome to javascript", show a slide with a wild wild west scene, and pretend to shoot a six-gun (with sound-effect!!!!)
 
-- test windows subsystem for linux
+- [ ] Add "suitcase" conversation to drive home the putting code together that changes together. (or maybe as good practices?)
 
-- test fish shell
+- [ ] fill in resources
 
-- Revisit all instructions. Add more detail & clarity.
+- [ ] add agenda/schedule
 
-- Modern JS #4 is way too fast. Slow down, talk more about what you're doing.
-
-- All Modern JS exercises need to change. More instructions, so they can see the answers for what i'm doing? Let them do it on their own? Find a way to make it more hands-on for them, easier for them to get to the answers, and still not take a lot of time.
-
-- Inconsistent names of functions - make sure I **always** name functions in examples/solutions!
-
-- In instructor notes for import/export, make sure I talk more about named vs default more!
-
-- Explain async stuff better
-
-- Ex 11 - take a look at FriendFlipper in completed/SOLUTIONS. Something might be wrong with it.
-
-- At least one place has the wrong name of prevState/prevProps. Check them!
-
-- Many modern JS features can be removed from "big up-front" exercises! Object destructuring, array destructuring, implicit return can all be held back until they see code without them - and sprinkle them in when they come up (just mention them)! There are probably other features that could do the same!
+- [ ] Modern JS: give guidance/recap after each exercise.
+  - ex 1: "we'll use default in most cases, named when a file does/could do multiple things."
+    - some people prefer always using named for refactoring/finding function names
 
 ---
-
-Things I need before exercise 5:
-
-X modules
-X fat arrows
-
-Array.map
-ternary
-
-things to introduce later:
-
-implicit return - no, just avoid it until I _need_ it later
 
 1: Modern JS: Modules & fat-arrow
 2: Component worksheets
@@ -137,62 +92,3 @@ break - 2:30
 s14,x13,s15 2:30-2:55
 x14 load data 2:55-3:15
 we skipped context & testing exercises & just talked through & looked at code.
-
-- state management
-- component = f(props)
-  - we were here
-- component = f(props, state)
-  - now we're here
-- what is state?
-  - drawing of props passed in & state looping
-  - passed into children as props
-    - drawing of props passed in & state looping & component boundary
-- hooks
-  - definition
-  - components are "pure" functions - hooks allow you to escape that.
-- hooks
-  - examples (useState, useEffect, useReducer, useMemo)
-- useState hook
-  - syntax (array destructuring)
-  - initial value
-  - state modifier
-    - when you call it, react will re-render the component
-  - calling from a click event
-    - example
-- exercise
-- guidance
-
-  - hooks must go at top of function & not be conditionally applied
-  - elevate state
-  - managing many state properties
-    - example of how it can get out of control
-    - solutions
-      - custom hook
-      - useReducer
-      - 3rd party library (formik)
-
-- Side Effects
-  things like loading state from an api, managing non-react deps
-- useEffect hook
-  - syntax
-    - "at time of firing effect"
-    - "at time of effect cleanup"
-    - deps array
-      - optional
-      - when to re-run effect
-      - sometimes it's an empty array
-- examples
-  - Loading Data
-    - async/await
-      - quick description (they can read later)
-    - "at time of firing effect"
-    - deps array
-  - Charting integration
-    - fire effect
-    - clean up effect
-    - deps?
-  - Sockets
-    - fire effect
-    - clean up effect
-    - deps
-- exercise: loading data

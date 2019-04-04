@@ -85,11 +85,13 @@ import callApi from './callApi';
 function DetailItem(props) {
   const [item, setItem] = useState({});
 
-  useEffect(async () => {
+  useEffect(() => {
+    async function load() {
+      const item = await callApi(props.id);
+      setItem(item);
+    }
 
-    const item = await callApi(props.id);
-    setItem(item);
-
+    load();
   }, []);
 
   return ( ... )
@@ -103,6 +105,8 @@ Loading data from an external source
 - callApi - an api client
 - useState - often, but not always associated with useEffect
 - async/await
+  - useEffect can only return a function or nothing
+  - so we can't mark the argument as async
 - first arg = what happens when the component mounts or the props change
 - no cleanup!
 - no props will cause it to re-fire - only fires once.

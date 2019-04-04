@@ -103,9 +103,11 @@ you get a provider & a consumer
 
 ```jsx
 function App() {
-  <UserContext.Provider value={this.state.user}>
-    <MySubTree />
-  </UserContext.Provider>;
+  return (
+    <UserContext.Provider value={this.state.user}>
+      <MyComponentTree />
+    </UserContext.Provider>
+  );
 }
 ```
 
@@ -130,7 +132,7 @@ function App() {
         onThemeChanged: this.handleThemeChanged,
       }}
     >
-      <MySubTree />
+      <MyComponentTree />
     </UserContext.Provider>
   );
 }
@@ -184,6 +186,8 @@ function CurrentUser() {
 ???
 
 for multiple things passed down via context...
+
+- note: not using fat-arrow for onClick because onUserChanged _is_ a function already
 
 ---
 
@@ -273,5 +277,30 @@ layout: true
 Component state: use setState
 
 Distant components: use context or Redux/mobx
+
+---
+
+### Read The Hooks Docs
+
+#### [reactjs.org/docs/hooks-intro.html](https://reactjs.org/docs/hooks-intro.html)
+
+???
+
+we've looked at only three hooks; docs have:
+
+- explanation of motivation
+- rules of use
+- a ton of other hooks
+- custom hooks
+
+---
+
+### `react-use`
+
+#### [streamich.github.io/react-use](http://streamich.github.io/react-use)
+
+???
+
+- a _ton_ of useful custom hooks
 
 ---

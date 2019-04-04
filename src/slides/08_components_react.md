@@ -177,6 +177,8 @@ layout: true
 class: bg-contain
 background-image: url('images/drawings/loop-1.jpg')
 
+???
+
 TODO: redraw props as inputs to function
 
 ---
@@ -344,9 +346,8 @@ layout: true
 class: bg-contain
 background-image: url('images/drawings/loop-1.jpg')
 
-TODO: redraw this image, or remove this slide
-
 ???
+TODO: redraw this image, or remove this slide
 
 they call this one-way data flow
 

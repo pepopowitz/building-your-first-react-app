@@ -273,7 +273,7 @@ layout: true
 ### Async Helpers
 
 ```jsx
-  it('', async () => {
+  it('shows details after clicking button', async () => {
     const context = render(<FriendDetail />);
 
     const button = context.getByText('Details');

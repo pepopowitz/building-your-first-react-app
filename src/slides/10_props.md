@@ -16,9 +16,8 @@ name: props-section
 class: bg-contain
 background-image: url('images/drawings/loop-1.jpg')
 
-TODO: replace this image (props as inputs)
-
 ???
+TODO: replace this image (props as inputs)
 
 Our Component Inputs
 
@@ -147,7 +146,7 @@ function FriendProfile(
 
 ???
 
-stateless function & destructuring - default arguments
+with argument destructuring
 
 ---
 
@@ -160,34 +159,40 @@ Every component gets a special prop
 --
 
 ```jsx
-<Title>Hello, friends!</Title>
-```
-
-???
-
-example: a Title component
-
-the children are everything inside of the Title element
-
---
-
-```jsx
 function Title({ children }) {
-  return <div id="title">{children}</div>;
+  return <h1 id="title">{children}</h1>;
 }
 ```
 
 ???
 
+...
+
+example: a Title component
+
 Title component gets children passed in
 
 --
 
-```html
-<div id="title">Hello, friends!</div>
+```jsx
+<Title>Hello, friends!</Title>
 ```
 
 ???
+
+...
+
+the children are everything inside of the Title element
+
+--
+
+```html
+<h1 id="title">Hello, friends!</h1>
+```
+
+???
+
+...
 
 this is what gets emitted to the DOM
 
@@ -404,7 +409,10 @@ layout: true
 
 ???
 
-will give you a **compile-time** error if it doesn't get those types
+- define interfaces of the required props
+- ts compiler becomes part of build step
+- will give you a **compile-time** error if it doesn't get those types
+- can use for more than react components
 
 ---
 

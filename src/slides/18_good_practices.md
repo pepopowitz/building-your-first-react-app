@@ -1,4 +1,3 @@
-
 template: module-title
 layout: false
 
@@ -15,21 +14,23 @@ name: good-practices-section
 ---
 
 ## create-react-app
-### https://bit.ly/create-react-app
+
+### [bit.ly/create-react-app](https://bit.ly/create-react-app)
 
 ???
 
 problem solved: setting up webpack & react & other dependencies is difficult
 
 ---
+
 layout: false
 template: module-section
 class: bg-contain, no-footer
 background-image: url('images/drawings/create-react-app.jpg')
 
 # Good Practices
-## create-react-app
 
+## create-react-app
 
 ???
 
@@ -43,17 +44,19 @@ if I were starting an app, I would use create-react-app.
 
 ---
 
-
 ## Thinking In React
 
-### https://reactjs.org/docs/thinking-in-react.html
+### [reactjs.org/docs/thinking-in-react.html](https://reactjs.org/docs/thinking-in-react.html)
 
 ???
 
 ---
+
 template: module-section
 layout: true
+
 # Good Practices
+
 ## Thinking In React
 
 ---
@@ -77,6 +80,7 @@ layout: true
 #### **Step 5:** Add Inverse Data Flow
 
 ---
+
 template: good-practices-section
 layout: true
 

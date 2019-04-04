@@ -138,8 +138,6 @@ It used to be that you had to wrap things in a div, instead of a fragment (pollu
 
 ---
 
----
-
 ### 3. Fragment
 
 ```jsx
@@ -161,6 +159,8 @@ Shortcut for rendering a fragment
 
 - don't need to import Fragment
 - "empty" tag
+
+---
 
 ### 4. String/Number
 

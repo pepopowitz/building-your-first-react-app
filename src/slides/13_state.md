@@ -34,9 +34,9 @@ name: state-section
 class: bg-contain
 background-image: url('')
 
-TODO: replace this image (component as f(props))
-
 ???
+
+TODO: replace this image (component as f(props))
 
 this is where we were
 
@@ -47,9 +47,9 @@ a component is a function of the props passed into it
 class: bg-contain
 background-image: url('')
 
-TODO: replace this image (component as f(props, state))
-
 ???
+
+TODO: replace this image (component as f(props, state))
 
 but that's not the only input to a component
 
@@ -60,9 +60,9 @@ a component is a function of props & state
 class: bg-contain
 background-image: url('')
 
-TODO: replace this image (props AND state, with state looping, & component boundary)
-
 ???
+
+TODO: replace this image (props AND state, with state looping, & component boundary)
 
 props are passed into a component
 
@@ -85,6 +85,11 @@ Someone else? It's props passed in.
 class: bg-contain
 background-image: url('images/drawings/state-turns-into-props.jpg')
 
+???
+
+- top level manages state;
+- each component down the line passes it to the next
+
 ---
 
 ## Hooks
@@ -92,6 +97,9 @@ background-image: url('images/drawings/state-turns-into-props.jpg')
 ???
 
 To manage state, we'll use a new React feature named hooks
+
+- v16.8
+- new as of ~Feb 2019
 
 ---
 
@@ -227,7 +235,9 @@ To use the state modifier,
 
 We might add an onClick handler
 
-which, when executed, calls setCount with the new value
+- when executed, calls setCount with the new value
+- fat-arrow because we pass onClick a _function_ to execute
+- if we just called setCount() directly, that would happen at render instead of click
 
 ---
 
@@ -264,7 +274,8 @@ name: state-suggestions
 
 That means never in a conditional or loop
 
-Order of calls to `useState` matters
+- Order of calls to `useState` matters
+- Hooks relies on order to keep track of each state prop - there's some magic
 
 ---
 
