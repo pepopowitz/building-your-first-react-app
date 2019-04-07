@@ -100,9 +100,7 @@ background-image: url('images/drawings/npm-chart.jpg')
 
 ???
 
-TODO: redraw npm chart
-
-(rolling 28 day downloads - drawing is based on old chart, up to >25 million)
+rolling 28 day downloads - over 25 million
 
 NPM usage is growing at a crazy rate
 

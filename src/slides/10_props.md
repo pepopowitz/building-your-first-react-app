@@ -14,10 +14,9 @@ name: props-section
 ---
 
 class: bg-contain
-background-image: url('images/drawings/loop-1.jpg')
+background-image: url('images/drawings/component-f-props.jpg')
 
 ???
-TODO: replace this image (props as inputs)
 
 Our Component Inputs
 

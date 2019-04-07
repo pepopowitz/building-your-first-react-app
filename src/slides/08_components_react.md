@@ -175,11 +175,11 @@ layout: true
 ---
 
 class: bg-contain
-background-image: url('images/drawings/loop-1.jpg')
+background-image: url('images/drawings/component-f-props.jpg')
 
 ???
 
-TODO: redraw props as inputs to function
+component = function of props, the result of which is output to browser
 
 ---
 

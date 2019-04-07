@@ -32,11 +32,9 @@ name: state-section
 ---
 
 class: bg-contain
-background-image: url('')
+background-image: url('images/drawings/component-f-props.jpg')
 
 ???
-
-TODO: replace this image (component as f(props))
 
 this is where we were
 
@@ -45,28 +43,21 @@ a component is a function of the props passed into it
 ---
 
 class: bg-contain
-background-image: url('')
+background-image: url('images/drawings/component-f-props-state.jpg')
 
 ???
-
-TODO: replace this image (component as f(props, state))
 
 but that's not the only input to a component
 
 a component is a function of props & state
 
----
+...
 
-class: bg-contain
-background-image: url('')
+distinction:
 
-???
+- props are passed into a component
 
-TODO: replace this image (props AND state, with state looping, & component boundary)
-
-props are passed into a component
-
-state is contained within a component
+- state is contained within a component
 
 Think about it from a responsibility viewpoint
 

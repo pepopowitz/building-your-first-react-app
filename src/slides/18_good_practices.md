@@ -110,10 +110,22 @@ But it is ALSO a good strategy to make sure your components are small & easy to 
 
 ---
 
-## Strive For Immutability & Pure Functions
+## Code That Changes Together Should Live Together
 
 ???
 
-Makes it easier to understand your app when things are more predictable
+I mean this in a couple ways:
+
+1. our new way of looking at separation of concerns
+
+markup + js + css
+
+but also,
+
+2. when organizing code in your app
+
+When grouped by file type, you have to bounce around to work on a feature
+
+When grouped by feature, all you need is in one folder
 
 ---

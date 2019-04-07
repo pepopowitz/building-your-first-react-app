@@ -23,11 +23,9 @@
 
 Image redos
 
-- [ ] npm growth graph
-- [ ] Props as inputs to functions
-- [ ] (component as f(props))
-- [ ] (component as f(props, state))
-- [ ] (props AND state, with state looping, & component boundary)
+- [x] npm growth graph
+- [x] (component as f(props))
+- [x] (component as f(props, state))
 - [ ] Welcome to JavaScript
 
 # maybe
@@ -36,11 +34,11 @@ Image redos
 
 - [ ] Modern JS exercises need a "Welcome to JavaScript" slide at the end, where I put on a cowboy hat, say "welcome to javascript", show a slide with a wild wild west scene, and pretend to shoot a six-gun (with sound-effect!!!!)
 
-- [ ] Add "suitcase" conversation to drive home the putting code together that changes together. (or maybe as good practices?)
+- [x] Add "suitcase" conversation to drive home the putting code together that changes together. (or maybe as good practices?)
 
 - [ ] fill in resources
 
-- [ ] add agenda/schedule
+- [x] add agenda/schedule
 
 - [ ] Modern JS: give guidance/recap after each exercise.
   - ex 1: "we'll use default in most cases, named when a file does/could do multiple things."
