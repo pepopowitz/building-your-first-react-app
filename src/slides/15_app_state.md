@@ -102,12 +102,12 @@ you get a provider & a consumer
 ### Provider
 
 ```jsx
-function App() {
-  return (
-    <UserContext.Provider value={this.state.user}>
-      <MyComponentTree />
-    </UserContext.Provider>
-  );
+import UserContext from './user-context.js';
+
+function UserProvider({ children }) {
+  const user = useUser(); // however you get the logged in user
+
+  return <UserContext.Provider value={user}>{children}</UserContext.Provider>;
 }
 ```
 
@@ -118,21 +118,27 @@ function App() {
 the provider will get wrapped around your component tree
 
 - value = the data you want to pass to consumers
+- user = however you got the user - maybe via useEffect,...
 
 ---
 
 ### Provider
 
 ```jsx
-function App() {
+import UserContext from "./user-context.js"
+
+function UserProvider({children}) {
+  const user = ... // however you get the logged in user
+  const handleUserChanged = ... // however you change the logged in user
+
   return (
     <UserContext.Provider
       value={{
-        user: this.state.user,
-        onThemeChanged: this.handleThemeChanged,
+        user: user,
+        onUserChanged: handleUserChanged,
       }}
     >
-      <MyComponentTree />
+      {children}
     </UserContext.Provider>
   );
 }
@@ -143,6 +149,28 @@ function App() {
 value can be an object, if there are multiple things you want to pass down
 
 including **actions** that will change the value
+
+---
+
+### The Top Of Your Tree
+
+```jsx
+import UserProvider from './user-provider.jsx';
+
+function App() {
+  return (
+    <UserProvider>
+      <MyComponentTree />
+    </UserProvider>
+  );
+}
+```
+
+???
+
+Then this wrapped provider gets imported into App & rendered at the top of the tree
+
+- mycomponenttree will be the children of UserProvider
 
 ---
 
@@ -274,7 +302,7 @@ layout: true
 
 ???
 
-Component state: use setState
+Component state: use useState
 
 Distant components: use context or Redux/mobx
 

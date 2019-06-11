@@ -44,6 +44,10 @@ Image redos
   - ex 1: "we'll use default in most cases, named when a file does/could do multiple things."
     - some people prefer always using named for refactoring/finding function names
 
+# ForwardJS
+
+- [ ] https://daveceddia.com/intro-to-hooks/ - add to extra credit
+
 ---
 
 # Schedule
