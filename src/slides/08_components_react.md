@@ -775,25 +775,16 @@ function Friend(props) {
 template: exercise
 layout: false
 
-# Exercise 3
+# Exercises 3 & 4
 
 ## Modern JavaScript: Working With Variables
-
-???
-
-New features to make it easier to work with objects
-
----
-
-template: exercise
-layout: false
-
-# Exercise 4
 
 ## JSX Fundamentals
 
 ???
 
-different things you can do with jsx
+- New features to make it easier to work with objects
+
+- different things you can do in jsx
 
 ---
